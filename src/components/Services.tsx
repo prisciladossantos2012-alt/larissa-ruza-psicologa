@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import servicesImage1 from "@/assets/services-image1.png";
 import servicesImage2 from "@/assets/services-image2.png";
 import associationsImage from "@/assets/associations.png";
@@ -24,7 +25,7 @@ const Services = () => {
               
               <div className="space-y-6">
                 {services.map((service, index) => <div key={index} className="flex items-start space-x-4">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mt-3 flex-shrink-0" />
+                    <ArrowRight className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
                     <p className="text-gray-800 text-lg leading-relaxed">
                       {service}
                     </p>
