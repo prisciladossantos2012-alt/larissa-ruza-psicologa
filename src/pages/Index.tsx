@@ -8,7 +8,7 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const Index = () => {
   return (
-    <>
+    <div className="min-h-screen">
       <Header />
       <main>
         <Hero />
@@ -18,7 +18,7 @@ const Index = () => {
         <Contact />
       </main>
       <FloatingWhatsApp />
-    </>
+    </div>
   );
 };
 

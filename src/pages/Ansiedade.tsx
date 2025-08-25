@@ -26,7 +26,7 @@ const Ansiedade = () => {
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
               Transforme sua relação com a ansiedade e recupere o controle da sua vida
             </p>
-            <Button variant="hero" size="lg" className="bg-white/10 border border-white/30 hover:bg-white/20 backdrop-blur-sm text-white">
+            <Button variant="cta" size="lg" className="bg-white/10 border border-white/30 hover:bg-white/20 backdrop-blur-sm text-white">
               Comece Sua Jornada Agora
             </Button>
           </div>
@@ -112,7 +112,7 @@ const Ansiedade = () => {
                     <p className="text-muted-foreground mb-6">
                       Agende sua primeira sessão e dê o primeiro passo para uma vida sem ansiedade.
                     </p>
-                    <Button variant="hero" size="lg" className="w-full">
+                    <Button variant="cta" size="lg" className="w-full">
                       Agendar Primeira Sessão
                     </Button>
                     <p className="text-sm text-muted-foreground mt-4">

@@ -1,64 +1,50 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Globe, Heart, Briefcase, Plane } from "lucide-react";
-
 const Services = () => {
   const services = [
-    {
-      icon: Globe,
-      title: "Psicoterapia online",
-      description: "para brasileiros no mundo inteiro (adolescentes e adultos)."
-    },
-    {
-      icon: Heart,
-      title: "Psicodiagnóstico e tratamento",
-      description: "terapêutico para transtornos de humor e personalidade."
-    },
-    {
-      icon: Briefcase,
-      title: "Mentoria e orientação",
-      description: "de carreira."
-    },
-    {
-      icon: Plane,
-      title: "Mentoria preparatória",
-      description: "para imigração."
-    }
+    "Psicoterapia online para brasileiros no mundo inteiro (adolescentes e adultos).",
+    "Psicodiagnóstico e tratamento terapêutico para transtornos de humor e personalidade.",
+    "Mentoria e orientação de carreira.",
+    "Mentoria preparatória para imigração."
   ];
 
   return (
-    <section id="servicos" className="py-20 bg-background">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-light text-primary mb-8">
+          <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-8">
             Meu trabalho é
           </h2>
-          <p className="text-2xl md:text-3xl text-foreground font-light">
+          <p className="text-2xl md:text-3xl text-gray-700 font-light">
             dedicado em:
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-elegant transition-all duration-500 border-border/50">
-              <CardContent className="p-8">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-sage-green/10 flex items-center justify-center group-hover:bg-sage-green/20 transition-colors duration-300">
-                      <service.icon className="w-6 h-6 text-sage-green" />
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-medium text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="max-w-4xl mx-auto">
+          <div className="grid gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-3"></div>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  {service}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Associações */}
+        <div className="text-center mt-20">
+          <p className="text-lg text-gray-600 mb-8">
+            Atualmente sou membro das seguintes associações:
+          </p>
+          <div className="flex justify-center space-x-8">
+            {/* Placeholder para logos das associações */}
+            <div className="w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center">
+              <span className="text-xs text-gray-500">Logo 1</span>
+            </div>
+            <div className="w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center">
+              <span className="text-xs text-gray-500">Logo 2</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
