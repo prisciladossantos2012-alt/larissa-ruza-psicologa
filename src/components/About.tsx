@@ -1,7 +1,6 @@
 
 import lariPortrait from "@/assets/lari-about.png";
 import therapyIcons from "@/assets/therapy-icons.png";
-import associationsImage from "@/assets/associations.png";
 
 const About = () => {
   return (
@@ -36,20 +35,6 @@ const About = () => {
                 abre espaço para reescrever sua história e revelar novos sentidos. 
                 E eu posso te apoiar nesse caminho.
               </p>
-            </div>
-            
-            <div className="mt-12">
-              <p className="text-gray-800 text-base mb-6">
-                Atualmente sou membro das seguintes associações:
-              </p>
-              
-              <div>
-                <img 
-                  src={associationsImage} 
-                  alt="Associações profissionais" 
-                  className="max-w-full h-auto"
-                />
-              </div>
             </div>
           </div>
           
