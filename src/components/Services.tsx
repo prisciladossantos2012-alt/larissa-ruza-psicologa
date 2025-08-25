@@ -11,9 +11,6 @@ const Services = () => {
             <div className="order-2 lg:order-1">
               <div className="space-y-4">
                 <div className="bg-gray-200 rounded-lg">
-                  <img src={servicesImage1} alt="Serviços de terapia" className="w-full h-auto object-cover rounded-lg" />
-                </div>
-                <div className="bg-gray-200 rounded-lg">
                   <img src={servicesImage2} alt="Psicoterapia online" className="w-full h-auto object-cover rounded-lg" />
                 </div>
               </div>
@@ -40,7 +37,7 @@ const Services = () => {
                 </p>
                 
                 <div>
-                  <img src={associationsImage} alt="Associações profissionais" className="w-full h-auto object-cover rounded-lg" />
+                  <img src={servicesImage1} alt="Serviços de terapia" className="w-full h-auto object-cover rounded-lg" />
                 </div>
               </div>
             </div>
