@@ -52,6 +52,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Psychology brand colors
+				'warm-beige': 'hsl(var(--warm-beige))',
+				'sage-green': 'hsl(var(--sage-green))',
+				'deep-sage': 'hsl(var(--deep-sage))',
+				'soft-cream': 'hsl(var(--soft-cream))',
+				'charcoal': 'hsl(var(--charcoal))',
+				'text-muted': 'hsl(var(--text-muted))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
