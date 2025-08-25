@@ -15,9 +15,10 @@ const Contact = () => {
       <div className="absolute inset-0 bg-black/60" />
       
       <div className="relative z-10 container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Content */}
-          <div className="text-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Content - Left Side */}
+            <div className="text-white">
             <h2 className="text-4xl md:text-5xl font-normal mb-8">
               Autocuidado aonde você estiver.
             </h2>
@@ -43,7 +44,7 @@ const Contact = () => {
               </a>
             </div>
             
-            <div className="max-w-2xl mx-auto">
+            <div>
               <h3 className="text-2xl font-normal mb-8 text-white">
                 Se você sentiu que é a hora de olhar para si e caminhar em direção 
                 ao que realmente importa, só me chamar.
@@ -80,6 +81,12 @@ const Contact = () => {
                   <a href="https://www.instagram.com/lariruza.psi" className="text-white hover:underline">Instagram</a>
                 </div>
               </div>
+            </div>
+            </div>
+            
+            {/* Right Side - Placeholder for form */}
+            <div className="lg:block hidden">
+              {/* This space will be used by the ContactForm component */}
             </div>
           </div>
         </div>

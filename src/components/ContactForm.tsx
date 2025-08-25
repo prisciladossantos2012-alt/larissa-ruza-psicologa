@@ -23,10 +23,15 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-transparent relative -mt-20">
       <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-white p-8 rounded-lg shadow-lg">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Left side - empty space to align with Contact component */}
+            <div className="lg:block hidden"></div>
+            
+            {/* Right side - Form */}
+            <div className="bg-white/95 backdrop-blur-sm p-8 rounded-lg relative z-10">
             <h2 className="text-3xl font-normal mb-4 text-center text-gray-800">
               Entre em Contato
             </h2>
@@ -99,6 +104,7 @@ const ContactForm = () => {
                 Enviar
               </Button>
             </form>
+            </div>
           </div>
         </div>
       </div>
