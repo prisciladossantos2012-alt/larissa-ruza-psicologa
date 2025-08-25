@@ -5,7 +5,7 @@ const Contact = () => {
     backgroundPosition: 'center'
   }}>
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/20" />
       
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
