@@ -5,6 +5,7 @@ import TherapyFor from "@/components/TherapyFor";
 import Services from "@/components/Services";
 import Autocuidado from "@/components/Autocuidado";
 import Contact from "@/components/Contact";
+import ContactForm from "@/components/ContactForm";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
         <Services />
         <Autocuidado />
         <Contact />
+        <ContactForm />
       </main>
       <FloatingWhatsApp />
     </div>
