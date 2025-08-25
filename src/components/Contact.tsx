@@ -19,7 +19,7 @@ const Contact = () => {
             <div className="mb-8">
               <p className="text-lg leading-relaxed">
                 <span className="bg-white text-gray-800 px-2 py-1">
-                  As sessões de terapia tem duração de 50 min e acontecem 100% online, com total sigilo e segurança.
+                  As sessões de terapia tem duração de 50 min e<br />acontecem 100% online, com total sigilo e segurança.
                 </span>
               </p>
             </div>
