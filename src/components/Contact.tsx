@@ -1,7 +1,6 @@
-import contactBg from "@/assets/contact-bg.jpg";
 const Contact = () => {
   return <section className="py-20 relative" style={{
-    backgroundImage: `url(${contactBg})`,
+    backgroundImage: `url(/lovable-uploads/da1797b2-5f44-4420-a0ce-bd12e53f7aaa.png)`,
     backgroundSize: 'cover',
     backgroundPosition: 'center'
   }}>
