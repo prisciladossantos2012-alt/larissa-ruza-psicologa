@@ -16,17 +16,19 @@ const Contact = () => {
               Autocuidado aonde você estiver.
             </h2>
             
-            <div className="bg-white text-gray-800 p-6 rounded-lg mb-8 mx-auto max-w-2xl">
+            <div className="mb-8">
               <p className="text-lg leading-relaxed">
-                As sessões de terapia tem duração de 50 min e acontecem 100% online, com total sigilo e segurança.
+                <span className="bg-white text-gray-800 px-2 py-1">
+                  As sessões de terapia tem duração de 50 min e acontecem 100% online, com total sigilo e segurança.
+                </span>
               </p>
             </div>
             
             <div className="mb-8">
-              <a href="http://bit.ly/psilariruza" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-3 bg-white text-gray-800 px-8 py-4 text-lg font-bold hover:bg-gray-100 transition-all duration-300 rounded-full">
+              <a href="http://bit.ly/psilariruza" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-3 text-white text-lg font-bold hover:opacity-80 transition-all duration-300 underline">
                 <span>PARA AGENDAR CLIQUE AQUI</span>
-                <div className="bg-gray-800 text-white rounded-full p-2">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-white text-gray-800 rounded-full p-2">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </div>
