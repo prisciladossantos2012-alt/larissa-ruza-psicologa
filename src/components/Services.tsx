@@ -1,5 +1,6 @@
 import servicesImage1 from "@/assets/services-image1.png";
 import servicesImage2 from "@/assets/services-image2.png";
+import associationsImage from "@/assets/associations.png";
 
 const Services = () => {
   const services = [
@@ -49,6 +50,20 @@ const Services = () => {
                     </p>
                   </div>
                 ))}
+              </div>
+              
+              <div className="mt-12">
+                <p className="text-gray-800 text-base mb-6">
+                  Atualmente sou membro das seguintes associações:
+                </p>
+                
+                <div>
+                  <img 
+                    src={associationsImage} 
+                    alt="Associações profissionais" 
+                    className="max-w-full h-auto"
+                  />
+                </div>
               </div>
               
             </div>
