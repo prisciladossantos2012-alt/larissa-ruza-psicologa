@@ -14,14 +14,6 @@ const TherapyFor = () => {
             </h3>
           </div>
           
-          {/* Therapy Icons */}
-          <div className="flex justify-center mb-16">
-            <img 
-              src={therapyIcons} 
-              alt="Ícones de terapia" 
-              className="max-w-full h-auto"
-            />
-          </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {/* Card 1 */}

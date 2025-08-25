@@ -1,5 +1,6 @@
 
 import lariPortrait from "@/assets/lari-about.png";
+import therapyIcons from "@/assets/therapy-icons.png";
 
 const About = () => {
   return (
@@ -39,11 +40,20 @@ const About = () => {
           
           {/* Image */}
           <div className="order-1 lg:order-2">
-            <div className="relative">
+            <div className="relative mb-8">
               <img 
                 src={lariPortrait} 
                 alt="Larissa Ruza - Psicóloga" 
                 className="w-full h-auto object-cover rounded-lg grayscale"
+              />
+            </div>
+            
+            {/* Therapy Icons */}
+            <div className="flex justify-center">
+              <img 
+                src={therapyIcons} 
+                alt="Ícones de terapia" 
+                className="max-w-full h-auto"
               />
             </div>
           </div>
