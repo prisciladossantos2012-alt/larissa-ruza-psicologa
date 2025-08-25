@@ -1,88 +1,62 @@
-
-import { Bird, Brain, Heart, Users } from "lucide-react";
+import therapyIcons from "@/assets/therapy-icons.png";
 
 const TherapyFor = () => {
   return (
-    <section className="py-20" style={{ background: 'linear-gradient(135deg, #4a67a8 0%, #5b7bb8 100%)' }}>
+    <section className="py-20 bg-gradient-to-b from-blue-600 to-blue-800 text-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-normal text-white mb-4">
-            A terapia serve
-          </h2>
-          <p className="text-3xl md:text-4xl text-white font-light">
-            para você que...
-          </p>
-        </div>
-        
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center text-white mb-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-normal mb-6">
+              A terapia serve
+            </h2>
+            <h3 className="text-3xl md:text-4xl font-normal">
+              para você que...
+            </h3>
+          </div>
+          
+          {/* Therapy Icons */}
+          <div className="flex justify-center mb-16">
+            <img 
+              src={therapyIcons} 
+              alt="Ícones de terapia" 
+              className="max-w-full h-auto"
+            />
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {/* Card 1 */}
-            <div className="flex flex-col items-center">
-              <div className="mb-6">
-                <Bird className="w-16 h-16 text-white" strokeWidth={1} />
-              </div>
-              <div className="space-y-2">
-                <p className="text-lg font-light leading-relaxed">
-                  quer mudar (hábitos,<br />
-                  carreira, país, vida...)<br />
-                  e não sabe por onde<br />
-                  começar
-                </p>
-              </div>
+            <div className="text-center">
+              <p className="text-lg leading-relaxed">
+                <strong>quer mudar</strong> (hábitos, carreira, país, vida...) <strong>e não sabe por onde começar</strong>
+              </p>
             </div>
             
             {/* Card 2 */}
-            <div className="flex flex-col items-center">
-              <div className="mb-6">
-                <div className="w-16 h-16 flex items-center justify-center">
-                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" strokeWidth={1} viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="3"/>
-                    <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1"/>
-                  </svg>
-                </div>
-              </div>
-              <div className="space-y-2">
-                <p className="text-lg font-light leading-relaxed">
-                  tem se sentido triste,<br />
-                  cansado, irritado ou ansioso<br />
-                  com frequência
-                </p>
-              </div>
+            <div className="text-center">
+              <p className="text-lg leading-relaxed">
+                <strong>tem se sentido triste, cansado, irritado ou ansioso</strong> com frequência
+              </p>
             </div>
             
             {/* Card 3 */}
-            <div className="flex flex-col items-center">
-              <div className="mb-6">
-                <Brain className="w-16 h-16 text-white" strokeWidth={1} />
-              </div>
-              <div className="space-y-2">
-                <p className="text-lg font-light leading-relaxed">
-                  sente dificuldade em<br />
-                  entender seus<br />
-                  sentimentos
-                </p>
-              </div>
+            <div className="text-center">
+              <p className="text-lg leading-relaxed">
+                <strong>sente dificuldade em entender seus sentimentos</strong>
+              </p>
             </div>
             
             {/* Card 4 */}
-            <div className="flex flex-col items-center">
-              <div className="mb-6">
-                <Users className="w-16 h-16 text-white" strokeWidth={1} />
-              </div>
-              <div className="space-y-2">
-                <p className="text-lg font-light leading-relaxed">
-                  quer melhorar a<br />
-                  qualidade dos seus<br />
-                  relacionamentos
-                </p>
-              </div>
+            <div className="text-center">
+              <p className="text-lg leading-relaxed">
+                <strong>quer melhorar a qualidade dos seus relacionamentos</strong>
+              </p>
             </div>
           </div>
           
           <div className="text-center">
-            <p className="text-xl md:text-2xl text-white leading-relaxed max-w-4xl mx-auto font-light">
-              ou apenas precisa ter um momento <strong>seu</strong>, para se conhecer, (re)descobrir 
-              e trilhar o caminho de <strong>uma vida mais significativa</strong>.
+            <p className="text-xl leading-relaxed max-w-4xl mx-auto">
+              ou apenas precisa ter um momento seu, para se <strong>conhecer</strong>, <strong>(re)descobrir</strong> 
+              e trilhar o caminho de uma <strong>vida mais significativa</strong>.
             </p>
           </div>
         </div>

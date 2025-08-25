@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import heroButterfly from "@/assets/hero-hands-butterfly.jpg";
+import contactBg from "@/assets/contact-bg.jpg";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -28,7 +28,7 @@ const Contact = () => {
     <section 
       className="py-20 relative"
       style={{
-        backgroundImage: `url(${heroButterfly})`,
+        backgroundImage: `url(${contactBg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -59,15 +59,15 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center space-x-3 bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-medium hover:bg-white hover:text-black transition-all duration-300 rounded"
                 >
-                  <span>PARA AGENDAR CLIQUE AQUI</span>
+                  <span>Para agendar clique aqui</span>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </a>
               </div>
               
-              <div className="space-y-6 text-blue-600">
-                <h3 className="text-2xl font-normal mb-8 text-blue-600">
+              <div className="space-y-6 text-white">
+                <h3 className="text-2xl font-normal mb-8 text-white">
                   Se você sentiu que é a hora de olhar para si e caminhar em direção 
                   ao que realmente importa, só me chamar.
                 </h3>
@@ -77,7 +77,7 @@ const Contact = () => {
                     <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
                       <span className="text-white text-sm">📅</span>
                     </div>
-                    <a href="https://www.doctoralia.com.br/larissa-ruza/psicologo/santo-andre3" className="text-white hover:underline">
+                    <a href="http://bit.ly/psilariruza" className="text-white hover:underline">
                       Agende pelo Doctoralia
                     </a>
                   </div>
@@ -100,7 +100,7 @@ const Contact = () => {
                     <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
                       <span className="text-white text-sm">📱</span>
                     </div>
-                    <a href="#" className="text-white hover:underline">Instagram</a>
+                    <a href="https://www.instagram.com/lariruza.psi" className="text-white hover:underline">Instagram</a>
                   </div>
                 </div>
               </div>

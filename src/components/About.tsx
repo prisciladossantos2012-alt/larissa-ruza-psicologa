@@ -1,5 +1,5 @@
 
-import lariPortrait from "@/assets/lari-professional.jpg";
+import lariPortrait from "@/assets/lari-about.png";
 
 const About = () => {
   return (
