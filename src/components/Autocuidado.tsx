@@ -1,4 +1,4 @@
 const Autocuidado = () => {
-  return;
+  return null;
 };
 export default Autocuidado;
