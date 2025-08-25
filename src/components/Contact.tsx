@@ -44,44 +44,6 @@ const Contact = () => {
               </a>
             </div>
             
-            <div>
-              <h3 className="text-2xl font-normal mb-8 text-white">
-                Se você sentiu que é a hora de olhar para si e caminhar em direção 
-                ao que realmente importa, só me chamar.
-              </h3>
-              
-              <div className="grid md:grid-cols-2 gap-6 text-left">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">📅</span>
-                  </div>
-                  <a href="http://bit.ly/psilariruza" className="text-white hover:underline">
-                    Agende pelo Doctoralia
-                  </a>
-                </div>
-                
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">📞</span>
-                  </div>
-                  <span className="text-white">+55 (11) 93020-2069</span>
-                </div>
-                
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">✉️</span>
-                  </div>
-                  <span className="text-white">larissaruza@gmail.com</span>
-                </div>
-                
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">📱</span>
-                  </div>
-                  <a href="https://www.instagram.com/lariruza.psi" className="text-white hover:underline">Instagram</a>
-                </div>
-              </div>
-            </div>
             </div>
             
             {/* Right Side - Placeholder for form */}
