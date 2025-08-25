@@ -10,7 +10,7 @@ const Contact = () => {
       
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-16 text-center">
             {/* Content - Left Side */}
             <div className="text-white">
             <h2 className="text-4xl md:text-5xl font-normal mb-8">
