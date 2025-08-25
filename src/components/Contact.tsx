@@ -13,7 +13,7 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-16 text-center items-center justify-center">
             {/* Content - Left Side */}
             <div className="text-white">
-            <h2 className="text-4xl md:text-5xl font-normal mb-8">
+            <h2 className="text-4xl md:text-5xl font-normal mb-8 text-center">
               Autocuidado aonde você estiver.
             </h2>
             
