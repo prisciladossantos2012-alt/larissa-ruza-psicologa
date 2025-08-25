@@ -1,4 +1,4 @@
-import therapyIcons from "@/assets/therapy-icons.png";
+import { RefreshCw, Heart, Eye, Users } from "lucide-react";
 
 const TherapyFor = () => {
   return (
@@ -18,6 +18,9 @@ const TherapyFor = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {/* Card 1 */}
             <div className="text-center">
+              <div className="mb-6 flex justify-center">
+                <RefreshCw size={48} className="text-white" />
+              </div>
               <p className="text-lg leading-relaxed">
                 <strong>quer mudar</strong> (hábitos, carreira, país, vida...) <strong>e não sabe por onde começar</strong>
               </p>
@@ -25,6 +28,9 @@ const TherapyFor = () => {
             
             {/* Card 2 */}
             <div className="text-center">
+              <div className="mb-6 flex justify-center">
+                <Heart size={48} className="text-white" />
+              </div>
               <p className="text-lg leading-relaxed">
                 <strong>tem se sentido triste, cansado, irritado ou ansioso</strong> com frequência
               </p>
@@ -32,6 +38,9 @@ const TherapyFor = () => {
             
             {/* Card 3 */}
             <div className="text-center">
+              <div className="mb-6 flex justify-center">
+                <Eye size={48} className="text-white" />
+              </div>
               <p className="text-lg leading-relaxed">
                 <strong>sente dificuldade em entender seus sentimentos</strong>
               </p>
@@ -39,6 +48,9 @@ const TherapyFor = () => {
             
             {/* Card 4 */}
             <div className="text-center">
+              <div className="mb-6 flex justify-center">
+                <Users size={48} className="text-white" />
+              </div>
               <p className="text-lg leading-relaxed">
                 <strong>quer melhorar a qualidade dos seus relacionamentos</strong>
               </p>
