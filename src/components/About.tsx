@@ -1,10 +1,7 @@
-
 import lariPortrait from "@/assets/lari-about.png";
 import therapyIcons from "@/assets/therapy-icons.png";
-
 const About = () => {
-  return (
-    <section className="py-20 bg-white">
+  return <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-start max-w-7xl mx-auto">
           {/* Content */}
@@ -41,26 +38,16 @@ const About = () => {
           {/* Image */}
           <div className="order-1 lg:order-2">
             <div className="relative mb-8">
-              <img 
-                src={lariPortrait} 
-                alt="Larissa Ruza - Psicóloga" 
-                className="w-full h-auto object-cover rounded-lg grayscale"
-              />
+              <img src={lariPortrait} alt="Larissa Ruza - Psicóloga" className="w-full h-auto object-cover rounded-lg grayscale" />
             </div>
             
             {/* Therapy Icons */}
             <div className="flex justify-center">
-              <img 
-                src={therapyIcons} 
-                alt="Ícones de terapia" 
-                className="max-w-full h-auto"
-              />
+              
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;

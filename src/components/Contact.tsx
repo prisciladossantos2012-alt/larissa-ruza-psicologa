@@ -1,16 +1,10 @@
-
 import contactBg from "@/assets/contact-bg.jpg";
-
 const Contact = () => {
-  return (
-    <section 
-      className="py-20 relative"
-      style={{
-        backgroundImage: `url(${contactBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-    >
+  return <section className="py-20 relative" style={{
+    backgroundImage: `url(${contactBg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  }}>
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60" />
       
@@ -31,12 +25,7 @@ const Contact = () => {
             </div>
             
             <div className="mb-8">
-              <a 
-                href="http://bit.ly/psilariruza"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-3 bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-medium hover:bg-white hover:text-black transition-all duration-300 rounded"
-              >
+              <a href="http://bit.ly/psilariruza" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-3 bg-transparent border-2 border-white text-white px-8 py-4 text-lg font-medium hover:bg-white hover:text-black transition-all duration-300 rounded">
                 <span>Para agendar clique aqui</span>
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -47,14 +36,10 @@ const Contact = () => {
             </div>
             
             {/* Right Side - Placeholder for form */}
-            <div className="lg:block hidden">
-              {/* This space will be used by the ContactForm component */}
-            </div>
+            
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
