@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import heroButterfly from "@/assets/hero-hands-butterfly.jpg";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ const Contact = () => {
     <section 
       className="py-20 relative"
       style={{
-        backgroundImage: `url('/placeholder.svg')`,
+        backgroundImage: `url(${heroButterfly})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

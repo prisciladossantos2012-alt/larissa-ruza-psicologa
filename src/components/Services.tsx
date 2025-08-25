@@ -1,4 +1,6 @@
 
+import lariPortrait from "@/assets/lari-professional.jpg";
+
 const Services = () => {
   const services = [
     "Psicoterapia online para brasileiros no mundo inteiro (adolescentes e adultos).",
@@ -17,14 +19,14 @@ const Services = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="aspect-square bg-gray-200 rounded-lg grayscale">
                   <img 
-                    src="/placeholder.svg"
+                    src={lariPortrait}
                     alt="Workspace" 
                     className="w-full h-full object-cover rounded-lg"
                   />
                 </div>
                 <div className="aspect-square bg-gray-200 rounded-lg grayscale">
                   <img 
-                    src="/placeholder.svg"
+                    src={lariPortrait}
                     alt="Lari Ruza"
                     className="w-full h-full object-cover rounded-lg"
                   />

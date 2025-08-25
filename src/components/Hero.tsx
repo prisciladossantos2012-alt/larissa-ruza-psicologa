@@ -14,11 +14,8 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/40" />
       
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight mb-12">
-          <span className="block">Entre o que somos</span>
-          <span className="block">e o que desejamos</span>
-          <span className="block">ser, há uma ponte</span>
-          <span className="block">chamada coragem.</span>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-light leading-tight mb-12 tracking-wide">
+          Entre o que somos e o que desejamos ser, há uma ponte chamada coragem.
         </h1>
         
         <p className="text-lg md:text-xl tracking-[0.2em] uppercase mb-12 opacity-90">
