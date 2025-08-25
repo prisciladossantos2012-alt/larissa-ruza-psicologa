@@ -23,7 +23,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-20 bg-transparent relative -mt-20">
+    <section className="py-20 bg-transparent relative">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16">
