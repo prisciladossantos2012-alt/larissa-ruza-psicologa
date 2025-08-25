@@ -40,7 +40,7 @@ const Services = () => {
                 </p>
                 
                 <div>
-                  
+                  <img src={associationsImage} alt="Associações profissionais" className="w-full h-auto object-cover rounded-lg" />
                 </div>
               </div>
             </div>
