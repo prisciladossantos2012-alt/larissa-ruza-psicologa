@@ -10,14 +10,14 @@ const Contact = () => {
       
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 text-center items-center justify-center">
-            {/* Content - Left Side */}
-            <div className="text-white">
-            <h2 className="text-4xl md:text-5xl font-normal mb-8 text-center">
+          <div className="flex flex-col items-center text-center">
+            {/* Content - Centered */}
+            <div className="text-white max-w-4xl">
+            <h2 className="text-4xl md:text-5xl font-normal mb-8">
               Autocuidado aonde você estiver.
             </h2>
             
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg mb-8 inline-block">
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg mb-8 mx-auto max-w-lg">
               <p className="text-lg leading-relaxed mb-4">
                 As sessões de terapia tem duração de 50 min e acontecem 100% online, 
                 com total sigilo e segurança.
@@ -34,9 +34,6 @@ const Contact = () => {
             </div>
             
             </div>
-            
-            {/* Right Side - Placeholder for form */}
-            
           </div>
         </div>
       </div>
