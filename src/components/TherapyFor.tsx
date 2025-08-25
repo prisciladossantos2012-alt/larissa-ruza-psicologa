@@ -1,8 +1,6 @@
-import { User, UserX, Brain, Heart } from "lucide-react";
-
 const TherapyFor = () => {
   return (
-    <section className="py-20 bg-[#5470a3] text-white font-sans">
+    <section className="py-20 bg-[#3d5aa0] text-white font-sans">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -19,14 +17,17 @@ const TherapyFor = () => {
             {/* Card 1 */}
             <div className="text-center">
               <div className="mb-6 flex justify-center">
-                <div className="w-20 h-20 flex items-center justify-center border-2 border-white rounded-lg">
-                  <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14 11l-3 3-3-3" />
+                <div className="w-20 h-20 flex items-center justify-center">
+                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" strokeWidth={1}/>
+                    <circle cx="9" cy="9" r="2" strokeWidth={1}/>
+                    <path d="M21 15l-3.086-3.086a2 2 0 00-2.828 0L6 21" strokeWidth={1}/>
+                    <path d="M3 7v10a2 2 0 002 2h10" strokeWidth={1}/>
+                    <path d="M17 7L7 17" strokeWidth={1}/>
                   </svg>
                 </div>
               </div>
-              <p className="text-lg leading-relaxed font-light">
+              <p className="text-lg leading-relaxed font-normal">
                 quer mudar (hábitos,<br />carreira, país, vida...)<br />e não sabe por onde<br />começar
               </p>
             </div>
@@ -35,15 +36,16 @@ const TherapyFor = () => {
             <div className="text-center">
               <div className="mb-6 flex justify-center">
                 <div className="w-20 h-20 flex items-center justify-center">
-                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" strokeWidth={1.5}/>
-                    <path d="M8 14s1.5 2 4 2 4-2 4-2" strokeWidth={1.5}/>
-                    <line x1="9" y1="9" x2="9.01" y2="9" strokeWidth={1.5}/>
-                    <line x1="15" y1="9" x2="15.01" y2="9" strokeWidth={1.5}/>
+                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" strokeWidth={1}/>
+                    <path d="M8 15s1.5-2 4-2 4 2 4 2" strokeWidth={1}/>
+                    <line x1="9" y1="9" x2="9.01" y2="9" strokeWidth={2}/>
+                    <line x1="15" y1="9" x2="15.01" y2="9" strokeWidth={2}/>
+                    <path d="M7 18s.5-1 2-1 2 1 2 1" strokeWidth={1}/>
                   </svg>
                 </div>
               </div>
-              <p className="text-lg leading-relaxed font-light">
+              <p className="text-lg leading-relaxed font-normal">
                 tem se sentido triste,<br />cansado, irritado ou ansioso<br />com frequência
               </p>
             </div>
@@ -52,13 +54,15 @@ const TherapyFor = () => {
             <div className="text-center">
               <div className="mb-6 flex justify-center">
                 <div className="w-20 h-20 flex items-center justify-center">
-                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 0c3 3 3 7 0 10-3-3-3-7 0-10z"/>
-                    <circle cx="12" cy="8" r="2" strokeWidth={1.5}/>
+                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3" strokeWidth={1}/>
+                    <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" strokeWidth={0.8}/>
+                    <path d="M8.5 8.5L15.5 15.5" strokeWidth={1}/>
+                    <path d="M15.5 8.5L8.5 15.5" strokeWidth={1}/>
                   </svg>
                 </div>
               </div>
-              <p className="text-lg leading-relaxed font-light">
+              <p className="text-lg leading-relaxed font-normal">
                 sente dificuldade em<br />entender seus<br />sentimentos
               </p>
             </div>
@@ -67,22 +71,25 @@ const TherapyFor = () => {
             <div className="text-center">
               <div className="mb-6 flex justify-center">
                 <div className="w-20 h-20 flex items-center justify-center">
-                  <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2L2 7h10l10-5-10 5zM2 17h20M6 12v6h12v-6"/>
-                    <circle cx="9" cy="15" r="1" strokeWidth={1.5}/>
-                    <circle cx="15" cy="15" r="1" strokeWidth={1.5}/>
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="8" cy="8" r="4" strokeWidth={1}/>
+                    <circle cx="16" cy="16" r="4" strokeWidth={1}/>
+                    <path d="M12 8c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4" strokeWidth={1}/>
+                    <path d="M12 16c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4" strokeWidth={1}/>
+                    <path d="M20 8c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4" strokeWidth={1}/>
+                    <path d="M20 16c0-2.21-1.79-4-4-4s-4 1.79-4 4 1.79 4 4 4" strokeWidth={1}/>
+                    <path d="M8 12h8" strokeWidth={1.5}/>
                   </svg>
                 </div>
               </div>
-              <p className="text-lg leading-relaxed font-light">
+              <p className="text-lg leading-relaxed font-normal">
                 quer melhorar a<br />qualidade dos seus<br />relacionamentos
               </p>
             </div>
           </div>
           
           <div className="text-center">
-            <p className="text-xl leading-relaxed max-w-4xl mx-auto font-light">
+            <p className="text-xl leading-relaxed max-w-4xl mx-auto font-normal">
               ou apenas precisa ter um momento seu, para se conhecer, (re)descobrir 
               e trilhar o caminho de uma vida mais significativa.
             </p>
