@@ -1,8 +1,8 @@
-import { RefreshCw, Heart, Eye, Users } from "lucide-react";
+import { Bird, Smile, Brain, Heart } from "lucide-react";
 
 const TherapyFor = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-blue-600 to-blue-800 text-white">
+    <section className="py-20 bg-blue-700 text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -19,7 +19,9 @@ const TherapyFor = () => {
             {/* Card 1 */}
             <div className="text-center">
               <div className="mb-6 flex justify-center">
-                <RefreshCw size={48} className="text-white" />
+                <div className="w-16 h-16 flex items-center justify-center">
+                  <Bird size={48} className="text-white stroke-1" />
+                </div>
               </div>
               <p className="text-lg leading-relaxed">
                 <strong>quer mudar</strong> (hábitos, carreira, país, vida...) <strong>e não sabe por onde começar</strong>
@@ -29,7 +31,9 @@ const TherapyFor = () => {
             {/* Card 2 */}
             <div className="text-center">
               <div className="mb-6 flex justify-center">
-                <Heart size={48} className="text-white" />
+                <div className="w-16 h-16 flex items-center justify-center">
+                  <Smile size={48} className="text-white stroke-1" />
+                </div>
               </div>
               <p className="text-lg leading-relaxed">
                 <strong>tem se sentido triste, cansado, irritado ou ansioso</strong> com frequência
@@ -39,7 +43,9 @@ const TherapyFor = () => {
             {/* Card 3 */}
             <div className="text-center">
               <div className="mb-6 flex justify-center">
-                <Eye size={48} className="text-white" />
+                <div className="w-16 h-16 flex items-center justify-center">
+                  <Brain size={48} className="text-white stroke-1" />
+                </div>
               </div>
               <p className="text-lg leading-relaxed">
                 <strong>sente dificuldade em entender seus sentimentos</strong>
@@ -49,7 +55,9 @@ const TherapyFor = () => {
             {/* Card 4 */}
             <div className="text-center">
               <div className="mb-6 flex justify-center">
-                <Users size={48} className="text-white" />
+                <div className="w-16 h-16 flex items-center justify-center">
+                  <Heart size={48} className="text-white stroke-1" />
+                </div>
               </div>
               <p className="text-lg leading-relaxed">
                 <strong>quer melhorar a qualidade dos seus relacionamentos</strong>
