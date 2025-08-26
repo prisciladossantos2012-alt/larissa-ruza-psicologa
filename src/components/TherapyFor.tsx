@@ -9,7 +9,7 @@ const TherapyFor = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-sans">
               A terapia serve
             </h2>
-            <h3 className="text-3xl md:text-4xl font-bold font-sans">
+            <h3 className="text-4xl md:text-5xl font-bold font-sans">
               para você que...
             </h3>
           </div>
