@@ -34,9 +34,9 @@ const ContactForm = () => {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen py-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen py-8 bg-white/95 backdrop-blur-sm rounded-lg mx-4">
             {/* Left side - Contact info */}
-            <div className="text-white animate-fade-in">
+            <div className="text-[#2c4186] animate-fade-in px-6 lg:px-8">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light leading-relaxed mb-12 sm:mb-16">
                 Se você sentiu<br />
                 que é a hora de<br />
@@ -48,39 +48,39 @@ const ContactForm = () => {
               
               <div className="grid gap-6 text-left">
                 <div className="flex items-center space-x-4 animate-scale-in" style={{animationDelay: '0.2s'}}>
-                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Calendar className="w-6 h-6 text-white" strokeWidth={1.5} />
+                  <div className="w-12 h-12 bg-[#2c4186]/10 rounded-full flex items-center justify-center">
+                    <Calendar className="w-6 h-6 text-[#2c4186]" strokeWidth={1.5} />
                   </div>
-                  <a href="http://bit.ly/psilariruza" className="text-white hover:text-white/80 transition-colors text-lg font-light underline hover:no-underline">
+                  <a href="http://bit.ly/psilariruza" className="text-black hover:text-gray-700 transition-colors text-lg font-light underline hover:no-underline">
                     Agende pelo Doctoralia
                   </a>
                 </div>
                 
                 <div className="flex items-center space-x-4 animate-scale-in" style={{animationDelay: '0.4s'}}>
-                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-white" strokeWidth={1.5} />
+                  <div className="w-12 h-12 bg-[#2c4186]/10 rounded-full flex items-center justify-center">
+                    <Phone className="w-6 h-6 text-[#2c4186]" strokeWidth={1.5} />
                   </div>
-                  <span className="text-white text-lg font-light">+55 (11) 93020-2069</span>
+                  <span className="text-black text-lg font-light">+55 (11) 93020-2069</span>
                 </div>
                 
                 <div className="flex items-center space-x-4 animate-scale-in" style={{animationDelay: '0.6s'}}>
-                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-white" strokeWidth={1.5} />
+                  <div className="w-12 h-12 bg-[#2c4186]/10 rounded-full flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-[#2c4186]" strokeWidth={1.5} />
                   </div>
-                  <span className="text-white text-lg font-light">larissaruza@gmail.com</span>
+                  <span className="text-black text-lg font-light">larissaruza@gmail.com</span>
                 </div>
                 
                 <div className="flex items-center space-x-4 animate-scale-in" style={{animationDelay: '0.8s'}}>
-                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Instagram className="w-6 h-6 text-white" strokeWidth={1.5} />
+                  <div className="w-12 h-12 bg-[#2c4186]/10 rounded-full flex items-center justify-center">
+                    <Instagram className="w-6 h-6 text-[#2c4186]" strokeWidth={1.5} />
                   </div>
-                  <a href="https://www.instagram.com/lariruza.psi" className="text-white hover:text-white/80 transition-colors text-lg font-light underline hover:no-underline">Instagram</a>
+                  <a href="https://www.instagram.com/lariruza.psi" className="text-black hover:text-gray-700 transition-colors text-lg font-light underline hover:no-underline">Instagram</a>
                 </div>
               </div>
             </div>
             
             {/* Right side - Form */}
-            <div className="bg-white/95 backdrop-blur-sm p-6 sm:p-8 lg:p-10 rounded-lg relative z-10 animate-scale-in" style={{animationDelay: '0.5s'}}>
+            <div className="bg-white/90 backdrop-blur-sm p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 animate-scale-in" style={{animationDelay: '0.5s'}}>
             <h2 className="text-2xl sm:text-3xl font-light mb-4 text-center text-gray-800">
               Entre em Contato
             </h2>
