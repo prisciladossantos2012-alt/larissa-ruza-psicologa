@@ -20,6 +20,8 @@ export default {
 		extend: {
 			fontFamily: {
 				'sans': ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
+				'script': ['Great Vibes', 'Dancing Script', 'cursive'],
+				'dancing': ['Dancing Script', 'cursive'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

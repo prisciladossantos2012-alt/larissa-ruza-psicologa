@@ -1,11 +1,13 @@
 import { useState } from "react";
-import logoLarissaRuza from "@/assets/logo-larissa-ruza.png";
 const Header = () => {
   return <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="absolute inset-x-0 top-4 flex justify-between items-center px-6">
         {/* Logo */}
         <div className="text-white">
-          <img src={logoLarissaRuza} alt="Larissa Ruza Psicologia" className="h-12 w-auto" />
+          <div className="text-center">
+            <div className="font-script text-4xl text-white mb-1">Larissa Ruza</div>
+            <div className="font-sans text-xs uppercase tracking-[0.2em] text-white/90">PSICOLOGIA</div>
+          </div>
         </div>
 
         {/* CTA Button */}
