@@ -80,7 +80,7 @@ const ContactForm = () => {
             </div>
             
             {/* Right side - Form */}
-            <div className="bg-white/90 backdrop-blur-sm p-8 sm:p-10 lg:p-12 xl:p-16 rounded-lg border border-gray-200 animate-scale-in max-w-2xl mx-auto" style={{animationDelay: '0.5s'}}>
+            <div className="bg-white/90 backdrop-blur-sm p-12 sm:p-16 lg:p-20 rounded-lg border border-gray-200 animate-scale-in w-full max-w-4xl mx-auto" style={{animationDelay: '0.5s'}}>
             <h2 className="text-2xl sm:text-3xl font-light mb-4 text-center text-gray-800">
               Entre em Contato
             </h2>
@@ -88,14 +88,14 @@ const ContactForm = () => {
               Se preferir, deixa seus dados e eu te retorno.
             </p>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-8">
               <div>
                 <label className="text-gray-700 mb-2 block font-light">
                   Seu nome <span className="text-red-500">*</span>
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input type="text" name="firstName" placeholder="Nome" value={formData.firstName} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors" required />
-                  <input type="text" name="lastName" placeholder="Sobrenome" value={formData.lastName} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors" required />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <input type="text" name="firstName" placeholder="Nome" value={formData.firstName} onChange={handleInputChange} className="w-full px-6 py-4 text-lg border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors" required />
+                  <input type="text" name="lastName" placeholder="Sobrenome" value={formData.lastName} onChange={handleInputChange} className="w-full px-6 py-4 text-lg border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors" required />
                 </div>
               </div>
               
@@ -103,7 +103,7 @@ const ContactForm = () => {
                 <label className="text-gray-700 mb-2 block font-light">
                   Seu Whatsapp <span className="text-red-500">*</span>
                 </label>
-                <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" value={formData.whatsapp} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors" required />
+                <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" value={formData.whatsapp} onChange={handleInputChange} className="w-full px-6 py-4 text-lg border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors" required />
                 <p className="text-sm text-gray-500 mt-1 font-light">
                   Coloque um número válido
                 </p>
@@ -113,10 +113,10 @@ const ContactForm = () => {
                 <label className="text-gray-700 mb-2 block font-light">
                   Como você me conheceu?
                 </label>
-                <textarea name="howDidYouMeetMe" value={formData.howDidYouMeetMe} onChange={handleInputChange} rows={3} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors resize-none" />
+                <textarea name="howDidYouMeetMe" value={formData.howDidYouMeetMe} onChange={handleInputChange} rows={4} className="w-full px-6 py-4 text-lg border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors resize-none" />
               </div>
               
-              <Button type="submit" className="w-full bg-[#2c4186] hover:bg-[#2c4186]/90 text-white py-4 text-lg font-light rounded-md transition-colors">
+              <Button type="submit" className="w-full bg-[#2c4186] hover:bg-[#2c4186]/90 text-white py-6 text-xl font-light rounded-md transition-colors">
                 Enviar
               </Button>
             </form>
