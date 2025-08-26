@@ -36,7 +36,7 @@ const ContactForm = () => {
               
               <div className="grid gap-6 text-left">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                     <span className="text-white text-sm">📅</span>
                   </div>
                   <a href="http://bit.ly/psilariruza" className="text-gray-800 hover:underline">
@@ -45,21 +45,21 @@ const ContactForm = () => {
                 </div>
                 
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                     <span className="text-white text-sm">📞</span>
                   </div>
                   <span className="text-gray-800">+55 (11) 93020-2069</span>
                 </div>
                 
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                     <span className="text-white text-sm">✉️</span>
                   </div>
                   <span className="text-gray-800">larissaruza@gmail.com</span>
                 </div>
                 
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                     <span className="text-white text-sm">📱</span>
                   </div>
                   <a href="https://www.instagram.com/lariruza.psi" className="text-gray-800 hover:underline">Instagram</a>
@@ -136,7 +136,7 @@ const ContactForm = () => {
               
               <Button 
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 text-lg font-medium"
+                className="w-full bg-primary hover:bg-primary/90 text-white py-4 text-lg font-medium"
               >
                 Enviar
               </Button>

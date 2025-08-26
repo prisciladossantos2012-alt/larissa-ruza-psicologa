@@ -18,7 +18,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 15%;
 
-    --primary: 218 60% 50%;
+    --primary: 226 61% 34%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 98%;
@@ -94,10 +94,10 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-normal;
+    @apply bg-background text-foreground font-sans;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-normal;
+    @apply font-light;
   }
 }

@@ -19,13 +19,13 @@ const Services = () => {
             
             {/* Content */}
             <div className="order-1 lg:order-2">
-              <h2 className="text-4xl md:text-5xl font-normal text-blue-600 mb-12">
+              <h2 className="text-4xl md:text-5xl font-light text-primary mb-12">
                 Meu trabalho é dedicado em:
               </h2>
               
               <div className="space-y-6">
                 {services.map((service, index) => <div key={index} className="flex items-start space-x-4">
-                    <ArrowRight className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+                    <ArrowRight className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                     <p className="text-gray-800 text-lg leading-relaxed">
                       {service}
                     </p>
@@ -68,7 +68,7 @@ const Services = () => {
               </p>
             </div>
             
-            <div className="bg-blue-600 text-white px-8 py-3 text-lg font-medium hover:bg-blue-700 transition-colors duration-300 flex items-center gap-3 mx-auto rounded-lg inline-flex">
+            <div className="bg-primary text-white px-8 py-3 text-lg font-medium hover:bg-primary/90 transition-colors duration-300 flex items-center gap-3 mx-auto rounded-lg inline-flex">
               PARA AGENDAR CLIQUE AQUI
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />

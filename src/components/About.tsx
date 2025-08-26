@@ -6,7 +6,7 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-start max-w-7xl mx-auto">
           {/* Content */}
           <div className="order-2 lg:order-1">
-            <h2 className="text-4xl md:text-5xl font-normal text-blue-600 mb-8">
+            <h2 className="text-4xl md:text-5xl font-light text-primary mb-8">
               Conheça sua psicóloga
             </h2>
             
