@@ -34,7 +34,7 @@ const ContactForm = () => {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen py-8 bg-white/95 backdrop-blur-sm rounded-lg mx-4">
+          <div className="grid lg:grid-cols-2 gap-4 lg:gap-6 items-center min-h-screen py-8 bg-white/95 backdrop-blur-sm rounded-lg mx-4">
             {/* Left side - Contact info */}
             <div className="text-[#2c4186] animate-fade-in px-6 lg:px-8">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light leading-relaxed mb-12 sm:mb-16">
@@ -80,7 +80,7 @@ const ContactForm = () => {
             </div>
             
             {/* Right side - Form */}
-            <div className="bg-white/90 backdrop-blur-sm p-8 sm:p-10 lg:p-12 rounded-lg border border-gray-200 animate-scale-in w-full max-w-5xl mx-auto" style={{animationDelay: '0.5s'}}>
+            <div className="bg-white/90 backdrop-blur-sm p-8 sm:p-10 lg:p-12 rounded-lg border border-gray-200 animate-scale-in w-full" style={{animationDelay: '0.5s'}}>
             <h2 className="text-2xl sm:text-3xl font-light mb-4 text-center text-gray-800">
               Entre em Contato
             </h2>
