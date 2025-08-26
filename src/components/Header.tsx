@@ -1,6 +1,6 @@
 import { useState } from "react";
 const Header = () => {
-  return <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
+  return <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
       <div className="absolute inset-x-0 top-4 flex justify-between items-center px-6">
         {/* Logo */}
         <div className="text-white">
