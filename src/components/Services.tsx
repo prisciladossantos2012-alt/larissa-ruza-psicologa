@@ -38,7 +38,7 @@ const Services = () => {
                 </p>
                 
                 <div>
-                  <img src={servicesImage1} alt="Serviços de terapia" className="w-3/4 h-auto object-cover rounded-lg" />
+                  <img src={servicesImage1} alt="Serviços de terapia" className="w-1/2 h-auto object-cover rounded-lg" />
                 </div>
               </div>
             </div>
