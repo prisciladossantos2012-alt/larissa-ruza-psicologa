@@ -1,5 +1,5 @@
 const Contact = () => {
-  return <section className="py-20 relative" style={{
+  return <section className="py-12 sm:py-16 lg:py-20 relative" style={{
     backgroundImage: `url(/lovable-uploads/da1797b2-5f44-4420-a0ce-bd12e53f7aaa.png)`,
     backgroundSize: 'cover',
     backgroundPosition: 'center'
@@ -7,12 +7,12 @@ const Contact = () => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/20" />
       
-      <div className="relative z-10 container mx-auto px-4">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-center text-center">
             {/* Content - Centered */}
             <div className="text-white max-w-4xl animate-zoom-in">
-            <h2 className="text-4xl md:text-5xl font-normal mb-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal mb-6 sm:mb-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               Autocuidado aonde você estiver.
             </h2>
             
