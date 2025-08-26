@@ -80,7 +80,7 @@ const ContactForm = () => {
             </div>
             
             {/* Right side - Form */}
-            <div className="bg-white/90 backdrop-blur-sm p-6 sm:p-8 lg:p-10 rounded-lg border border-gray-200 animate-scale-in" style={{animationDelay: '0.5s'}}>
+            <div className="bg-white/90 backdrop-blur-sm p-8 sm:p-10 lg:p-12 xl:p-16 rounded-lg border border-gray-200 animate-scale-in max-w-2xl mx-auto" style={{animationDelay: '0.5s'}}>
             <h2 className="text-2xl sm:text-3xl font-light mb-4 text-center text-gray-800">
               Entre em Contato
             </h2>
