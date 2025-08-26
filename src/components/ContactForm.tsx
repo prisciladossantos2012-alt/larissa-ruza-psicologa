@@ -20,8 +20,32 @@ const ContactForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    
+    // Validate required fields
+    if (!formData.firstName || !formData.lastName || !formData.whatsapp) {
+      alert('Por favor, preencha todos os campos obrigatórios.');
+      return;
+    }
+    
+    // Create WhatsApp message
+    const message = `Olá! Meu nome é ${formData.firstName} ${formData.lastName}.
+Meu WhatsApp: ${formData.whatsapp}
+${formData.howDidYouMeetMe ? `Como me conheceu: ${formData.howDidYouMeetMe}` : ''}
+
+Gostaria de agendar uma sessão de terapia.`;
+    
+    // Open WhatsApp
+    const whatsappNumber = "5511930202069";
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+    
+    // Reset form
+    setFormData({
+      firstName: '',
+      lastName: '',
+      whatsapp: '',
+      howDidYouMeetMe: ''
+    });
   };
 
   return <section className="py-16 sm:py-20 relative min-h-screen overflow-hidden" style={{
