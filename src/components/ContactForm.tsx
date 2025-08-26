@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Calendar, Phone, Mail, Instagram } from "lucide-react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +27,7 @@ const ContactForm = () => {
     <section className="py-20 bg-transparent relative">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-3 gap-16">
             {/* Left side - Contact info */}
             <div className="text-gray-800">
               <h3 className="text-3xl font-normal mb-8 text-primary leading-tight">
@@ -42,8 +43,8 @@ const ContactForm = () => {
               
               <div className="grid gap-6 text-left">
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">📅</span>
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                    <Calendar className="text-white" size={20} />
                   </div>
                   <a href="http://bit.ly/psilariruza" className="text-gray-800 hover:underline">
                     Agende pelo Doctoralia
@@ -51,22 +52,22 @@ const ContactForm = () => {
                 </div>
                 
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">📞</span>
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                    <Phone className="text-white" size={20} />
                   </div>
                   <span className="text-gray-800">+55 (11) 93020-2069</span>
                 </div>
                 
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">✉️</span>
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                    <Mail className="text-white" size={20} />
                   </div>
                   <span className="text-gray-800">larissaruza@gmail.com</span>
                 </div>
                 
                 <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">📱</span>
+                  <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                    <Instagram className="text-white" size={20} />
                   </div>
                   <a href="https://www.instagram.com/lariruza.psi" className="text-gray-800 hover:underline">Instagram</a>
                 </div>
@@ -74,7 +75,7 @@ const ContactForm = () => {
             </div>
             
             {/* Right side - Form */}
-            <div className="bg-white/95 backdrop-blur-sm p-8 rounded-lg relative z-10">
+            <div className="lg:col-span-2 bg-white/95 backdrop-blur-sm p-8 rounded-lg relative z-10">
             <h2 className="text-3xl font-normal mb-4 text-center text-gray-800">
               Entre em Contato
             </h2>
