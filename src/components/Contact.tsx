@@ -1,5 +1,11 @@
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 const Contact = () => {
-  return <section className="py-12 sm:py-16 lg:py-20 relative" style={{
+  const { ref: sectionRef, inView: sectionInView } = useScrollAnimation();
+  const { ref: titleRef, inView: titleInView } = useScrollAnimation();
+  const { ref: descRef, inView: descInView } = useScrollAnimation();
+  const { ref: buttonRef, inView: buttonInView } = useScrollAnimation();
+  return <section ref={sectionRef} className="py-12 sm:py-16 lg:py-20 relative" style={{
     backgroundImage: `url(/lovable-uploads/da1797b2-5f44-4420-a0ce-bd12e53f7aaa.png)`,
     backgroundSize: 'cover',
     backgroundPosition: 'center'
@@ -11,12 +17,12 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-center text-center">
             {/* Content - Centered */}
-            <div className="text-white max-w-4xl animate-zoom-in">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal mb-6 sm:mb-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <div className={`text-white max-w-4xl ${sectionInView ? 'animate-zoom-in' : 'opacity-0'}`}>
+            <h2 ref={titleRef} className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal mb-6 sm:mb-8 ${titleInView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{animationDelay: titleInView ? '0.2s' : '0s'}}>
               Autocuidado aonde você estiver.
             </h2>
             
-            <div className="mb-8 animate-slide-up" style={{animationDelay: '0.4s'}}>
+            <div ref={descRef} className={`mb-8 ${descInView ? 'animate-slide-up' : 'opacity-0'}`} style={{animationDelay: descInView ? '0.4s' : '0s'}}>
               <p className="text-lg leading-relaxed">
                 <span className="bg-white text-gray-800 px-2 py-1">
                   As sessões de terapia tem duração de 50 min e
@@ -27,7 +33,7 @@ const Contact = () => {
               </p>
             </div>
             
-            <div className="mb-8 animate-bounce-in" style={{animationDelay: '0.6s'}}>
+            <div ref={buttonRef} className={`mb-8 ${buttonInView ? 'animate-bounce-in' : 'opacity-0'}`} style={{animationDelay: buttonInView ? '0.6s' : '0s'}}>
               <a href="http://bit.ly/psilariruza" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-3 text-white text-lg font-bold hover:opacity-80 transition-all duration-300 underline">
                 <span>PARA AGENDAR CLIQUE AQUI</span>
                 <div className="bg-white text-gray-800 rounded-full p-2">

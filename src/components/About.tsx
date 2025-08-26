@@ -1,17 +1,23 @@
 import lariPortrait from "@/assets/lari-about.png";
 import therapyIcons from "@/assets/therapy-icons.png";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const About = () => {
-  return <section className="py-12 sm:py-16 lg:py-20 bg-white">
+  const { ref: sectionRef, inView: sectionInView } = useScrollAnimation();
+  const { ref: titleRef, inView: titleInView } = useScrollAnimation();
+  const { ref: textRef, inView: textInView } = useScrollAnimation();
+  const { ref: imageRef, inView: imageInView } = useScrollAnimation();
+
+  return <section ref={sectionRef} className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start max-w-7xl mx-auto">
           {/* Content */}
-          <div className="order-2 lg:order-1 animate-fade-in-left">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-primary mb-6 sm:mb-8 animate-slide-up" style={{animationDelay: '0.2s'}}>
+          <div className={`order-2 lg:order-1 ${sectionInView ? 'animate-fade-in-left' : 'opacity-0'}`}>
+            <h2 ref={titleRef} className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-primary mb-6 sm:mb-8 ${titleInView ? 'animate-slide-up' : 'opacity-0'}`} style={{animationDelay: titleInView ? '0.2s' : '0s'}}>
               Conheça sua psicóloga
             </h2>
             
-            <div className="space-y-4 sm:space-y-6 text-gray-800 text-sm sm:text-base leading-relaxed animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+            <div ref={textRef} className={`space-y-4 sm:space-y-6 text-gray-800 text-sm sm:text-base leading-relaxed ${textInView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{animationDelay: textInView ? '0.4s' : '0s'}}>
               <p>
                 Eu sou <strong>Lari Ruza (CRP 06/157739)</strong>, uma psicóloga nômade que já viveu 
                 e aprendeu em diferentes cantos do mundo — do Brasil à Espanha, 
@@ -37,8 +43,8 @@ const About = () => {
           </div>
           
           {/* Image */}
-          <div className="order-1 lg:order-2 animate-fade-in-right">
-            <div className="relative mb-8 animate-zoom-in" style={{animationDelay: '0.3s'}}>
+          <div className={`order-1 lg:order-2 ${sectionInView ? 'animate-fade-in-right' : 'opacity-0'}`}>
+            <div ref={imageRef} className={`relative mb-8 ${imageInView ? 'animate-zoom-in' : 'opacity-0'}`} style={{animationDelay: imageInView ? '0.3s' : '0s'}}>
               <img src={lariPortrait} alt="Larissa Ruza - Psicóloga" className="w-full h-auto object-cover rounded-lg grayscale" />
             </div>
             
