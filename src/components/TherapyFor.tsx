@@ -65,7 +65,7 @@ const TherapyFor = () => {
           </div>
           
           <div className="text-center">
-            <p className="text-xl leading-relaxed max-w-4xl mx-auto font-light font-sans">
+            <p className="text-xl leading-relaxed max-w-4xl mx-auto font-bold font-sans">
               ou apenas precisa ter um momento seu, para se conhecer, (re)descobrir 
               e trilhar o caminho de uma vida mais significativa.
             </p>
