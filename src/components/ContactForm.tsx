@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -7,31 +8,37 @@ const ContactForm = () => {
     whatsapp: '',
     howDidYouMeetMe: ''
   });
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
     console.log('Form submitted:', formData);
   };
-  return <section className="py-20 bg-transparent relative">
+
+  return (
+    <section className="py-20 bg-transparent relative">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Left side - Contact info */}
             <div className="text-gray-800">
-              <h3 className="text-2xl font-normal mb-8">Se você sentiu 
-que é a hora de 
-olhar para si e 
-caminhar em direção 
-ao que 
-realmente 
-importa, só me 
-chamar.</h3>
+              <h3 className="text-3xl font-normal mb-8 text-primary leading-tight">
+                Se você sentiu<br/>
+                que é a hora de<br/>
+                olhar para si e<br/>
+                caminhar em<br/>
+                direção ao que<br/>
+                realmente<br/>
+                importa, só me<br/>
+                chamar.
+              </h3>
               
               <div className="grid gap-6 text-left">
                 <div className="flex items-center space-x-3">
@@ -81,8 +88,24 @@ chamar.</h3>
                   Seu nome <span className="text-red-500">*</span>
                 </label>
                 <div className="grid grid-cols-2 gap-4">
-                  <input type="text" name="firstName" placeholder="Nome" value={formData.firstName} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
-                  <input type="text" name="lastName" placeholder="Sobrenome" value={formData.lastName} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder="Nome"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                    required
+                  />
+                  <input
+                    type="text"
+                    name="lastName"
+                    placeholder="Sobrenome"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                    required
+                  />
                 </div>
               </div>
               
@@ -90,7 +113,15 @@ chamar.</h3>
                 <label className="text-gray-700 mb-2 block">
                   Seu Whatsapp <span className="text-red-500">*</span>
                 </label>
-                <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" value={formData.whatsapp} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
+                <input
+                  type="tel"
+                  name="whatsapp"
+                  placeholder="(00) 00000-0000"
+                  value={formData.whatsapp}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                  required
+                />
                 <p className="text-sm text-gray-500 mt-1">
                   Coloque um número válido
                 </p>
@@ -100,7 +131,13 @@ chamar.</h3>
                 <label className="text-gray-700 mb-2 block">
                   Como você me conheceu?
                 </label>
-                <textarea name="howDidYouMeetMe" value={formData.howDidYouMeetMe} onChange={handleInputChange} rows={3} className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+                <textarea
+                  name="howDidYouMeetMe"
+                  value={formData.howDidYouMeetMe}
+                  onChange={handleInputChange}
+                  rows={3}
+                  className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                />
               </div>
               
               <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white py-4 text-lg font-medium">
@@ -111,6 +148,8 @@ chamar.</h3>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default ContactForm;
