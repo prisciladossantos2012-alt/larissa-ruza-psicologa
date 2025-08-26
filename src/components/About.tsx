@@ -6,7 +6,6 @@ const About = () => {
   const { ref: sectionRef, inView: sectionInView } = useScrollAnimation();
   const { ref: titleRef, inView: titleInView } = useScrollAnimation();
   const { ref: textRef, inView: textInView } = useScrollAnimation();
-  const { ref: imageRef, inView: imageInView } = useScrollAnimation();
 
   return <section ref={sectionRef} className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -44,7 +43,7 @@ const About = () => {
           
           {/* Image */}
           <div className={`order-1 lg:order-2 ${sectionInView ? 'animate-fade-in-right' : 'opacity-0'}`}>
-            <div ref={imageRef} className={`relative mb-8 ${imageInView ? 'animate-zoom-in' : 'opacity-0'}`} style={{animationDelay: imageInView ? '0.3s' : '0s'}}>
+            <div className="relative mb-8">
               <img src={lariPortrait} alt="Larissa Ruza - Psicóloga" className="w-full h-auto object-cover rounded-lg grayscale" />
             </div>
             

@@ -1,11 +1,19 @@
 import { RotateCcw, Heart, Brain, Users } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const TherapyFor = () => {
+  const { ref: titleRef, inView: titleInView } = useScrollAnimation();
+  const { ref: card1Ref, inView: card1InView } = useScrollAnimation();
+  const { ref: card2Ref, inView: card2InView } = useScrollAnimation();
+  const { ref: card3Ref, inView: card3InView } = useScrollAnimation();
+  const { ref: card4Ref, inView: card4InView } = useScrollAnimation();
+  const { ref: finalTextRef, inView: finalTextInView } = useScrollAnimation();
+
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-[#2c4186] text-white font-sans">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+          <div ref={titleRef} className={`text-center mb-12 sm:mb-16 ${titleInView ? 'animate-fade-in' : 'opacity-0'}`}>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 sm:mb-6 font-sans">
               A terapia serve
             </h2>
@@ -16,7 +24,7 @@ const TherapyFor = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-16">
             {/* Card 1 - Mudança/Direção */}
-            <div className="text-center animate-scale-in" style={{animationDelay: '0.2s'}}>
+            <div ref={card1Ref} className={`text-center ${card1InView ? 'animate-fade-in-up' : 'opacity-0'}`}>
                <div className="mb-4 sm:mb-6 flex justify-center">
                  <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
                    <RotateCcw className="w-12 h-12 sm:w-16 sm:h-16 text-white" strokeWidth={1.5} />
@@ -28,7 +36,7 @@ const TherapyFor = () => {
             </div>
             
             {/* Card 2 - Sentimentos negativos */}
-            <div className="text-center animate-scale-in" style={{animationDelay: '0.4s'}}>
+            <div ref={card2Ref} className={`text-center ${card2InView ? 'animate-fade-in-up' : 'opacity-0'}`}>
                <div className="mb-4 sm:mb-6 flex justify-center">
                  <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
                    <Heart className="w-12 h-12 sm:w-16 sm:h-16 text-white" strokeWidth={1.5} />
@@ -40,7 +48,7 @@ const TherapyFor = () => {
             </div>
             
             {/* Card 3 - Autoconhecimento */}
-            <div className="text-center animate-scale-in" style={{animationDelay: '0.6s'}}>
+            <div ref={card3Ref} className={`text-center ${card3InView ? 'animate-fade-in-up' : 'opacity-0'}`}>
                <div className="mb-4 sm:mb-6 flex justify-center">
                  <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
                    <Brain className="w-12 h-12 sm:w-16 sm:h-16 text-white" strokeWidth={1.5} />
@@ -52,7 +60,7 @@ const TherapyFor = () => {
             </div>
             
             {/* Card 4 - Relacionamentos */}
-            <div className="text-center animate-scale-in" style={{animationDelay: '0.8s'}}>
+            <div ref={card4Ref} className={`text-center ${card4InView ? 'animate-fade-in-up' : 'opacity-0'}`}>
                <div className="mb-4 sm:mb-6 flex justify-center">
                  <div className="w-16 h-16 sm:w-20 sm:h-20 flex items-center justify-center">
                    <Users className="w-12 h-12 sm:w-16 sm:h-16 text-white" strokeWidth={1.5} />
@@ -64,7 +72,7 @@ const TherapyFor = () => {
             </div>
           </div>
           
-          <div className="text-center animate-fade-in" style={{animationDelay: '1s'}}>
+          <div ref={finalTextRef} className={`text-center ${finalTextInView ? 'animate-slide-up' : 'opacity-0'}`}>
             <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-relaxed max-w-4xl mx-auto font-semibold font-sans px-4">
               ou apenas precisa ter um momento seu, para se conhecer, (re)descobrir 
               e trilhar o caminho de uma vida mais significativa.
