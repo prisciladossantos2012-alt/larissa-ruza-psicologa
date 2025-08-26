@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Calendar, Phone, Mail, Instagram } from "lucide-react";
+import contactBg from "@/assets/contact-bg.jpg";
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -7,101 +10,113 @@ const ContactForm = () => {
     whatsapp: '',
     howDidYouMeetMe: ''
   });
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
     console.log('Form submitted:', formData);
   };
-  return <section className="py-20 bg-transparent relative">
-      <div className="container mx-auto px-4">
+
+  return <section className="py-16 sm:py-20 relative min-h-screen overflow-hidden" style={{
+    backgroundImage: `url(${contactBg})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center'
+  }}>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60" />
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen py-8">
             {/* Left side - Contact info */}
-            <div className="text-gray-800">
-              <h3 className="text-2xl font-normal mb-8">Se você sentiu 
-que é a hora de 
-olhar para si e 
-caminhar em direção 
-ao que realmente 
-importa, só me chamar.</h3>
+            <div className="text-white animate-fade-in">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light leading-relaxed mb-12 sm:mb-16">
+                Se você sentiu<br />
+                que é a hora de<br />
+                olhar para si e<br />
+                caminhar em direção<br />
+                ao que realmente<br />
+                importa, só me chamar.
+              </h3>
               
               <div className="grid gap-6 text-left">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">📅</span>
+                <div className="flex items-center space-x-4 animate-scale-in" style={{animationDelay: '0.2s'}}>
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <Calendar className="w-6 h-6 text-white" strokeWidth={1.5} />
                   </div>
-                  <a href="http://bit.ly/psilariruza" className="text-gray-800 hover:underline">
+                  <a href="http://bit.ly/psilariruza" className="text-white hover:text-white/80 transition-colors text-lg font-light underline hover:no-underline">
                     Agende pelo Doctoralia
                   </a>
                 </div>
                 
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">📞</span>
+                <div className="flex items-center space-x-4 animate-scale-in" style={{animationDelay: '0.4s'}}>
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <Phone className="w-6 h-6 text-white" strokeWidth={1.5} />
                   </div>
-                  <span className="text-gray-800">+55 (11) 93020-2069</span>
+                  <span className="text-white text-lg font-light">+55 (11) 93020-2069</span>
                 </div>
                 
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">✉️</span>
+                <div className="flex items-center space-x-4 animate-scale-in" style={{animationDelay: '0.6s'}}>
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-white" strokeWidth={1.5} />
                   </div>
-                  <span className="text-gray-800">larissaruza@gmail.com</span>
+                  <span className="text-white text-lg font-light">larissaruza@gmail.com</span>
                 </div>
                 
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">📱</span>
+                <div className="flex items-center space-x-4 animate-scale-in" style={{animationDelay: '0.8s'}}>
+                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <Instagram className="w-6 h-6 text-white" strokeWidth={1.5} />
                   </div>
-                  <a href="https://www.instagram.com/lariruza.psi" className="text-gray-800 hover:underline">Instagram</a>
+                  <a href="https://www.instagram.com/lariruza.psi" className="text-white hover:text-white/80 transition-colors text-lg font-light underline hover:no-underline">Instagram</a>
                 </div>
               </div>
             </div>
             
             {/* Right side - Form */}
-            <div className="bg-white/95 backdrop-blur-sm p-8 rounded-lg relative z-10">
-            <h2 className="text-3xl font-normal mb-4 text-center text-gray-800">
+            <div className="bg-white/95 backdrop-blur-sm p-6 sm:p-8 lg:p-10 rounded-lg relative z-10 animate-scale-in" style={{animationDelay: '0.5s'}}>
+            <h2 className="text-2xl sm:text-3xl font-light mb-4 text-center text-gray-800">
               Entre em Contato
             </h2>
-            <p className="text-gray-600 mb-6 text-center">
+            <p className="text-gray-600 mb-6 text-center font-light">
               Se preferir, deixa seus dados e eu te retorno.
             </p>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="text-gray-700 mb-2 block">
+                <label className="text-gray-700 mb-2 block font-light">
                   Seu nome <span className="text-red-500">*</span>
                 </label>
-                <div className="grid grid-cols-2 gap-4">
-                  <input type="text" name="firstName" placeholder="Nome" value={formData.firstName} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
-                  <input type="text" name="lastName" placeholder="Sobrenome" value={formData.lastName} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <input type="text" name="firstName" placeholder="Nome" value={formData.firstName} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors" required />
+                  <input type="text" name="lastName" placeholder="Sobrenome" value={formData.lastName} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors" required />
                 </div>
               </div>
               
               <div>
-                <label className="text-gray-700 mb-2 block">
+                <label className="text-gray-700 mb-2 block font-light">
                   Seu Whatsapp <span className="text-red-500">*</span>
                 </label>
-                <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" value={formData.whatsapp} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" required />
-                <p className="text-sm text-gray-500 mt-1">
+                <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" value={formData.whatsapp} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors" required />
+                <p className="text-sm text-gray-500 mt-1 font-light">
                   Coloque um número válido
                 </p>
               </div>
               
               <div>
-                <label className="text-gray-700 mb-2 block">
+                <label className="text-gray-700 mb-2 block font-light">
                   Como você me conheceu?
                 </label>
-                <textarea name="howDidYouMeetMe" value={formData.howDidYouMeetMe} onChange={handleInputChange} rows={3} className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-blue-500" />
+                <textarea name="howDidYouMeetMe" value={formData.howDidYouMeetMe} onChange={handleInputChange} rows={3} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors resize-none" />
               </div>
               
-              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white py-4 text-lg font-medium">
+              <Button type="submit" className="w-full bg-[#2c4186] hover:bg-[#2c4186]/90 text-white py-4 text-lg font-light rounded-md transition-colors">
                 Enviar
               </Button>
             </form>
@@ -111,4 +126,5 @@ importa, só me chamar.</h3>
       </div>
     </section>;
 };
+
 export default ContactForm;
