@@ -6,10 +6,10 @@ const TherapyFor = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-sans">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 font-sans">
               A terapia serve
             </h2>
-            <h3 className="text-4xl md:text-5xl font-bold font-sans">
+            <h3 className="text-4xl md:text-5xl font-light font-sans">
               para você que...
             </h3>
           </div>
@@ -65,7 +65,7 @@ const TherapyFor = () => {
           </div>
           
           <div className="text-center">
-            <p className="text-4xl md:text-5xl leading-relaxed max-w-4xl mx-auto font-bold font-sans">
+            <p className="text-4xl md:text-5xl leading-relaxed max-w-4xl mx-auto font-light font-sans">
               ou apenas precisa ter um momento seu, para se conhecer, (re)descobrir 
               e trilhar o caminho de uma vida mais significativa.
             </p>
