@@ -1,16 +1,17 @@
 import lariPortrait from "@/assets/lari-about.png";
 import therapyIcons from "@/assets/therapy-icons.png";
+
 const About = () => {
   return <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-start max-w-7xl mx-auto">
           {/* Content */}
-          <div className="order-2 lg:order-1">
-            <h2 className="text-4xl md:text-5xl font-light text-primary mb-8">
+          <div className="order-2 lg:order-1 animate-fade-in-left">
+            <h2 className="text-4xl md:text-5xl font-light text-primary mb-8 animate-slide-up" style={{animationDelay: '0.2s'}}>
               Conheça sua psicóloga
             </h2>
             
-            <div className="space-y-6 text-gray-800 text-base leading-relaxed">
+            <div className="space-y-6 text-gray-800 text-base leading-relaxed animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               <p>
                 Eu sou <strong>Lari Ruza (CRP 06/157739)</strong>, uma psicóloga nômade que já viveu 
                 e aprendeu em diferentes cantos do mundo — do Brasil à Espanha, 
@@ -36,8 +37,8 @@ const About = () => {
           </div>
           
           {/* Image */}
-          <div className="order-1 lg:order-2">
-            <div className="relative mb-8">
+          <div className="order-1 lg:order-2 animate-fade-in-right">
+            <div className="relative mb-8 animate-zoom-in" style={{animationDelay: '0.3s'}}>
               <img src={lariPortrait} alt="Larissa Ruza - Psicóloga" className="w-full h-auto object-cover rounded-lg grayscale" />
             </div>
             
@@ -50,4 +51,5 @@ const About = () => {
       </div>
     </section>;
 };
+
 export default About;

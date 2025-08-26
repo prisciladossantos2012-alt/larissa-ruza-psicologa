@@ -11,12 +11,12 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-center text-center">
             {/* Content - Centered */}
-            <div className="text-white max-w-4xl">
-            <h2 className="text-4xl md:text-5xl font-normal mb-8">
+            <div className="text-white max-w-4xl animate-zoom-in">
+            <h2 className="text-4xl md:text-5xl font-normal mb-8 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               Autocuidado aonde você estiver.
             </h2>
             
-            <div className="mb-8">
+            <div className="mb-8 animate-slide-up" style={{animationDelay: '0.4s'}}>
               <p className="text-lg leading-relaxed">
                 <span className="bg-white text-gray-800 px-2 py-1">
                   As sessões de terapia tem duração de 50 min e
@@ -27,7 +27,7 @@ const Contact = () => {
               </p>
             </div>
             
-            <div className="mb-8">
+            <div className="mb-8 animate-bounce-in" style={{animationDelay: '0.6s'}}>
               <a href="http://bit.ly/psilariruza" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-3 text-white text-lg font-bold hover:opacity-80 transition-all duration-300 underline">
                 <span>PARA AGENDAR CLIQUE AQUI</span>
                 <div className="bg-white text-gray-800 rounded-full p-2">
