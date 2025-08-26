@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, Phone, Mail, Instagram } from "lucide-react";
+import { CalendarDays, MessageCircle, AtSign, Camera } from "lucide-react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -44,7 +44,7 @@ const ContactForm = () => {
               <div className="grid gap-6 text-left">
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                    <Calendar className="text-white" size={20} />
+                    <CalendarDays className="text-white" size={20} />
                   </div>
                   <a href="http://bit.ly/psilariruza" className="text-gray-800 hover:underline">
                     Agende pelo Doctoralia
@@ -53,21 +53,21 @@ const ContactForm = () => {
                 
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                    <Phone className="text-white" size={20} />
+                    <MessageCircle className="text-white" size={20} />
                   </div>
                   <span className="text-gray-800">+55 (11) 93020-2069</span>
                 </div>
                 
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                    <Mail className="text-white" size={20} />
+                    <AtSign className="text-white" size={20} />
                   </div>
                   <span className="text-gray-800">larissaruza@gmail.com</span>
                 </div>
                 
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                    <Instagram className="text-white" size={20} />
+                    <Camera className="text-white" size={20} />
                   </div>
                   <a href="https://www.instagram.com/lariruza.psi" className="text-gray-800 hover:underline">Instagram</a>
                 </div>
