@@ -5,8 +5,8 @@ const Header = () => {
         {/* Logo */}
         <div className="text-white">
           <div className="text-center">
-            <div className="font-script text-4xl text-white mb-1">Larissa Ruza</div>
-            <div className="font-sans text-xs uppercase tracking-[0.2em] text-white/90">PSICOLOGIA</div>
+            <div className="font-serif text-2xl font-light text-white tracking-wide">Larissa Ruza</div>
+            <div className="font-sans text-xs uppercase tracking-[0.3em] text-white/80 mt-1">PSICOLOGIA</div>
           </div>
         </div>
 
