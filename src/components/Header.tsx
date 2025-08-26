@@ -5,7 +5,7 @@ const Header = () => {
         {/* Logo */}
         <div className="text-white">
           <div className="text-center">
-            <div className="font-sans text-2xl font-extralight text-white tracking-wide">Larissa Ruza</div>
+            <div className="font-sans text-2xl text-white tracking-wide" style={{fontWeight: '100'}}>Larissa Ruza</div>
             <div className="font-sans text-xs font-extralight uppercase tracking-[0.3em] text-white/80 mt-1">PSICOLOGIA</div>
           </div>
         </div>
