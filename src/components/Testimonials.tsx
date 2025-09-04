@@ -22,6 +22,41 @@ const testimonials = [
     comment: "Adoro a Lari, ela me ajuda muito! Me sinto acolhida e sem julgamentos, as consultas são leves",
     date: "31 de maio de 2025",
     location: "Terapia Online - São Paulo"
+  },
+  {
+    name: "Marina Reis",
+    rating: 5,
+    comment: "A Larissa é uma profissional super acolhedora, com escuta ativa e perguntas que ajudam no processo de imigração que estou passando. Me sinto confortável durante toda a sessão.",
+    date: "7 de maio de 2025",
+    location: "Terapia Online - Brasil e exterior"
+  },
+  {
+    name: "Julia a",
+    rating: 5,
+    comment: "A Larissa tem uma escuta que acolhe de verdade, sabe olhar pro outro com empatia e sem julgamentos. É o tipo de profissional que faz a gente se sentir à vontade logo de cara — e isso, pra mim, faz toda a diferença. Indico demais de olhos fechados.",
+    date: "2 de maio de 2025",
+    location: "Atendimento Online Psicóloga Larissa Ruza"
+  },
+  {
+    name: "Michelli",
+    rating: 5,
+    comment: "Muito atenciosa, carismática amei o atendimento, hiper recomendo!",
+    date: "30 de abril de 2025",
+    location: "Atendimento Online Psicóloga Larissa Ruza"
+  },
+  {
+    name: "Renata F.",
+    rating: 5,
+    comment: "A Larissa me ajudou a encontrar caminhos pra entender coisas que eu nem sabia que precisava. Ela tem uma gentileza ímpar, delicada, firme e é super dedicada.",
+    date: "30 de abril de 2025",
+    location: "Atendimento Online Psicóloga Larissa Ruza"
+  },
+  {
+    name: "Fernanda Luz",
+    rating: 5,
+    comment: "Me sinto vista, acolhida. Obrigada, Larissa pela ajuda!",
+    date: "30 de abril de 2025",
+    location: "Atendimento Online Psicóloga Larissa Ruza"
   }
 ];
 
