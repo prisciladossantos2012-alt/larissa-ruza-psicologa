@@ -8,10 +8,8 @@ import Testimonials from "@/components/Testimonials";
 import DoctoraliaWidget from "@/components/DoctoraliaWidget";
 import ContactForm from "@/components/ContactForm";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Header />
       <main>
         <Hero />
@@ -23,12 +21,8 @@ const Index = () => {
         <section className="py-16 sm:py-20 bg-white">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-playfair text-primary mb-4">
-                Agende Online
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light">
-                Use o sistema abaixo para agendar sua consulta diretamente pelo Doctoralia
-              </p>
+              
+              
             </div>
             <div className="flex justify-center">
               <DoctoraliaWidget />
@@ -38,8 +32,6 @@ const Index = () => {
         <ContactForm />
       </main>
       <FloatingWhatsApp />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
