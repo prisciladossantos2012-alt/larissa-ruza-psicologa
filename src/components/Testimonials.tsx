@@ -3,40 +3,25 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const testimonials = [
   {
-    name: "Maria S.",
+    name: "Erica",
     rating: 5,
-    comment: "A Larissa me ajudou muito a lidar com minha ansiedade. Suas técnicas são eficazes e ela tem uma escuta muito acolhedora. Recomendo demais!",
-    date: "há 2 meses"
+    comment: "Foi a minha primeira consulta, e ja amei! O posicionamento dela, o olhar de atenção a empatia e os insights de visão sobre os assuntos. Ela é maravilhosa e indico desde ja!",
+    date: "30 de julho de 2025",
+    location: "Terapia Presencial - Santo André (ABC)"
   },
   {
-    name: "João P.",
+    name: "LP",
     rating: 5,
-    comment: "Excelente profissional! Me senti muito à vontade desde a primeira sessão. A terapia online funcionou perfeitamente e consegui grandes avanços.",
-    date: "há 1 mês"
+    comment: "Ter a habilidade de escutar e acolher, é um diferencial para quem sofre, e senti isso por parte da Larissa, me senti acolhida e segura.",
+    date: "7 de julho de 2025",
+    location: "Terapia Online - São Paulo"
   },
   {
-    name: "Ana L.",
+    name: "Joana",
     rating: 5,
-    comment: "Larissa é uma psicóloga excepcional. Sua abordagem humanizada e técnica me ajudaram a superar momentos difíceis. Muito grata!",
-    date: "há 3 semanas"
-  },
-  {
-    name: "Carlos M.",
-    rating: 5,
-    comment: "Processo terapêutico transformador. A Larissa soube conduzir as sessões com muito profissionalismo e empatia. Recomendo a todos!",
-    date: "há 1 semana"
-  },
-  {
-    name: "Fernanda R.",
-    rating: 5,
-    comment: "Terapia online de excelente qualidade. A Larissa é muito atenciosa e suas técnicas realmente funcionam. Muito satisfeita com o resultado.",
-    date: "há 2 semanas"
-  },
-  {
-    name: "Roberto C.",
-    rating: 5,
-    comment: "Profissional incrível! Me ajudou a desenvolver ferramentas para lidar melhor com o stress do trabalho. Sessões muito produtivas.",
-    date: "há 1 mês"
+    comment: "Adoro a Lari, ela me ajuda muito! Me sinto acolhida e sem julgamentos, as consultas são leves",
+    date: "31 de maio de 2025",
+    location: "Terapia Online - São Paulo"
   }
 ];
 
@@ -102,7 +87,7 @@ const Testimonials = () => {
               ))}
             </div>
             <span className="text-gray-700 font-medium">5.0</span>
-            <span className="text-gray-500">• Baseado em 150+ avaliações</span>
+            <span className="text-gray-500">• Baseado em feedbacks verificados</span>
           </div>
         </div>
       </div>
