@@ -1,6 +1,6 @@
 import heroImage from "@/assets/hero-main.jpg";
 const Hero = () => {
-  return <section className="relative h-screen flex items-center justify-center text-white overflow-hidden" style={{
+  return <section className="relative h-[70vh] flex items-center justify-center text-white overflow-hidden" style={{
     backgroundImage: `url(${heroImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center'

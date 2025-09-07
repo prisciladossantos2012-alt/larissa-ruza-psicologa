@@ -1,5 +1,12 @@
 import { Star } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const testimonials = [
   {
@@ -86,33 +93,41 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className={`bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in border border-gray-100`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-1">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-6xl mx-auto"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 h-full">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-1">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                    <span className="text-sm text-gray-500">{testimonial.date}</span>
+                  </div>
+                  
+                  <p className="text-gray-700 mb-4 font-light leading-relaxed">
+                    "{testimonial.comment}"
+                  </p>
+                  
+                  <div className="border-t pt-4">
+                    <p className="font-medium text-primary">{testimonial.name}</p>
+                    <p className="text-sm text-gray-500">Paciente verificado</p>
+                  </div>
                 </div>
-                <span className="text-sm text-gray-500">{testimonial.date}</span>
-              </div>
-              
-              <p className="text-gray-700 mb-4 font-light leading-relaxed">
-                "{testimonial.comment}"
-              </p>
-              
-              <div className="border-t pt-4">
-                <p className="font-medium text-primary">{testimonial.name}</p>
-                <p className="text-sm text-gray-500">Paciente verificado</p>
-              </div>
-            </div>
-          ))}
-        </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
 
         <div className="text-center mt-12">
           <div className="inline-flex items-center space-x-2 bg-white rounded-full px-6 py-3 shadow-md">
