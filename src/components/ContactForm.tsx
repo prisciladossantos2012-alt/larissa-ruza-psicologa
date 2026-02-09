@@ -41,8 +41,7 @@ const ContactForm = () => {
     }
     const validated = result.data;
     const message = `Olá! Meu nome é ${validated.firstName} ${validated.lastName}.\nMeu WhatsApp: ${validated.whatsapp}\n${validated.howDidYouMeetMe ? `Como me conheceu: ${validated.howDidYouMeetMe}` : ""}\n\nGostaria de agendar uma sessão de terapia.`;
-    const whatsappNumber = "5511930202069";
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const url = `/whatsapp?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
     setFormData({ firstName: "", lastName: "", whatsapp: "", howDidYouMeetMe: "" });
     setErrors({});
