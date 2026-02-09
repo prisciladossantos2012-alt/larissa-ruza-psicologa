@@ -34,7 +34,7 @@ const Hero = () => {
 
           {/* Subheadline */}
           <p className="text-lg sm:text-xl text-white/90 font-light leading-relaxed mb-8 max-w-xl opacity-0 animate-fade-in" style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}>
-            Psicoterapia online especializada em ansiedade, autoestima, relacionamentos e dependência emocional para mulheres que buscam uma vida mais significativa.
+            Psicoterapia online e presencial especializada em ansiedade, TOC, borderline, terapia de casal, vícios, autoestima e dependência emocional.
           </p>
 
           {/* Trust points */}
