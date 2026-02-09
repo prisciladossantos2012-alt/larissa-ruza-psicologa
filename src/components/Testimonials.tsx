@@ -144,10 +144,10 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-6xl mx-auto">
+        <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-6xl mx-auto px-8 sm:px-12">
           <CarouselContent className="-ml-2 md:-ml-4">
             {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={index} className="pl-2 md:pl-4 basis-[85%] sm:basis-1/2 lg:basis-1/3">
                 <div className="bg-background rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-border h-full flex flex-col">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-0.5">
@@ -168,8 +168,8 @@ const Testimonials = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="-left-4 sm:-left-6" />
+          <CarouselNext className="-right-4 sm:-right-6" />
         </Carousel>
 
         <div className="text-center mt-10">
