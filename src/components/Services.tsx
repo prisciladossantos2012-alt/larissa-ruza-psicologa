@@ -77,9 +77,7 @@ const Services = () => {
             Sessões de 50 minutos, 100% online, com total sigilo e segurança.
           </p>
           <a
-            href="https://www.doctoralia.com.br/larissa-ruza/psicologo/santo-andre3"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/agendar"
             className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-background/90 transition-all duration-300"
           >
             Agendar Minha Sessão
