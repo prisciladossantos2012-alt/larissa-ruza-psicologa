@@ -54,9 +54,7 @@ const Footer = () => {
                 Pronta para dar o primeiro passo?
               </p>
               <a
-                href="https://www.doctoralia.com.br/larissa-ruza/psicologo/santo-andre3"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/agendar"
                 className="inline-flex items-center bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all"
               >
                 Agendar Sessão

@@ -58,9 +58,7 @@ const About = () => {
             </div>
 
             <a
-              href="https://www.doctoralia.com.br/larissa-ruza/psicologo/santo-andre3"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/agendar"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 mt-8"
             >
               Agendar com a Larissa

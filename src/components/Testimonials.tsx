@@ -174,9 +174,7 @@ const Testimonials = () => {
 
         <div className="text-center mt-10">
           <a
-            href="https://www.doctoralia.com.br/larissa-ruza/psicologo/santo-andre3"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/agendar"
             className="inline-flex items-center gap-3 bg-background rounded-full px-6 py-3 shadow-sm border border-border hover:shadow-md transition-all"
           >
             <div className="flex items-center gap-0.5">
