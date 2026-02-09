@@ -1,0 +1,4 @@
+NOTA: Para o tema WordPress funcionar corretamente no painel de Aparência,
+você precisa adicionar um arquivo screenshot.png (1200x900px) na raiz da pasta do tema.
+
+Use uma captura de tela do site como imagem de preview.
