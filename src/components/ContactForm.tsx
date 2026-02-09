@@ -1,7 +1,15 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar, Phone, Mail, Instagram } from "lucide-react";
+import { z } from "zod";
 import contactBg from "@/assets/contact-bg.jpg";
+
+const contactSchema = z.object({
+  firstName: z.string().trim().min(1, "Nome é obrigatório").max(50, "Máximo 50 caracteres").regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Nome contém caracteres inválidos"),
+  lastName: z.string().trim().min(1, "Sobrenome é obrigatório").max(50, "Máximo 50 caracteres").regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Sobrenome contém caracteres inválidos"),
+  whatsapp: z.string().trim().min(1, "WhatsApp é obrigatório").regex(/^\+?[\d\s()-]{10,20}$/, "Número de WhatsApp inválido"),
+  howDidYouMeetMe: z.string().max(500, "Máximo 500 caracteres").optional().or(z.literal(''))
+});
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -10,42 +18,46 @@ const ContactForm = () => {
     whatsapp: '',
     howDidYouMeetMe: ''
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    // Enforce maxLength limits
+    const maxLengths: Record<string, number> = { firstName: 50, lastName: 50, whatsapp: 20, howDidYouMeetMe: 500 };
+    if (maxLengths[name] && value.length > maxLengths[name]) return;
+    setFormData({ ...formData, [name]: value });
+    // Clear error on change
+    if (errors[name]) setErrors(prev => ({ ...prev, [name]: '' }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Validate required fields
-    if (!formData.firstName || !formData.lastName || !formData.whatsapp) {
-      alert('Por favor, preencha todos os campos obrigatórios.');
+    const result = contactSchema.safeParse(formData);
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      result.error.errors.forEach(err => {
+        const field = err.path[0] as string;
+        if (!fieldErrors[field]) fieldErrors[field] = err.message;
+      });
+      setErrors(fieldErrors);
       return;
     }
+
+    const validated = result.data;
     
-    // Create WhatsApp message
-    const message = `Olá! Meu nome é ${formData.firstName} ${formData.lastName}.
-Meu WhatsApp: ${formData.whatsapp}
-${formData.howDidYouMeetMe ? `Como me conheceu: ${formData.howDidYouMeetMe}` : ''}
+    const message = `Olá! Meu nome é ${validated.firstName} ${validated.lastName}.
+Meu WhatsApp: ${validated.whatsapp}
+${validated.howDidYouMeetMe ? `Como me conheceu: ${validated.howDidYouMeetMe}` : ''}
 
 Gostaria de agendar uma sessão de terapia.`;
     
-    // Open WhatsApp
     const whatsappNumber = "5511930202069";
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
     
-    // Reset form
-    setFormData({
-      firstName: '',
-      lastName: '',
-      whatsapp: '',
-      howDidYouMeetMe: ''
-    });
+    setFormData({ firstName: '', lastName: '', whatsapp: '', howDidYouMeetMe: '' });
+    setErrors({});
   };
 
   return <section className="py-16 sm:py-20 relative min-h-screen overflow-hidden" style={{
@@ -118,8 +130,14 @@ Gostaria de agendar uma sessão de terapia.`;
                   Seu nome <span className="text-red-500">*</span>
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <input type="text" name="firstName" placeholder="Nome" value={formData.firstName} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors" required />
-                  <input type="text" name="lastName" placeholder="Sobrenome" value={formData.lastName} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors" required />
+                  <div>
+                    <input type="text" name="firstName" placeholder="Nome" value={formData.firstName} onChange={handleInputChange} maxLength={50} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors" />
+                    {errors.firstName && <p className="text-sm text-red-500 mt-1">{errors.firstName}</p>}
+                  </div>
+                  <div>
+                    <input type="text" name="lastName" placeholder="Sobrenome" value={formData.lastName} onChange={handleInputChange} maxLength={50} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors" />
+                    {errors.lastName && <p className="text-sm text-red-500 mt-1">{errors.lastName}</p>}
+                  </div>
                 </div>
               </div>
               
@@ -127,10 +145,8 @@ Gostaria de agendar uma sessão de terapia.`;
                 <label className="text-gray-700 mb-2 block font-light">
                   Seu Whatsapp <span className="text-red-500">*</span>
                 </label>
-                <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" value={formData.whatsapp} onChange={handleInputChange} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors" required />
-                <p className="text-sm text-gray-500 mt-1 font-light">
-                  Coloque um número válido
-                </p>
+                <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" value={formData.whatsapp} onChange={handleInputChange} maxLength={20} className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition-colors" />
+                {errors.whatsapp ? <p className="text-sm text-red-500 mt-1">{errors.whatsapp}</p> : <p className="text-sm text-gray-500 mt-1 font-light">Coloque um número válido</p>}
               </div>
               
               <div>

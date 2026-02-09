@@ -7,8 +7,9 @@ const DoctoraliaWidget = () => {
       if (!document.getElementById('zl-widget-s')) {
         const script = document.createElement('script');
         script.id = 'zl-widget-s';
-        script.src = '//platform.docplanner.com/js/widget.js';
+        script.src = 'https://platform.docplanner.com/js/widget.js';
         script.async = true;
+        script.crossOrigin = 'anonymous';
         document.head.appendChild(script);
       }
     };
