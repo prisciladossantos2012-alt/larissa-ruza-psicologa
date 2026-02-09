@@ -1,0 +1,23 @@
+import { useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+
+const WHATSAPP_NUMBER = "5511930202069";
+const DEFAULT_MESSAGE = "Olá! Gostaria de agendar uma sessão de terapia.";
+
+const WhatsAppRedirect = () => {
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const customMessage = searchParams.get("text") || DEFAULT_MESSAGE;
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(customMessage)}`;
+    window.location.replace(url);
+  }, [searchParams]);
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-background">
+      <p className="text-muted-foreground">Redirecionando para WhatsApp...</p>
+    </div>
+  );
+};
+
+export default WhatsAppRedirect;
