@@ -1,26 +1,41 @@
-import { RotateCcw, Heart, Brain, Users } from "lucide-react";
+import { Heart, Brain, Users, RotateCcw, Flame, Shield, HeartCrack } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const items = [
   {
     icon: Heart,
     title: "Ansiedade e estresse",
-    description: "Tem se sentido triste, cansado, irritado ou ansioso com frequência",
+    description: "Crises de ansiedade, pânico, preocupação excessiva e estresse constante",
   },
   {
     icon: Brain,
-    title: "Autoestima e autoconhecimento",
-    description: "Sente dificuldade em entender seus sentimentos e se valorizar",
+    title: "TOC",
+    description: "Pensamentos obsessivos e comportamentos compulsivos que limitam sua vida",
+  },
+  {
+    icon: Shield,
+    title: "Borderline",
+    description: "Instabilidade emocional, medo de abandono e dificuldade nos relacionamentos",
   },
   {
     icon: Users,
-    title: "Relacionamentos",
-    description: "Quer melhorar a qualidade dos seus relacionamentos pessoais e profissionais",
+    title: "Terapia de Casal",
+    description: "Comunicação, conflitos, crises e fortalecimento do vínculo entre parceiros",
+  },
+  {
+    icon: HeartCrack,
+    title: "Autoestima e dependência emocional",
+    description: "Autoconhecimento, valorização pessoal e relações mais saudáveis",
+  },
+  {
+    icon: Flame,
+    title: "Vícios e compulsões",
+    description: "Comportamentos compulsivos, vícios e padrões autodestrutivos",
   },
   {
     icon: RotateCcw,
     title: "Mudanças e transições",
-    description: "Quer mudar hábitos, carreira, país ou vida e não sabe por onde começar",
+    description: "Carreira, imigração, luto e recomeços que precisam de suporte emocional",
   },
 ];
 
@@ -41,7 +56,7 @@ const TherapyFor = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {items.map((item, index) => (
               <div
                 key={index}
