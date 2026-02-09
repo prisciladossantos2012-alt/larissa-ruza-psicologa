@@ -6,8 +6,8 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 const services = [
   {
     icon: Video,
-    title: "Psicoterapia Online",
-    description: "Atendimento 100% online para brasileiros no mundo inteiro. Sessões de 50 minutos com total sigilo e segurança.",
+    title: "Psicoterapia Online e Presencial",
+    description: "Atendimento online para brasileiros no mundo inteiro e presencial em Santo André (Av. Portugal, 397). Sessões de 50 minutos.",
   },
   {
     icon: Users,

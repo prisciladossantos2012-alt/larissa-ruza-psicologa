@@ -14,7 +14,8 @@ const Footer = () => {
               </div>
               <p className="text-sm text-background/60 font-light">
                 CRP 06/157739<br />
-                Psicóloga Clínica
+                Psicóloga Clínica<br />
+                Av. Portugal, 397 - Santo André/SP
               </p>
             </div>
 

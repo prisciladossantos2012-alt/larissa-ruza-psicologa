@@ -39,7 +39,7 @@ const Hero = () => {
 
           {/* Trust points */}
           <div className="flex flex-col sm:flex-row gap-3 mb-10 opacity-0 animate-fade-in" style={{ animationDelay: "0.7s", animationFillMode: "forwards" }}>
-            {["Atendimento 100% online", "Terapia do Esquema", "CRP 06/157739"].map((item) => (
+            {["Online e presencial em Santo André", "Terapia do Esquema", "CRP 06/157739"].map((item) => (
               <div key={item} className="flex items-center gap-2 text-sm text-white/85">
                 <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
                 <span>{item}</span>
