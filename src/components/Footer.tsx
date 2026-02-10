@@ -38,8 +38,8 @@ const Footer = () => {
                 <a href="tel:+5511930202069" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors font-light">
                   <Phone className="w-4 h-4" /> +55 (11) 93020-2069
                 </a>
-                <a href="mailto:larissaruza@gmail.com" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors font-light">
-                  <Mail className="w-4 h-4" /> larissaruza@gmail.com
+                <a href="mailto:psilariruza@gmail.com" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors font-light">
+                  <Mail className="w-4 h-4" /> psilariruza@gmail.com
                 </a>
                 <a href="https://www.instagram.com/lariruza.psi" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors font-light">
                   <Instagram className="w-4 h-4" /> @lariruza.psi

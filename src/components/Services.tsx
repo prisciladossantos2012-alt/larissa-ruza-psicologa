@@ -11,8 +11,8 @@ const services = [
   },
   {
     icon: Users,
-    title: "Terapia do Esquema",
-    description: "Psicodiagnóstico e tratamento terapêutico para transtornos de humor e personalidade.",
+    title: "Abordagens baseadas em evidências",
+    description: "Uso de abordagens e técnicas cientificamente comprovadas (TCC, Terapia do Esquema, ACT, EPR) adaptadas à sua realidade.",
   },
   {
     icon: Briefcase,

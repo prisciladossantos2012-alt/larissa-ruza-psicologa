@@ -5,37 +5,37 @@ const items = [
   {
     icon: Heart,
     title: "Ansiedade e estresse",
-    description: "Crises de ansiedade, pânico, preocupação excessiva e estresse constante",
-  },
-  {
-    icon: Brain,
-    title: "TOC",
-    description: "Pensamentos obsessivos e comportamentos compulsivos que limitam sua vida",
+    description: "Crises de ansiedade, pânico, preocupação excessiva e estresse constante.",
   },
   {
     icon: Shield,
-    title: "Borderline",
-    description: "Instabilidade emocional, medo de abandono e dificuldade nos relacionamentos",
-  },
-  {
-    icon: Users,
-    title: "Terapia de Casal",
-    description: "Comunicação, conflitos, crises e fortalecimento do vínculo entre parceiros",
+    title: "Transtornos de personalidade",
+    description: "Instabilidade emocional, medo do abandono, padrões emocionais e relacionais persistentes, que geram sofrimento e dificuldades nos vínculos.",
   },
   {
     icon: HeartCrack,
     title: "Autoestima e dependência emocional",
-    description: "Autoconhecimento, valorização pessoal e relações mais saudáveis",
+    description: "Autoconhecimento, valorização pessoal e relações mais saudáveis.",
   },
   {
     icon: Flame,
     title: "Vícios e compulsões",
-    description: "Comportamentos compulsivos, vícios e padrões autodestrutivos",
+    description: "Compulsões comportamentais, comportamentos compulsivos, vícios e comportamentos repetitivos, como compras, jogos, uso excessivo de internet, alimentação emocional e compulsões ligadas à sexualidade.",
   },
   {
     icon: RotateCcw,
     title: "Mudanças e transições",
-    description: "Carreira, imigração, luto e recomeços que precisam de suporte emocional",
+    description: "Carreira, imigração, luto e recomeços que precisam de suporte emocional.",
+  },
+  {
+    icon: Brain,
+    title: "Autoconhecimento",
+    description: "Valores pessoais, sentido de vida e escolhas.",
+  },
+  {
+    icon: Users,
+    title: "Terapia de Casal",
+    description: "Fortalecimento do vínculo entre parceiros.",
   },
 ];
 
@@ -49,10 +49,10 @@ const TherapyFor = () => {
           <div ref={titleRef} className={`text-center mb-12 sm:mb-16 ${titleInView ? "animate-fade-in" : "opacity-0"}`}>
             <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">Especialidades</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              A terapia é para você que...
+              Especialidades atendidas na psicoterapia
             </h2>
             <p className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">
-              Identifique-se com alguma dessas situações? Eu posso te ajudar.
+              Se você se identifica com alguma dessas situações, vamos conversar.
             </p>
           </div>
 
