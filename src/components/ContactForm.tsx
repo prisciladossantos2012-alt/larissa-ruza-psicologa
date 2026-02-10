@@ -6,6 +6,7 @@ import { z } from "zod";
 const contactSchema = z.object({
   firstName: z.string().trim().min(1, "Nome é obrigatório").max(50, "Máximo 50 caracteres").regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Nome contém caracteres inválidos"),
   lastName: z.string().trim().min(1, "Sobrenome é obrigatório").max(50, "Máximo 50 caracteres").regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Sobrenome contém caracteres inválidos"),
+  email: z.string().trim().min(1, "Email é obrigatório").email("Email inválido").max(255, "Máximo 255 caracteres"),
   whatsapp: z.string().trim().min(1, "WhatsApp é obrigatório").regex(/^\+?[\d\s()-]{10,20}$/, "Número de WhatsApp inválido"),
   howDidYouMeetMe: z.string().max(500, "Máximo 500 caracteres").optional().or(z.literal('')),
 });
@@ -14,6 +15,7 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
+    email: "",
     whatsapp: "",
     howDidYouMeetMe: "",
   });
@@ -21,7 +23,7 @@ const ContactForm = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    const maxLengths: Record<string, number> = { firstName: 50, lastName: 50, whatsapp: 20, howDidYouMeetMe: 500 };
+    const maxLengths: Record<string, number> = { firstName: 50, lastName: 50, email: 255, whatsapp: 20, howDidYouMeetMe: 500 };
     if (maxLengths[name] && value.length > maxLengths[name]) return;
     setFormData({ ...formData, [name]: value });
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
@@ -40,10 +42,10 @@ const ContactForm = () => {
       return;
     }
     const validated = result.data;
-    const message = `Olá! Meu nome é ${validated.firstName} ${validated.lastName}.\nMeu WhatsApp: ${validated.whatsapp}\n${validated.howDidYouMeetMe ? `Como me conheceu: ${validated.howDidYouMeetMe}` : ""}\n\nGostaria de agendar uma sessão de terapia.`;
+    const message = `Olá! Meu nome é ${validated.firstName} ${validated.lastName}.\nEmail: ${validated.email}\nMeu WhatsApp: ${validated.whatsapp}\n${validated.howDidYouMeetMe ? `Como me conheceu: ${validated.howDidYouMeetMe}` : ""}\n\nGostaria de agendar uma sessão de terapia.`;
     const url = `/whatsapp?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
-    setFormData({ firstName: "", lastName: "", whatsapp: "", howDidYouMeetMe: "" });
+    setFormData({ firstName: "", lastName: "", email: "", whatsapp: "", howDidYouMeetMe: "" });
     setErrors({});
   };
 
@@ -103,6 +105,12 @@ const ContactForm = () => {
                     <input type="text" name="lastName" placeholder="Sobrenome" value={formData.lastName} onChange={handleInputChange} maxLength={50} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm bg-background" />
                     {errors.lastName && <p className="text-xs text-destructive mt-1">{errors.lastName}</p>}
                   </div>
+                </div>
+
+                <div>
+                  <label className="text-sm text-foreground mb-1.5 block font-medium">Email <span className="text-destructive">*</span></label>
+                  <input type="email" name="email" placeholder="seu@email.com" value={formData.email} onChange={handleInputChange} maxLength={255} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm bg-background" />
+                  {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
                 </div>
 
                 <div>
