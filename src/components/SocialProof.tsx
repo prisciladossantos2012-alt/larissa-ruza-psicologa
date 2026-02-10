@@ -1,7 +1,7 @@
 import { Clock, Globe, Award, MapPin } from "lucide-react";
 
 const stats = [
-  { icon: Clock, value: "11+", label: "Anos de experiência" },
+  { icon: Clock, value: "Horários flexíveis", label: "Manhã, tarde e noite" },
   { icon: Globe, value: "Online", label: "Brasil e exterior" },
   { icon: MapPin, value: "Presencial", label: "Santo André/SP" },
   { icon: Award, value: "5.0", label: "Nota no Doctoralia" },

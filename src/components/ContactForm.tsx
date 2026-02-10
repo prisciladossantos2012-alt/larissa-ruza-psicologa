@@ -68,7 +68,7 @@ const ContactForm = () => {
                 {[
                   { icon: Calendar, label: "Agende pelo Doctoralia", href: "http://bit.ly/psilariruza", isLink: true },
                   { icon: Phone, label: "+55 (11) 93020-2069" },
-                  { icon: Mail, label: "larissaruza@gmail.com" },
+                  { icon: Mail, label: "psilariruza@gmail.com" },
                   { icon: MapPin, label: "Av. Portugal, 397 - Santo André/SP" },
                   { icon: Instagram, label: "@lariruza.psi", href: "https://www.instagram.com/lariruza.psi", isLink: true },
                 ].map((item, i) => (

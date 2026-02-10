@@ -8,20 +8,24 @@ import {
 
 const faqs = [
   {
-    question: "Como funciona a terapia online?",
-    answer: "As sessões acontecem por videochamada, com duração de 50 minutos. Você precisa apenas de um dispositivo com câmera, internet estável e um ambiente privado. É tão eficaz quanto a terapia presencial.",
-  },
-  {
     question: "Qual a abordagem terapêutica utilizada?",
-    answer: "Trabalho principalmente com Terapia do Esquema, integrada com Terapias Contextuais e de Terceira Geração, oferecendo um atendimento personalizado para cada paciente.",
-  },
-  {
-    question: "Quanto tempo dura o tratamento?",
-    answer: "Varia conforme cada pessoa e demanda. Algumas pessoas sentem melhorias significativas em poucas sessões, enquanto outras optam por um acompanhamento mais longo. Juntas definimos o melhor caminho.",
+    answer: "Trabalho com Terapias Cognitivo-Comportamentais Contextuais (TCC, Terapia do Esquema e Terapia de Aceitação e Compromisso - ACT), oferecendo um atendimento personalizado para cada paciente e demanda.",
   },
   {
     question: "Atende por plano de saúde?",
     answer: "Atualmente o atendimento é particular. Após cada sessão, emito recibo para que você possa solicitar reembolso ao seu plano de saúde, caso ele ofereça essa opção.",
+  },
+  {
+    question: "Como funciona a psicoterapia na modalidade online?",
+    answer: "As sessões acontecem por videochamada, com duração de 50 minutos. Você precisa apenas de um dispositivo com câmera, internet estável e um ambiente privado. É tão eficaz quanto a terapia presencial.",
+  },
+  {
+    question: "Como funciona a psicoterapia na modalidade presencial?",
+    answer: "As sessões acontecem na Avenida Portugal, 397 em Santo André, no ABC Paulista, com duração de 50 minutos. Diversos estacionamentos nas proximidades.",
+  },
+  {
+    question: "Como funciona o processo terapêutico?",
+    answer: "Os objetivos são definidos a partir da sua demanda. As sessões são semanais ou quinzenais, 50 minutos cada, com privacidade total e sigilo. Você não só fala sobre os problemas, mas aprende técnicas para lidar com eles no dia a dia. E a gente acompanha sua evolução, ajustando o que precisar.",
   },
   {
     question: "Posso fazer terapia morando fora do Brasil?",
@@ -30,6 +34,10 @@ const faqs = [
   {
     question: "Como agendar minha primeira sessão?",
     answer: "Você pode agendar diretamente pelo Doctoralia, pelo WhatsApp ou preenchendo o formulário de contato aqui no site. Responderei o mais breve possível!",
+  },
+  {
+    question: "Qual idade você atende?",
+    answer: "Adolescentes a partir de 16 anos, adultos e casais.",
   },
 ];
 

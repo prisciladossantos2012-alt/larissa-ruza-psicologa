@@ -47,13 +47,23 @@ const About = () => {
               }`}
             >
               <p>
-                Psicóloga nômade que já viveu e aprendeu em diferentes cantos do mundo — do Brasil à Espanha, Irlanda e além. Essa trajetória aumenta minha percepção sobre as <strong className="text-foreground">possibilidades que surgem a cada novo passo</strong>.
+                Psicóloga que já viveu e aprendeu em diferentes cantos do mundo: Brasil, Espanha e Irlanda. Essa trajetória aumenta minha percepção sobre as <strong className="text-foreground">possibilidades que surgem a cada novo passo</strong>.
               </p>
               <p>
-                Formada em <strong className="text-foreground">Terapia do Esquema</strong> pelo Wainer e NJ/NYC Institute, em formação em Terapias de Terceira Geração (Espanha) e pós-graduanda em Terapias Contextuais pela PUC-PR.
+                Sou especializada em <strong className="text-foreground">ansiedade, traumas, TOC, transtornos de personalidade e terapia de casal</strong>.
               </p>
-              <p>
-                Com <strong className="text-foreground">11 anos de experiência em RH, mentoria de carreira e liderança</strong>, reúno prática e sensibilidade para potencializar cada etapa da sua transformação.
+
+              <div className="mt-4">
+                <p className="font-medium text-foreground mb-2">Formação:</p>
+                <ul className="list-disc list-inside space-y-1 text-sm">
+                  <li>Terapia do Esquema — Wainer Psicologia Cognitiva e NJ/NYC Schema Therapy Institute</li>
+                  <li>Pós-graduação em Terapias Contextuais — PUC-PR</li>
+                  <li>Formação em Terapia Cognitivo-Comportamental (Artmed)</li>
+                </ul>
+              </div>
+
+              <p className="mt-4">
+                Além da clínica, trabalho com <strong className="text-foreground">mentoria de carreira e acompanhamento psicológico</strong> de futuros e atuais imigrantes brasileiros. São mais de 8 anos de experiência ajudando pessoas a navegarem entre transições de carreira, mudanças de país e os desafios emocionais que vêm com recomeços.
               </p>
             </div>
 
