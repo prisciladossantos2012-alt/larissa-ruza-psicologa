@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, Phone, Mail, Instagram, ArrowRight, MapPin } from "lucide-react";
+import { Calendar, Phone, Mail, Instagram, ArrowRight, MapPin, Loader2 } from "lucide-react";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+import { trackFormSubmit } from "@/lib/analytics";
 
 const contactSchema = z.object({
   firstName: z.string().trim().min(1, "Nome é obrigatório").max(50, "Máximo 50 caracteres").regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Nome contém caracteres inválidos"),
@@ -20,6 +23,8 @@ const ContactForm = () => {
     howDidYouMeetMe: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -29,7 +34,7 @@ const ContactForm = () => {
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const result = contactSchema.safeParse(formData);
     if (!result.success) {
@@ -41,12 +46,34 @@ const ContactForm = () => {
       setErrors(fieldErrors);
       return;
     }
-    const validated = result.data;
-    const message = `Olá! Meu nome é ${validated.firstName} ${validated.lastName}.\nEmail: ${validated.email}\nMeu WhatsApp: ${validated.whatsapp}\n${validated.howDidYouMeetMe ? `Como me conheceu: ${validated.howDidYouMeetMe}` : ""}\n\nGostaria de agendar uma sessão de terapia.`;
-    const url = `/whatsapp?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-    setFormData({ firstName: "", lastName: "", email: "", whatsapp: "", howDidYouMeetMe: "" });
-    setErrors({});
+
+    setIsSubmitting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: result.data,
+      });
+
+      if (error) throw error;
+
+      trackFormSubmit();
+
+      toast({
+        title: "Mensagem enviada!",
+        description: "Entraremos em contato em breve.",
+      });
+
+      setFormData({ firstName: "", lastName: "", email: "", whatsapp: "", howDidYouMeetMe: "" });
+      setErrors({});
+    } catch (err) {
+      console.error('Form submission error:', err);
+      toast({
+        title: "Erro ao enviar",
+        description: "Tente novamente ou entre em contato pelo WhatsApp.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -66,23 +93,19 @@ const ContactForm = () => {
 
               <div className="grid gap-5">
                 {[
-                  { icon: Calendar, label: "Agende pelo Doctoralia", href: "http://bit.ly/psilariruza", isLink: true },
-                  { icon: Phone, label: "+55 (11) 93020-2069" },
-                  { icon: Mail, label: "psilariruza@gmail.com" },
-                  { icon: MapPin, label: "Av. Portugal, 397 - Santo André/SP" },
-                  { icon: Instagram, label: "@lariruza.psi", href: "https://www.instagram.com/lariruza.psi", isLink: true },
+                  { icon: Calendar, label: "Agende pelo Doctoralia", href: "http://bit.ly/psilariruza" },
+                  { icon: Phone, label: "+55 (11) 93020-2069", href: "https://wa.me/5511930202069" },
+                  { icon: Mail, label: "psilariruza@gmail.com", href: "mailto:psilariruza@gmail.com" },
+                  { icon: MapPin, label: "Av. Portugal, 397 - Santo André/SP", href: "https://maps.google.com/?q=Av.+Portugal,+397+-+Santo+André,+SP" },
+                  { icon: Instagram, label: "@lariruza.psi", href: "https://www.instagram.com/lariruza.psi" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4">
                     <div className="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                       <item.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
                     </div>
-                    {item.isLink ? (
-                      <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors font-light">
-                        {item.label}
-                      </a>
-                    ) : (
-                      <span className="text-foreground font-light">{item.label}</span>
-                    )}
+                    <a href={item.href} target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors font-light">
+                      {item.label}
+                    </a>
                   </div>
                 ))}
               </div>
@@ -124,9 +147,18 @@ const ContactForm = () => {
                   <textarea name="howDidYouMeetMe" value={formData.howDidYouMeetMe} onChange={handleInputChange} rows={3} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm bg-background resize-none" />
                 </div>
 
-                <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-sm font-medium rounded-lg transition-colors">
-                  Enviar Mensagem
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                <Button type="submit" disabled={isSubmitting} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-sm font-medium rounded-lg transition-colors">
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      Enviando...
+                    </>
+                  ) : (
+                    <>
+                      Enviar Mensagem
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </>
+                  )}
                 </Button>
               </form>
             </div>

@@ -1,4 +1,4 @@
-import { ArrowRight, Video, Users, Briefcase, Globe } from "lucide-react";
+import { ArrowRight, Video, Users, Briefcase } from "lucide-react";
 import servicesImage2 from "@/assets/services-image2.png";
 import servicesImage1 from "@/assets/services-image1.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -18,11 +18,6 @@ const services = [
     icon: Briefcase,
     title: "Mentoria de Carreira",
     description: "Orientação profissional para quem busca clareza e direção na carreira.",
-  },
-  {
-    icon: Globe,
-    title: "Mentoria para Imigração",
-    description: "Preparação emocional e prática para quem está planejando morar fora.",
   },
 ];
 
