@@ -56,11 +56,11 @@ const TherapyFor = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center max-w-4xl mx-auto">
             {items.map((item, index) => (
               <div
                 key={index}
-                className="bg-background rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-border text-center group"
+                className="bg-background rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-border text-center group w-full"
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                   <item.icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
@@ -72,9 +72,6 @@ const TherapyFor = () => {
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-lg text-muted-foreground font-light mb-6 max-w-2xl mx-auto">
-              Ou apenas precisa de um momento seu, para se conhecer, (re)descobrir e trilhar o caminho de uma vida mais significativa.
-            </p>
             <a
               href="/agendar"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300"

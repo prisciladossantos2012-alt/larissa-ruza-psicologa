@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const WHATSAPP_NUMBER = "5511930202069";
 const DEFAULT_MESSAGE = "Olá! Gostaria de agendar uma sessão de terapia.";
@@ -10,6 +11,9 @@ const WhatsAppRedirect = () => {
   useEffect(() => {
     const customMessage = searchParams.get("text") || DEFAULT_MESSAGE;
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(customMessage)}`;
+    
+    trackWhatsAppClick("Redirect WhatsApp", url);
+    
     window.location.replace(url);
   }, [searchParams]);
 

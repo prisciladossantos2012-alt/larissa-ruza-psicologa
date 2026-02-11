@@ -34,15 +34,12 @@ const Hero = () => {
 
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
-            Cuide da sua saúde mental com quem entende você
+            Um espaço seguro para cuidar do que não pode mais ser adiado.
           </h1>
 
           {/* Subheadline */}
-          <p className="text-base sm:text-lg text-white/90 font-light leading-relaxed mb-4 max-w-xl opacity-0 animate-fade-in" style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}>
-            <strong className="text-white font-medium">Psicoterapia online e presencial</strong> especializada no tratamento de ansiedade, TOC, compulsões comportamentais, borderline, terapia de casal, vícios, autoestima e dependência emocional.
-          </p>
-          <p className="text-sm sm:text-base text-white/75 font-light leading-relaxed mb-8 max-w-xl opacity-0 animate-fade-in" style={{ animationDelay: "0.55s", animationFillMode: "forwards" }}>
-            Abordagens baseadas em evidências para compreender padrões emocionais profundos e construir mudanças reais.
+          <p className="text-base sm:text-lg text-white/90 font-light leading-relaxed mb-8 max-w-xl opacity-0 animate-fade-in" style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}>
+            Psicoterapia online e presencial especializada no tratamento de ansiedade, TOC, compulsões comportamentais, transtornos de personalidade e traumas. Abordagens baseadas em evidências para compreender padrões emocionais profundos e construir mudanças reais.
           </p>
 
           {/* Trust points */}

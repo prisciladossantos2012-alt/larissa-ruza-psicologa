@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import { trackDoctoraliaClick } from "@/lib/analytics";
 
 const DOCTORALIA_URL = "https://www.doctoralia.com.br/larissa-ruza/psicologo/santo-andre3";
 
@@ -7,7 +8,8 @@ const Agendar = () => {
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
-    // Preserve any UTM params and forward them
+    trackDoctoraliaClick("Agendar Sessão", DOCTORALIA_URL);
+
     const utmParams = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
     const url = new URL(DOCTORALIA_URL);
     
