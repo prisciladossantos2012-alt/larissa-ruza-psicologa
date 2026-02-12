@@ -12,7 +12,7 @@ const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now();
-  const timestamps = (rateLimitMap.get(ip) || []).filter(t => now - t < RATE_LIMIT_WINDOW_MS);
+  const timestamps = (rateLimitMap.get(ip) || []).filter((t) => now - t < RATE_LIMIT_WINDOW_MS);
   rateLimitMap.set(ip, timestamps);
   if (timestamps.length >= RATE_LIMIT_MAX) return true;
   timestamps.push(now);
@@ -26,10 +26,10 @@ serve(async (req) => {
 
   const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
   if (isRateLimited(ip)) {
-    return new Response(
-      JSON.stringify({ error: "Muitas tentativas. Tente novamente mais tarde." }),
-      { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-    );
+    return new Response(JSON.stringify({ error: "Muitas tentativas. Tente novamente mais tarde." }), {
+      status: 429,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
   }
 
   try {
@@ -40,11 +40,11 @@ serve(async (req) => {
 
     const escapeHtml = (text: string): string => {
       const map: Record<string, string> = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;',
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;",
       };
       return text.replace(/[&<>"']/g, (m) => map[m]);
     };
@@ -74,7 +74,7 @@ serve(async (req) => {
       },
       body: JSON.stringify({
         from: "Site Larissa Ruza <onboarding@resend.dev>",
-        to: ["psilariruza@gmail.com"],
+        to: ["prisciladossantos2012@gmail.com"],
         subject: `Novo lead: ${firstName} ${lastName}`,
         html: htmlBody,
         reply_to: email,
