@@ -36,11 +36,11 @@ const Services = () => {
               </h2>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-6 mb-12">
+            <div className="flex flex-wrap justify-center gap-6 mb-12">
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="flex items-start gap-4 p-6 bg-muted rounded-xl hover:shadow-md transition-all duration-300 border border-border"
+                  className="flex items-start gap-4 p-6 bg-muted rounded-xl hover:shadow-md transition-all duration-300 border border-border w-full sm:w-[calc(50%-12px)]"
                 >
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <service.icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
