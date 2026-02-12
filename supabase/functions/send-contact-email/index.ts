@@ -24,14 +24,15 @@ serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-    const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-    if (isRateLimited(ip)) {
-      return new Response(
-        JSON.stringify({ error: "Muitas tentativas. Tente novamente mais tarde." }),
-        { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  if (isRateLimited(ip)) {
+    return new Response(
+      JSON.stringify({ error: "Muitas tentativas. Tente novamente mais tarde." }),
+      { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+    );
+  }
 
+  try {
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     if (!RESEND_API_KEY) {
       throw new Error("RESEND_API_KEY is not configured");
