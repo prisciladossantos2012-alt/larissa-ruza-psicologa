@@ -16,6 +16,17 @@ serve(async (req) => {
       throw new Error("RESEND_API_KEY is not configured");
     }
 
+    const escapeHtml = (text: string): string => {
+      const map: Record<string, string> = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;',
+      };
+      return text.replace(/[&<>"']/g, (m) => map[m]);
+    };
+
     const { firstName, lastName, email, whatsapp, howDidYouMeetMe } = await req.json();
 
     if (!firstName || !lastName || !email || !whatsapp) {
@@ -27,10 +38,10 @@ serve(async (req) => {
 
     const htmlBody = `
       <h2>Novo lead do site</h2>
-      <p><strong>Nome:</strong> ${firstName} ${lastName}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>WhatsApp:</strong> ${whatsapp}</p>
-      ${howDidYouMeetMe ? `<p><strong>Como me conheceu:</strong> ${howDidYouMeetMe}</p>` : ""}
+      <p><strong>Nome:</strong> ${escapeHtml(firstName)} ${escapeHtml(lastName)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+      <p><strong>WhatsApp:</strong> ${escapeHtml(whatsapp)}</p>
+      ${howDidYouMeetMe ? `<p><strong>Como me conheceu:</strong> ${escapeHtml(howDidYouMeetMe)}</p>` : ""}
     `;
 
     const res = await fetch("https://api.resend.com/emails", {
