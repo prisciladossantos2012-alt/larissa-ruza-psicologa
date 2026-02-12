@@ -53,7 +53,7 @@ const Hero = () => {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}>
+          <div className="flex flex-col sm:flex-row gap-4 pb-12 sm:pb-0 opacity-0 animate-fade-in" style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}>
             <a
               href="/agendar"
               className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 text-base font-medium rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-lg"
