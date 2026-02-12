@@ -56,11 +56,11 @@ const TherapyFor = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center max-w-4xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
             {items.map((item, index) => (
               <div
                 key={index}
-                className="bg-background rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-border text-center group w-full"
+                className="bg-background rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 border border-border text-center group w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
               >
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                   <item.icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
