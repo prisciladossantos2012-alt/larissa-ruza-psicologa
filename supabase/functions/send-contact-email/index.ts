@@ -74,7 +74,7 @@ serve(async (req) => {
       },
       body: JSON.stringify({
         from: "Site Larissa Ruza <onboarding@resend.dev>",
-        to: ["psilariruza@gmail.com"],
+        to: ["prisciladossantos2012@gmail.com"],
         subject: `Novo lead: ${firstName} ${lastName}`,
         html: htmlBody,
         reply_to: email,
