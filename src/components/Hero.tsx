@@ -29,7 +29,7 @@ const Hero = () => {
 
           {/* Subtitle */}
           <p className="text-sm uppercase tracking-widest text-white/70 font-medium mb-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}>
-            Um espaço seguro
+            Psicóloga Clínica
           </p>
 
           {/* Headline */}
