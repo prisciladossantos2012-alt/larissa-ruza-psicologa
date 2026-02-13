@@ -4,22 +4,22 @@ import servicesImage1 from "@/assets/services-image1.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const services = [
-  {
-    icon: Video,
-    title: "Psicoterapia Online e Presencial",
-    description: "Atendimento online para brasileiros no mundo inteiro e presencial em Santo André (Av. Portugal, 397). Sessões de 50 minutos.",
-  },
-  {
-    icon: Users,
-    title: "Abordagens baseadas em evidências",
-    description: "Uso de abordagens e técnicas cientificamente comprovadas (TCC, Terapia do Esquema, ACT, EPR) adaptadas à sua realidade.",
-  },
-  {
-    icon: Briefcase,
-    title: "Mentoria de Carreira",
-    description: "Orientação profissional para quem busca clareza e direção na carreira.",
-  },
-];
+{
+  icon: Video,
+  title: "Psicoterapia Online e Presencial",
+  description: "Atendimento online para brasileiros no mundo inteiro e presencial em Santo André (Av. Portugal, 397). Sessões de 50 minutos."
+},
+{
+  icon: Users,
+  title: "Abordagens baseadas em evidências",
+  description: "Uso de abordagens e técnicas cientificamente comprovadas (TCC, Terapia do Esquema, ACT, EPR) adaptadas à sua realidade."
+},
+{
+  icon: Briefcase,
+  title: "Mentoria de Carreira",
+  description: "Orientação profissional para quem busca clareza e direção na carreira."
+}];
+
 
 const Services = () => {
   const { ref: titleRef, inView: titleInView } = useScrollAnimation();
@@ -37,11 +37,11 @@ const Services = () => {
             </div>
 
             <div className="flex flex-wrap justify-center gap-6 mb-12">
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-4 p-6 bg-muted rounded-xl hover:shadow-md transition-all duration-300 border border-border w-full sm:w-[calc(50%-12px)]"
-                >
+              {services.map((service, index) =>
+              <div
+                key={index}
+                className="flex items-start gap-4 p-6 bg-muted rounded-xl hover:shadow-md transition-all duration-300 border border-border w-full sm:w-[calc(50%-12px)]">
+
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <service.icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
                   </div>
@@ -50,7 +50,7 @@ const Services = () => {
                     <p className="text-sm text-muted-foreground font-light leading-relaxed">{service.description}</p>
                   </div>
                 </div>
-              ))}
+              )}
             </div>
 
             {/* Associations */}
@@ -68,20 +68,20 @@ const Services = () => {
           <h2 className="text-2xl sm:text-3xl font-semibold text-primary-foreground mb-4">
             Autocuidado aonde você estiver
           </h2>
-          <p className="text-primary-foreground/80 text-lg font-light mb-8 max-w-xl mx-auto">
-            Sessões de 50 minutos, 100% online, com total sigilo e segurança.
+          <p className="text-primary-foreground/80 text-lg font-light mb-8 max-w-xl mx-auto">Sessões de 50 minutos, 100% online e Presencial, com total sigilo e segurança.
+
           </p>
           <a
             href="/agendar"
-            className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-background/90 transition-all duration-300"
-          >
+            className="inline-flex items-center gap-2 bg-background text-foreground px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-background/90 transition-all duration-300">
+
             Agendar Minha Sessão
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>
       </section>
-    </>
-  );
+    </>);
+
 };
 
 export default Services;

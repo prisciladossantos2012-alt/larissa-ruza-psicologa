@@ -11,7 +11,7 @@ const contactSchema = z.object({
   lastName: z.string().trim().min(1, "Sobrenome é obrigatório").max(50, "Máximo 50 caracteres").regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Sobrenome contém caracteres inválidos"),
   email: z.string().trim().min(1, "Email é obrigatório").email("Email inválido").max(255, "Máximo 255 caracteres"),
   whatsapp: z.string().trim().min(1, "WhatsApp é obrigatório").regex(/^\+?[\d\s()-]{10,20}$/, "Número de WhatsApp inválido"),
-  howDidYouMeetMe: z.string().max(500, "Máximo 500 caracteres").optional().or(z.literal('')),
+  howDidYouMeetMe: z.string().max(500, "Máximo 500 caracteres").optional().or(z.literal(''))
 });
 
 const ContactForm = () => {
@@ -20,7 +20,7 @@ const ContactForm = () => {
     lastName: "",
     email: "",
     whatsapp: "",
-    howDidYouMeetMe: "",
+    howDidYouMeetMe: ""
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -50,7 +50,7 @@ const ContactForm = () => {
     setIsSubmitting(true);
     try {
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: result.data,
+        body: result.data
       });
 
       if (error) throw error;
@@ -59,7 +59,7 @@ const ContactForm = () => {
 
       toast({
         title: "Mensagem enviada!",
-        description: "Entraremos em contato em breve.",
+        description: "Entraremos em contato em breve."
       });
 
       setFormData({ firstName: "", lastName: "", email: "", whatsapp: "", howDidYouMeetMe: "" });
@@ -69,7 +69,7 @@ const ContactForm = () => {
       toast({
         title: "Erro ao enviar",
         description: "Tente novamente ou entre em contato pelo WhatsApp.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
@@ -84,8 +84,8 @@ const ContactForm = () => {
             {/* Left side */}
             <div>
               <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">Contato</p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground mb-6">
-                Pronta para dar o primeiro passo?
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground mb-6">Pronto para dar o primeiro passo?
+
               </h2>
               <p className="text-muted-foreground font-light leading-relaxed mb-10">
                 Se você sentiu que é a hora de olhar para si e caminhar em direção ao que realmente importa, entre em contato.
@@ -93,13 +93,13 @@ const ContactForm = () => {
 
               <div className="grid gap-5">
                 {[
-                  { icon: Calendar, label: "Agende pelo Doctoralia", href: "http://bit.ly/psilariruza" },
-                  { icon: Phone, label: "+55 (11) 93020-2069", href: "https://wa.me/5511930202069" },
-                  { icon: Mail, label: "psilariruza@gmail.com", href: "mailto:psilariruza@gmail.com" },
-                  { icon: MapPin, label: "Av. Portugal, 397 - Santo André/SP", href: "https://maps.google.com/?q=Av.+Portugal,+397+-+Santo+André,+SP" },
-                  { icon: Instagram, label: "@lariruza.psi", href: "https://www.instagram.com/lariruza.psi" },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4">
+                { icon: Calendar, label: "Agende pelo Doctoralia", href: "http://bit.ly/psilariruza" },
+                { icon: Phone, label: "+55 (11) 93020-2069", href: "https://wa.me/5511930202069" },
+                { icon: Mail, label: "psilariruza@gmail.com", href: "mailto:psilariruza@gmail.com" },
+                { icon: MapPin, label: "Av. Portugal, 397 - Santo André/SP", href: "https://maps.google.com/?q=Av.+Portugal,+397+-+Santo+André,+SP" },
+                { icon: Instagram, label: "@lariruza.psi", href: "https://www.instagram.com/lariruza.psi" }].
+                map((item, i) =>
+                <div key={i} className="flex items-center gap-4">
                     <div className="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                       <item.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
                     </div>
@@ -107,7 +107,7 @@ const ContactForm = () => {
                       {item.label}
                     </a>
                   </div>
-                ))}
+                )}
               </div>
             </div>
 
@@ -148,25 +148,25 @@ const ContactForm = () => {
                 </div>
 
                 <Button type="submit" disabled={isSubmitting} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-sm font-medium rounded-lg transition-colors">
-                  {isSubmitting ? (
-                    <>
+                  {isSubmitting ?
+                  <>
                       <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                       Enviando...
-                    </>
-                  ) : (
-                    <>
+                    </> :
+
+                  <>
                       Enviar Mensagem
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </>
-                  )}
+                  }
                 </Button>
               </form>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ContactForm;
