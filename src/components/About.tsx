@@ -1,4 +1,5 @@
 import lariPortrait from "@/assets/lari-about.png";
+import servicesImage1 from "@/assets/services-image1.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { ArrowRight } from "lucide-react";
 
@@ -65,11 +66,19 @@ const About = () => {
               <p className="mt-4">
                 Além da clínica, trabalho com <strong className="text-foreground">mentoria de carreira e acompanhamento psicológico</strong> de futuros e atuais imigrantes brasileiros. São mais de 8 anos de experiência ajudando pessoas a navegarem entre transições de carreira, mudanças de país e os desafios emocionais que vêm com recomeços.
               </p>
+
+              <div className="mt-6 flex items-center gap-4 p-4 bg-muted rounded-xl border border-border">
+                <img src={servicesImage1} alt="ACBS - Association for Contextual Behavioral Science" className="h-12 object-contain" />
+                <div>
+                  <p className="text-sm font-medium text-foreground">Membro da ACBS</p>
+                  <p className="text-xs text-muted-foreground">Association for Contextual Behavioral Science</p>
+                </div>
+              </div>
             </div>
 
             <a
               href="/agendar"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 mt-8"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 mt-8 uppercase"
             >
               Agendar com a Larissa
               <ArrowRight className="w-4 h-4" />
