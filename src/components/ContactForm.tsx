@@ -116,7 +116,7 @@ const ContactForm = () => {
               <h3 className="text-xl font-semibold text-foreground mb-2">Envie uma mensagem</h3>
               <p className="text-muted-foreground text-sm font-light mb-6">Deixe seus dados e eu te retorno.</p>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} action="" method="POST" className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm text-foreground mb-1.5 block font-medium">Nome <span className="text-destructive">*</span></label>
