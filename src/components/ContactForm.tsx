@@ -57,6 +57,39 @@ const ContactForm = () => {
 
       trackFormSubmit();
 
+      // Trigger native hidden form submit for HubSpot Collected Forms capture
+      try {
+        const hiddenForm = document.createElement("form");
+        hiddenForm.setAttribute("action", "about:blank");
+        hiddenForm.setAttribute("method", "POST");
+        hiddenForm.setAttribute("target", "hs-hidden-iframe");
+        hiddenForm.style.display = "none";
+
+        const hiddenIframe = document.createElement("iframe");
+        hiddenIframe.name = "hs-hidden-iframe";
+        hiddenIframe.style.display = "none";
+        document.body.appendChild(hiddenIframe);
+
+        const fields = { firstName: result.data.firstName, lastName: result.data.lastName, email: result.data.email, phone: result.data.whatsapp };
+        for (const [name, value] of Object.entries(fields)) {
+          const input = document.createElement("input");
+          input.type = name === "email" ? "email" : "hidden";
+          input.name = name;
+          input.value = value;
+          hiddenForm.appendChild(input);
+        }
+
+        document.body.appendChild(hiddenForm);
+        hiddenForm.submit();
+
+        setTimeout(() => {
+          hiddenForm.remove();
+          hiddenIframe.remove();
+        }, 2000);
+      } catch (hsErr) {
+        console.warn("HubSpot form trigger failed:", hsErr);
+      }
+
       toast({
         title: "Mensagem enviada!",
         description: "Entraremos em contato em breve."
