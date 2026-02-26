@@ -4,6 +4,8 @@ import SocialProof from "@/components/SocialProof";
 import About from "@/components/About";
 import TherapyFor from "@/components/TherapyFor";
 import Services from "@/components/Services";
+import Investment from "@/components/Investment";
+import SocialValues from "@/components/SocialValues";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import ContactForm from "@/components/ContactForm";
@@ -20,6 +22,8 @@ const Index = () => {
         <About />
         <TherapyFor />
         <Services />
+        <Investment />
+        <SocialValues />
         <Testimonials />
         <FAQ />
         <ContactForm />

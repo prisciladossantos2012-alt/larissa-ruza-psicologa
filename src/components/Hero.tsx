@@ -1,7 +1,24 @@
 import heroImage from "@/assets/hero-main.jpg";
 import { Star, CheckCircle } from "lucide-react";
+import { trackAndRedirectWhatsApp } from "@/lib/analytics";
 
 const Hero = () => {
+  const handlePrimaryCta = () => {
+    trackAndRedirectWhatsApp(
+      "hero_cta_click",
+      "Quero entender como a terapia pode me ajudar",
+      "Olá, Larissa. Li sobre seu trabalho no site e gostaria de entender melhor como funciona o processo terapêutico."
+    );
+  };
+
+  const handleSecondaryCta = () => {
+    trackAndRedirectWhatsApp(
+      "hero_secondary_cta_click",
+      "Ver como funcionam as sessões",
+      "Olá, Larissa. Gostaria de receber mais detalhes sobre como acontecem as sessões."
+    );
+  };
+
   return (
     <section
       id="inicio"
@@ -12,7 +29,6 @@ const Hero = () => {
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,7 +50,7 @@ const Hero = () => {
 
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
-            Um espaço seguro para cuidar do que não pode mais ser adiado.
+            Terapia para Ansiedade, Relações e Autenticidade
           </h1>
 
           {/* Subheadline */}
@@ -54,18 +70,18 @@ const Hero = () => {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 pb-12 sm:pb-0 opacity-0 animate-fade-in" style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}>
-            <a
-              href="/agendar"
-              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 text-base font-medium rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-lg"
+            <button
+              onClick={handlePrimaryCta}
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 text-base font-medium rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-lg cursor-pointer"
             >
-              Agendar Minha Sessão
-            </a>
-            <a
-              href="#sobre"
-              className="inline-flex items-center justify-center border-2 border-white/50 text-white px-8 py-4 text-base font-light rounded-lg hover:bg-white/10 transition-all duration-300"
+              Quero entender como a terapia pode me ajudar
+            </button>
+            <button
+              onClick={handleSecondaryCta}
+              className="inline-flex items-center justify-center border-2 border-white/50 text-white px-8 py-4 text-base font-light rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
             >
-              Conheça a psicóloga
-            </a>
+              Ver como funcionam as sessões
+            </button>
           </div>
         </div>
       </div>

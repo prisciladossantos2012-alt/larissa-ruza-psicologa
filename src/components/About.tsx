@@ -1,12 +1,20 @@
 import lariPortrait from "@/assets/lari-about.png";
 import servicesImage1 from "@/assets/services-image1.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { ArrowRight } from "lucide-react";
+import { trackAndRedirectWhatsApp } from "@/lib/analytics";
 
 const About = () => {
   const { ref: sectionRef, inView: sectionInView } = useScrollAnimation();
   const { ref: titleRef, inView: titleInView } = useScrollAnimation();
   const { ref: textRef, inView: textInView } = useScrollAnimation();
+
+  const handleCta = () => {
+    trackAndRedirectWhatsApp(
+      "sobre_cta_click",
+      "Quero conversar antes de iniciar",
+      "Olá, Larissa. Gostaria de entender melhor sua abordagem antes de iniciar o processo."
+    );
+  };
 
   return (
     <section id="sobre" ref={sectionRef} className="py-16 sm:py-20 lg:py-24 bg-background">
@@ -20,7 +28,6 @@ const About = () => {
                 alt="Larissa Ruza - Psicóloga CRP 06/157739"
                 className="w-full h-auto object-cover rounded-2xl grayscale"
               />
-              {/* Credential badge */}
               <div className="absolute bottom-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium shadow-lg">
                 CRP 06/157739
               </div>
@@ -76,13 +83,12 @@ const About = () => {
               </div>
             </div>
 
-            <a
-              href="/agendar"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 mt-8 uppercase"
+            <button
+              onClick={handleCta}
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 mt-8 cursor-pointer"
             >
-              Agendar com a Larissa
-              <ArrowRight className="w-4 h-4" />
-            </a>
+              Quero conversar antes de iniciar
+            </button>
           </div>
         </div>
       </div>
