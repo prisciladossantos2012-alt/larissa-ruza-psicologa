@@ -1,4 +1,5 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { trackAndRedirectWhatsApp } from "@/lib/analytics";
 import {
   Accordion,
   AccordionContent,
@@ -44,6 +45,14 @@ const faqs = [
 const FAQ = () => {
   const { ref: titleRef, inView: titleInView } = useScrollAnimation();
 
+  const handleCta = () => {
+    trackAndRedirectWhatsApp(
+      "faq_cta_click",
+      "Ainda tenho dúvidas sobre o processo",
+      "Olá, Larissa. Li as informações do site e ainda tenho algumas dúvidas sobre o processo terapêutico."
+    );
+  };
+
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,6 +80,15 @@ const FAQ = () => {
               </AccordionItem>
             ))}
           </Accordion>
+
+          <div className="text-center mt-12">
+            <button
+              onClick={handleCta}
+              className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer"
+            >
+              Ainda tenho dúvidas sobre o processo
+            </button>
+          </div>
         </div>
       </div>
     </section>

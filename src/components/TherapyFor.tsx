@@ -1,5 +1,6 @@
 import { Heart, Brain, Users, RotateCcw, Flame, Shield, HeartCrack } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { trackAndRedirectWhatsApp } from "@/lib/analytics";
 
 const items = [
   {
@@ -42,6 +43,14 @@ const items = [
 const TherapyFor = () => {
   const { ref: titleRef, inView: titleInView } = useScrollAnimation();
 
+  const handleCta = () => {
+    trackAndRedirectWhatsApp(
+      "identificacao_cta_click",
+      "Isso faz sentido para mim",
+      "Olá, Larissa. Me identifiquei com as situações descritas no site e gostaria de conversar sobre iniciar acompanhamento."
+    );
+  };
+
   return (
     <section id="especialidades" className="py-16 sm:py-20 lg:py-24 bg-muted">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,12 +81,12 @@ const TherapyFor = () => {
           </div>
 
           <div className="text-center mt-12">
-            <a
-              href="/agendar"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300"
+            <button
+              onClick={handleCta}
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 cursor-pointer"
             >
-              Quero Começar Minha Terapia
-            </a>
+              Isso faz sentido para mim
+            </button>
           </div>
         </div>
       </div>

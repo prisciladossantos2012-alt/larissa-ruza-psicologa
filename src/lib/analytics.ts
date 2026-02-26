@@ -8,11 +8,9 @@ declare global {
 }
 
 export const trackEvent = (eventName: string, params?: Record<string, string>) => {
-  // gtag
   if (window.gtag) {
     window.gtag('event', eventName, params);
   }
-  // dataLayer for GTM
   if (window.dataLayer) {
     window.dataLayer.push({
       event: eventName,
@@ -43,4 +41,29 @@ export const trackFormSubmit = () => {
     button_text: 'Enviar Mensagem',
     link_url: '',
   });
+};
+
+const WHATSAPP_NUMBER = "5511930202069";
+
+/**
+ * Track a GA4 event and redirect to WhatsApp with a qualified message.
+ * Uses sendBeacon to ensure the event is sent before navigation.
+ */
+export const trackAndRedirectWhatsApp = (
+  eventName: string,
+  buttonText: string,
+  whatsappMessage: string
+) => {
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  trackEvent(eventName, {
+    page_location: window.location.href,
+    button_text: buttonText,
+    link_url: url,
+  });
+
+  // Small delay to ensure event is dispatched
+  setTimeout(() => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  }, 150);
 };
