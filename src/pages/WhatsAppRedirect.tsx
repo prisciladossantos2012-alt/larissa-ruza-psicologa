@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { trackWhatsAppClick } from "@/lib/analytics";
 
 const WHATSAPP_NUMBER = "5511930202069";
-const DEFAULT_MESSAGE = "Olá! Gostaria de agendar uma sessão de terapia.";
+const DEFAULT_MESSAGE = "Olá! Tenho interesse em agendar uma sessão e gostaria de receber as informações sobre formato, investimento e disponibilidade de horários.";
 
 const WhatsAppRedirect = () => {
   const [searchParams] = useSearchParams();
