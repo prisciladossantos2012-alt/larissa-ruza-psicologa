@@ -84,12 +84,6 @@ const Hero = () => {
             >
               {t("hero.secondaryCta")}
             </button>
-            <a
-              href="/brasileiros-no-exterior"
-              className="inline-flex items-center justify-center border-2 border-white/30 text-white/90 px-8 py-4 text-base font-light rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
-            >
-              {t("hero.abroadCta")}
-            </a>
           </div>
         </div>
       </div>
