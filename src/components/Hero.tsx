@@ -14,8 +14,8 @@ const Hero = () => {
   const handleSecondaryCta = () => {
     trackAndRedirectWhatsApp(
       "hero_secondary_cta_click",
-      "Ver como funcionam as sessões",
-      "Olá, Larissa. Gostaria de receber mais detalhes sobre como acontecem as sessões."
+      "Conheça a Psicóloga",
+      "Olá, Larissa. Vi no seu site e gostaria de conhecer mais sobre sua formação e abordagem terapêutica."
     );
   };
 
