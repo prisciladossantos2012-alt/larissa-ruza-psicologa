@@ -71,16 +71,16 @@ const Hero = () => {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row flex-wrap gap-4 pb-12 sm:pb-0 opacity-0 animate-fade-in" style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}>
+          <div className="flex flex-col sm:flex-row items-stretch gap-4 pb-12 sm:pb-0 opacity-0 animate-fade-in" style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}>
             <button
               onClick={handlePrimaryCta}
-              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 text-base font-medium rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-lg cursor-pointer"
+              className="inline-flex items-center justify-center text-center leading-tight flex-1 sm:basis-0 sm:max-w-xs bg-primary text-primary-foreground px-6 py-4 text-base font-medium rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-lg cursor-pointer"
             >
               {t("hero.primaryCta")}
             </button>
             <button
               onClick={handleSecondaryCta}
-              className="inline-flex items-center justify-center border-2 border-white/50 text-white px-8 py-4 text-base font-light rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
+              className="inline-flex items-center justify-center text-center leading-tight flex-1 sm:basis-0 sm:max-w-xs border-2 border-white/50 text-white px-6 py-4 text-base font-light rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
             >
               {t("hero.secondaryCta")}
             </button>
