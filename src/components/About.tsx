@@ -11,8 +11,8 @@ const About = () => {
   const handleCta = () => {
     trackAndRedirectWhatsApp(
       "sobre_cta_click",
-      "Quero conversar antes de iniciar",
-      "Olá, Larissa. Gostaria de entender melhor sua abordagem antes de iniciar o processo."
+      "Quero agendar",
+      "Olá, Larissa. Li sobre você no site e gostaria de agendar uma sessão."
     );
   };
 
@@ -87,7 +87,7 @@ const About = () => {
               onClick={handleCta}
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 mt-8 cursor-pointer"
             >
-              Quero conversar antes de iniciar
+              Quero agendar
             </button>
           </div>
         </div>
