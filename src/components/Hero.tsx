@@ -50,7 +50,7 @@ const Hero = () => {
 
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
-            Terapia para Ansiedade, Relações e Autenticidade
+            Um espaço seguro para cuidar do que não pode mais ser adiado.
           </h1>
 
           {/* Subheadline */}
