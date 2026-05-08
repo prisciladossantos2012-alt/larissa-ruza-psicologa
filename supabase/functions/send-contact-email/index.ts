@@ -35,7 +35,11 @@ serve(async (req) => {
   try {
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     if (!RESEND_API_KEY) {
-      throw new Error("RESEND_API_KEY is not configured");
+      console.error("Email service is not configured");
+      return new Response(JSON.stringify({ error: "Falha ao enviar mensagem. Tente novamente." }), {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
     }
 
     const escapeHtml = (text: string): string => {
@@ -51,8 +55,24 @@ serve(async (req) => {
 
     const { firstName, lastName, email, whatsapp, howDidYouMeetMe } = await req.json();
 
-    if (!firstName || !lastName || !email || !whatsapp) {
-      return new Response(JSON.stringify({ error: "Campos obrigatórios faltando" }), {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^\+?[\d\s()-]{10,20}$/;
+    const nameRegex = /^[a-zA-ZÀ-ÿ\s'-]+$/;
+
+    const isStr = (v: unknown): v is string => typeof v === "string";
+    const validationError = (() => {
+      if (!isStr(firstName) || firstName.trim().length === 0 || firstName.length > 50 || !nameRegex.test(firstName)) return "Nome inválido";
+      if (!isStr(lastName) || lastName.trim().length === 0 || lastName.length > 50 || !nameRegex.test(lastName)) return "Sobrenome inválido";
+      if (!isStr(email) || email.length > 255 || !emailRegex.test(email)) return "Email inválido";
+      if (!isStr(whatsapp) || !phoneRegex.test(whatsapp)) return "WhatsApp inválido";
+      if (howDidYouMeetMe !== undefined && howDidYouMeetMe !== null && howDidYouMeetMe !== "") {
+        if (!isStr(howDidYouMeetMe) || howDidYouMeetMe.length > 500) return "Campo 'como me conheceu' inválido";
+      }
+      return null;
+    })();
+
+    if (validationError) {
+      return new Response(JSON.stringify({ error: validationError }), {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
@@ -84,8 +104,11 @@ serve(async (req) => {
     const data = await res.json();
 
     if (!res.ok) {
-      console.error("Resend error:", data);
-      throw new Error(`Resend API error [${res.status}]: ${JSON.stringify(data)}`);
+      console.error("Resend error:", res.status, data);
+      return new Response(JSON.stringify({ error: "Falha ao enviar mensagem. Tente novamente." }), {
+        status: 502,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
     }
 
     return new Response(JSON.stringify({ success: true }), {
@@ -93,9 +116,8 @@ serve(async (req) => {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
   } catch (error) {
-    console.error("Error:", error);
-    const message = error instanceof Error ? error.message : "Unknown error";
-    return new Response(JSON.stringify({ error: message }), {
+    console.error("Error processing contact form:", error);
+    return new Response(JSON.stringify({ error: "Falha ao enviar mensagem. Tente novamente." }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
