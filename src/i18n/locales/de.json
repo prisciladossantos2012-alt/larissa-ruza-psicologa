@@ -1,0 +1,198 @@
+{
+  "header": {
+    "home": "Start",
+    "about": "Über mich",
+    "specialties": "Schwerpunkte",
+    "services": "Leistungen",
+    "testimonials": "Stimmen",
+    "contact": "Kontakt",
+    "schedule": "Termin buchen",
+    "language": "Sprache"
+  },
+  "hero": {
+    "rating": "Bewertung 5.0 auf Doctoralia",
+    "role": "Klinische Psychologin",
+    "title": "Ein sicherer Raum, um das zu pflegen, was nicht länger warten kann.",
+    "subtitle": "Online- und Präsenz-Psychotherapie spezialisiert auf Angst, Zwangsstörungen, Verhaltenskompulsionen, Persönlichkeitsstörungen und Traumata. Evidenzbasierte Ansätze, um tiefe emotionale Muster zu verstehen und echten Wandel zu schaffen.",
+    "trust": {
+      "online": "Online und vor Ort in Santo André",
+      "couples": "Erwachsene und Paare",
+      "crp": "CRP 06/157739",
+      "audience": "Erwachsene und Paare"
+    },
+    "primaryCta": "Ich möchte verstehen, wie Therapie mir helfen kann",
+    "secondaryCta": "Die Psychologin kennenlernen",
+    "abroadCta": "Ich lebe außerhalb Brasiliens"
+  },
+  "exteriorBanner": {
+    "badge": "Brasilianer im Ausland",
+    "title": "Leben Sie außerhalb Brasiliens?",
+    "text": "Online-Sitzungen auf Portugiesisch, in jeder Zeitzone, Zahlung in USD, EUR oder BRL.",
+    "cta": "Internationale Betreuung ansehen"
+  },
+  "socialProof": {
+    "flexible": "Flexible Zeiten",
+    "flexibleLabel": "Morgens, nachmittags und abends",
+    "online": "Online",
+    "onlineLabel": "Brasilien und Ausland",
+    "inPerson": "Vor Ort",
+    "inPersonLabel": "Santo André/SP",
+    "rating": "5.0",
+    "ratingLabel": "Doctoralia-Bewertung"
+  },
+  "about": {
+    "eyebrow": "Über mich",
+    "title": "Hallo, ich bin",
+    "name": "Lari Ruza",
+    "p1Pre": "Psychologin, die in verschiedenen Teilen der Welt gelebt und gelernt hat: Brasilien, Spanien und Irland. Dieser Werdegang vertieft meine Wahrnehmung der ",
+    "p1Strong": "Möglichkeiten, die mit jedem neuen Schritt entstehen",
+    "p1Post": ".",
+    "p2Pre": "Ich bin spezialisiert auf ",
+    "p2Strong": "Angst, Trauma, Zwangsstörungen, Persönlichkeitsstörungen und Paartherapie",
+    "p2Post": ".",
+    "formationTitle": "Ausbildung:",
+    "f1": "Schematherapie — Wainer Kognitive Psychologie und NJ/NYC Schema Therapy Institute",
+    "f2": "Postgraduiertenstudium in kontextuellen Therapien — PUC-PR",
+    "f3": "Ausbildung in kognitiver Verhaltenstherapie (Artmed)",
+    "p3Pre": "Neben der Klinik biete ich ",
+    "p3Strong": "Karrierementoring und psychologische Begleitung",
+    "p3Post": " für aktuelle und künftige brasilianische Auswanderer. Über 8 Jahre Erfahrung in Karriereübergängen, Länderwechseln und den emotionalen Herausforderungen von Neuanfängen.",
+    "acbsMember": "ACBS-Mitglied",
+    "acbsName": "Association for Contextual Behavioral Science",
+    "cta": "Ich möchte buchen"
+  },
+  "therapyFor": {
+    "eyebrow": "Schwerpunkte",
+    "title": "Schwerpunkte in der Psychotherapie",
+    "subtitle": "Wenn Sie sich in einer dieser Situationen wiederfinden, kann Therapie helfen.",
+    "cta": "Das ist sinnvoll für mich",
+    "items": {
+      "anxiety": {
+        "title": "Angst und Stress",
+        "desc": "Angstkrisen, Panik, übermäßige Sorge und ständiger Stress."
+      },
+      "personality": {
+        "title": "Persönlichkeitsstörungen",
+        "desc": "Emotionale Instabilität, Verlassenheitsangst, anhaltende emotionale und relationale Muster, die Leiden und Bindungsschwierigkeiten verursachen."
+      },
+      "selfEsteem": {
+        "title": "Selbstwert und emotionale Abhängigkeit",
+        "desc": "Selbsterkenntnis, Selbstwertschätzung und gesündere Beziehungen."
+      },
+      "compulsions": {
+        "title": "Sucht und Zwang",
+        "desc": "Verhaltenszwänge, zwanghaftes Verhalten, Süchte und repetitive Verhaltensweisen wie Einkauf, Spiel, übermäßige Internetnutzung, emotionales Essen und sexualbezogene Zwänge."
+      },
+      "transitions": {
+        "title": "Veränderungen und Übergänge",
+        "desc": "Karriere, Auswanderung, Trauer und Neuanfänge mit Bedarf an emotionaler Unterstützung."
+      },
+      "selfKnowledge": {
+        "title": "Selbsterkenntnis",
+        "desc": "Persönliche Werte, Lebenssinn und Entscheidungen."
+      },
+      "couples": {
+        "title": "Paartherapie",
+        "desc": "Stärkung der Bindung zwischen Partnern."
+      }
+    }
+  },
+  "services": {
+    "eyebrow": "Wie die Sitzungen ablaufen",
+    "title": "Wie ich Ihnen helfen kann",
+    "s1": {
+      "title": "Online- und Präsenz-Psychotherapie",
+      "desc": "Online-Betreuung für Brasilianer weltweit und vor Ort in Santo André (Av. Portugal, 397). Sitzungen von 50 Minuten."
+    },
+    "s2": {
+      "title": "Evidenzbasierte Ansätze",
+      "desc": "Wissenschaftlich erprobte Ansätze und Techniken (KVT, Schematherapie, ACT, ERP) angepasst an Ihre Realität."
+    },
+    "s3": {
+      "title": "Karrierementoring",
+      "desc": "Berufliche Orientierung für alle, die Klarheit und Richtung in ihrer Karriere suchen."
+    },
+    "associations": "Mitglied der folgenden Vereinigungen:",
+    "cta": "Ich möchte buchen"
+  },
+  "investment": {
+    "eyebrow": "Investition",
+    "title": "Wie die Investition funktioniert",
+    "monthly": {
+      "title": "Monatspakete",
+      "desc": "Ich arbeite mit Monatspaketen zu festem Preis. Sie erleichtern die finanzielle Planung und sichern die Regelmäßigkeit — entscheidend für den therapeutischen Prozess."
+    },
+    "international": {
+      "title": "Internationale Betreuung",
+      "desc": "Wenn Sie außerhalb Brasiliens leben, kann die Zahlung in USD, EUR oder BRL erfolgen."
+    },
+    "social": {
+      "title": "Sozialtarife",
+      "desc": "Ich glaube, Zugang zu psychischer Gesundheit ist ein Recht. Daher reserviere ich Plätze mit besonderen Konditionen für Menschen in sozioökonomisch schwieriger Lage."
+    },
+    "cta": "Mehr über die Investition erfahren"
+  },
+  "socialValues": {
+    "eyebrow": "Sozialtarife",
+    "title": "Zugängliche Psychotherapie",
+    "p1": "Ich glaube, Zugang zu psychischer Gesundheit ist ein Recht. Daher biete ich Plätze zu besonderen Tarifen für Menschen in sozioökonomisch schwieriger Lage.",
+    "p2": "Wenn Sie finanzielle Schwierigkeiten haben und psychologische Begleitung brauchen, melden Sie sich, damit wir über Ihre Situation sprechen.",
+    "cta": "Über Sozialtarife sprechen"
+  },
+  "testimonials": {
+    "eyebrow": "Stimmen",
+    "title": "Was meine Patienten sagen",
+    "subtitle": "Echte Stimmen von Menschen, die ihr Leben durch Therapie verändert haben",
+    "verified": "Verifizierte Konsultation",
+    "seeAll": "Alle auf Doctoralia ansehen"
+  },
+  "faq": {
+    "eyebrow": "Häufige Fragen",
+    "title": "Häufig gestellte Fragen",
+    "cta": "Ich habe noch Fragen zum Prozess",
+    "items": [
+      {
+        "q": "Welchen therapeutischen Ansatz nutzen Sie?",
+        "a": "Ich arbeite mit kontextuellen kognitiven Verhaltenstherapien (KVT, Schematherapie und Akzeptanz- und Commitment-Therapie - ACT) und biete persönliche Betreuung für jeden Patienten und jedes Anliegen."
+      },
+      {
+        "q": "Akzeptieren Sie Krankenversicherungen?",
+        "a": "Derzeit ist die Betreuung privat. Nach jeder Sitzung stelle ich eine Quittung aus, damit Sie bei Ihrer Krankenversicherung Erstattung beantragen können, falls diese das anbietet."
+      },
+      {
+        "q": "Wie funktioniert Online-Psychotherapie?",
+        "a": "Sitzungen finden per Videoanruf statt, 50 Minuten lang. Sie brauchen nur ein Gerät mit Kamera, stabiles Internet und eine private Umgebung. Sie ist genauso wirksam wie Präsenztherapie."
+      },
+      {
+        "q": "Wie funktioniert Präsenz-Psychotherapie?",
+        "a": "Die Sitzungen finden in Avenida Portugal, 397 in Santo André, Region ABC Paulista, statt, 50 Minuten lang. Mehrere Parkplätze in der Nähe."
+      },
+      {
+        "q": "Wie läuft der therapeutische Prozess ab?",
+        "a": "Die Ziele werden auf Basis Ihres Anliegens festgelegt. Sitzungen wöchentlich oder zweiwöchentlich, je 50 Minuten, mit voller Privatsphäre. Sie sprechen nicht nur über Probleme, sondern lernen Techniken für den Alltag. Wir verfolgen Ihren Fortschritt und passen an, was nötig ist."
+      },
+      {
+        "q": "Kann ich Therapie machen, wenn ich außerhalb Brasiliens lebe?",
+        "a": "Ja! Ich betreue Brasilianer überall auf der Welt. Ich habe selbst Migrationserfahrung und verstehe die emotionalen Herausforderungen dieses Prozesses."
+      },
+      {
+        "q": "Wie buche ich meine erste Sitzung?",
+        "a": "Sie können direkt über Doctoralia, WhatsApp oder das Kontaktformular auf der Seite buchen. Ich antworte schnellstmöglich!"
+      },
+      {
+        "q": "Welche Altersgruppen betreuen Sie?",
+        "a": "Jugendliche ab 16 Jahren, Erwachsene und Paare."
+      }
+    ]
+  },
+  "footer": {
+    "role": "Klinische Psychologin",
+    "address": "Av. Portugal, 397 - Santo André/SP",
+    "navTitle": "Navigation",
+    "contactTitle": "Kontakt",
+    "scheduleTitle": "Buchen",
+    "schedulePrompt": "Bereit für den ersten Schritt?",
+    "schedule": "Termin buchen",
+    "rights": "Alle Rechte vorbehalten."
+  }
+}

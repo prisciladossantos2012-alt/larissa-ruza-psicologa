@@ -1,0 +1,198 @@
+{
+  "header": {
+    "home": "Início",
+    "about": "Sobre",
+    "specialties": "Especialidades",
+    "services": "Serviços",
+    "testimonials": "Depoimentos",
+    "contact": "Contato",
+    "schedule": "Agendar Sessão",
+    "language": "Idioma"
+  },
+  "hero": {
+    "rating": "Nota 5.0 no Doctoralia",
+    "role": "Psicóloga Clínica",
+    "title": "Um espaço seguro para cuidar do que não pode mais ser adiado.",
+    "subtitle": "Psicoterapia online e presencial especializada no tratamento de ansiedade, TOC, compulsões comportamentais, transtornos de personalidade e traumas. Abordagens baseadas em evidências para compreender padrões emocionais profundos e construir mudanças reais.",
+    "trust": {
+      "online": "Online e presencial em Santo André",
+      "couples": "Adultos e Casais",
+      "crp": "CRP 06/157739",
+      "audience": "Adultos e casais"
+    },
+    "primaryCta": "Quero entender como a terapia pode me ajudar",
+    "secondaryCta": "Conheça a Psicóloga",
+    "abroadCta": "Moro fora do Brasil"
+  },
+  "exteriorBanner": {
+    "badge": "Brasileiros no exterior",
+    "title": "Mora fora do Brasil?",
+    "text": "Atendimento online em português, em qualquer fuso horário, com pagamento em USD, EUR ou BRL.",
+    "cta": "Ver atendimento internacional"
+  },
+  "socialProof": {
+    "flexible": "Horários flexíveis",
+    "flexibleLabel": "Manhã, tarde e noite",
+    "online": "Online",
+    "onlineLabel": "Brasil e exterior",
+    "inPerson": "Presencial",
+    "inPersonLabel": "Santo André/SP",
+    "rating": "5.0",
+    "ratingLabel": "Nota no Doctoralia"
+  },
+  "about": {
+    "eyebrow": "Sobre mim",
+    "title": "Olá, eu sou a",
+    "name": "Lari Ruza",
+    "p1Pre": "Psicóloga que já viveu e aprendeu em diferentes cantos do mundo: Brasil, Espanha e Irlanda. Essa trajetória aumenta minha percepção sobre as ",
+    "p1Strong": "possibilidades que surgem a cada novo passo",
+    "p1Post": ".",
+    "p2Pre": "Sou especializada em ",
+    "p2Strong": "ansiedade, traumas, TOC, transtornos de personalidade e terapia de casal",
+    "p2Post": ".",
+    "formationTitle": "Formação:",
+    "f1": "Terapia do Esquema — Wainer Psicologia Cognitiva e NJ/NYC Schema Therapy Institute",
+    "f2": "Pós-graduação em Terapias Contextuais — PUC-PR",
+    "f3": "Formação em Terapia Cognitivo-Comportamental (Artmed)",
+    "p3Pre": "Além da clínica, trabalho com ",
+    "p3Strong": "mentoria de carreira e acompanhamento psicológico",
+    "p3Post": " de futuros e atuais imigrantes brasileiros. São mais de 8 anos de experiência ajudando pessoas a navegarem entre transições de carreira, mudanças de país e os desafios emocionais que vêm com recomeços.",
+    "acbsMember": "Membro da ACBS",
+    "acbsName": "Association for Contextual Behavioral Science",
+    "cta": "Quero agendar"
+  },
+  "therapyFor": {
+    "eyebrow": "Especialidades",
+    "title": "Especialidades atendidas na psicoterapia",
+    "subtitle": "Se você se identifica com alguma dessas situações, a terapia pode te ajudar.",
+    "cta": "Isso faz sentido para mim",
+    "items": {
+      "anxiety": {
+        "title": "Ansiedade e estresse",
+        "desc": "Crises de ansiedade, pânico, preocupação excessiva e estresse constante."
+      },
+      "personality": {
+        "title": "Transtornos de personalidade",
+        "desc": "Instabilidade emocional, medo do abandono, padrões emocionais e relacionais persistentes, que geram sofrimento e dificuldades nos vínculos."
+      },
+      "selfEsteem": {
+        "title": "Autoestima e dependência emocional",
+        "desc": "Autoconhecimento, valorização pessoal e relações mais saudáveis."
+      },
+      "compulsions": {
+        "title": "Vícios e compulsões",
+        "desc": "Compulsões comportamentais, comportamentos compulsivos, vícios e comportamentos repetitivos, como compras, jogos, uso excessivo de internet, alimentação emocional e compulsões ligadas à sexualidade."
+      },
+      "transitions": {
+        "title": "Mudanças e transições",
+        "desc": "Carreira, imigração, luto e recomeços que precisam de suporte emocional."
+      },
+      "selfKnowledge": {
+        "title": "Autoconhecimento",
+        "desc": "Valores pessoais, sentido de vida e escolhas."
+      },
+      "couples": {
+        "title": "Terapia de Casal",
+        "desc": "Fortalecimento do vínculo entre parceiros."
+      }
+    }
+  },
+  "services": {
+    "eyebrow": "Como funcionam as sessões",
+    "title": "Como posso te ajudar",
+    "s1": {
+      "title": "Psicoterapia Online e Presencial",
+      "desc": "Atendimento online para brasileiros no mundo inteiro e presencial em Santo André (Av. Portugal, 397). Sessões de 50 minutos."
+    },
+    "s2": {
+      "title": "Abordagens baseadas em evidências",
+      "desc": "Uso de abordagens e técnicas cientificamente comprovadas (TCC, Terapia do Esquema, ACT, EPR) adaptadas à sua realidade."
+    },
+    "s3": {
+      "title": "Mentoria de Carreira",
+      "desc": "Orientação profissional para quem busca clareza e direção na carreira."
+    },
+    "associations": "Membro das seguintes associações:",
+    "cta": "Quero agendar"
+  },
+  "investment": {
+    "eyebrow": "Investimento",
+    "title": "Como funciona o investimento",
+    "monthly": {
+      "title": "Pacotes mensais",
+      "desc": "Trabalho com pacotes de sessões com valor fixo mensal. Além de facilitar o planejamento financeiro, eles ajudam a manter a regularidade — que faz toda a diferença no processo terapêutico."
+    },
+    "international": {
+      "title": "Atendimento internacional",
+      "desc": "Se você mora fora do Brasil, seu pagamento pode ser realizado em dólar, euro ou reais."
+    },
+    "social": {
+      "title": "Valores sociais",
+      "desc": "Acredito que acesso à saúde mental é um direito. Por isso, reservo vagas com condições diferenciadas para pessoas em situação de vulnerabilidade socioeconômica."
+    },
+    "cta": "Quero saber mais sobre o investimento"
+  },
+  "socialValues": {
+    "eyebrow": "Valores sociais",
+    "title": "Psicoterapia acessível",
+    "p1": "Acredito que o acesso à saúde mental é um direito. Por isso, disponibilizo vagas com valores diferenciados para pessoas em situação de vulnerabilidade socioeconômica.",
+    "p2": "Se você está passando por dificuldades financeiras e precisa de acompanhamento psicológico, entre em contato para conversarmos sobre sua situação.",
+    "cta": "Quero conversar sobre valores sociais"
+  },
+  "testimonials": {
+    "eyebrow": "Depoimentos",
+    "title": "O que dizem meus pacientes",
+    "subtitle": "Depoimentos reais de quem transformou sua vida através da terapia",
+    "verified": "Consulta verificada",
+    "seeAll": "Ver todos no Doctoralia"
+  },
+  "faq": {
+    "eyebrow": "Dúvidas Frequentes",
+    "title": "Perguntas Frequentes",
+    "cta": "Ainda tenho dúvidas sobre o processo",
+    "items": [
+      {
+        "q": "Qual a abordagem terapêutica utilizada?",
+        "a": "Trabalho com Terapias Cognitivo-Comportamentais Contextuais (TCC, Terapia do Esquema e Terapia de Aceitação e Compromisso - ACT), oferecendo um atendimento personalizado para cada paciente e demanda."
+      },
+      {
+        "q": "Atende por plano de saúde?",
+        "a": "Atualmente o atendimento é particular. Após cada sessão, emito recibo para que você possa solicitar reembolso ao seu plano de saúde, caso ele ofereça essa opção."
+      },
+      {
+        "q": "Como funciona a psicoterapia na modalidade online?",
+        "a": "As sessões acontecem por videochamada, com duração de 50 minutos. Você precisa apenas de um dispositivo com câmera, internet estável e um ambiente privado. É tão eficaz quanto a terapia presencial."
+      },
+      {
+        "q": "Como funciona a psicoterapia na modalidade presencial?",
+        "a": "As sessões acontecem na Avenida Portugal, 397 em Santo André, no ABC Paulista, com duração de 50 minutos. Diversos estacionamentos nas proximidades."
+      },
+      {
+        "q": "Como funciona o processo terapêutico?",
+        "a": "Os objetivos são definidos a partir da sua demanda. As sessões são semanais ou quinzenais, 50 minutos cada, com privacidade total e sigilo. Você não só fala sobre os problemas, mas aprende técnicas para lidar com eles no dia a dia. E a gente acompanha sua evolução, ajustando o que precisar."
+      },
+      {
+        "q": "Posso fazer terapia morando fora do Brasil?",
+        "a": "Sim! Atendo brasileiros em qualquer lugar do mundo. Inclusive, tenho experiência pessoal com imigração e entendo os desafios emocionais desse processo."
+      },
+      {
+        "q": "Como agendar minha primeira sessão?",
+        "a": "Você pode agendar diretamente pelo Doctoralia, pelo WhatsApp ou preenchendo o formulário de contato aqui no site. Responderei o mais breve possível!"
+      },
+      {
+        "q": "Qual idade você atende?",
+        "a": "Adolescentes a partir de 16 anos, adultos e casais."
+      }
+    ]
+  },
+  "footer": {
+    "role": "Psicóloga Clínica",
+    "address": "Av. Portugal, 397 - Santo André/SP",
+    "navTitle": "Navegação",
+    "contactTitle": "Contato",
+    "scheduleTitle": "Agendar",
+    "schedulePrompt": "Pronta para dar o primeiro passo?",
+    "schedule": "Agendar Sessão",
+    "rights": "Todos os direitos reservados."
+  }
+}

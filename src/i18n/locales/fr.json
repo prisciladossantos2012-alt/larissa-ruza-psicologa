@@ -1,0 +1,198 @@
+{
+  "header": {
+    "home": "Accueil",
+    "about": "À propos",
+    "specialties": "Spécialités",
+    "services": "Services",
+    "testimonials": "Témoignages",
+    "contact": "Contact",
+    "schedule": "Prendre RDV",
+    "language": "Langue"
+  },
+  "hero": {
+    "rating": "Note 5.0 sur Doctoralia",
+    "role": "Psychologue Clinicienne",
+    "title": "Un espace sûr pour prendre soin de ce qui ne peut plus attendre.",
+    "subtitle": "Psychothérapie en ligne et en cabinet spécialisée en anxiété, TOC, compulsions comportementales, troubles de la personnalité et traumatismes. Approches fondées sur des preuves pour comprendre les schémas émotionnels profonds et construire de vrais changements.",
+    "trust": {
+      "online": "En ligne et en cabinet à Santo André",
+      "couples": "Adultes et Couples",
+      "crp": "CRP 06/157739",
+      "audience": "Adultes et couples"
+    },
+    "primaryCta": "Je veux comprendre comment la thérapie peut m'aider",
+    "secondaryCta": "Découvrir la Psychologue",
+    "abroadCta": "Je vis hors du Brésil"
+  },
+  "exteriorBanner": {
+    "badge": "Brésiliens à l'étranger",
+    "title": "Vous vivez hors du Brésil ?",
+    "text": "Suivi en ligne en portugais, dans tout fuseau horaire, avec paiement en USD, EUR ou BRL.",
+    "cta": "Voir le suivi international"
+  },
+  "socialProof": {
+    "flexible": "Horaires flexibles",
+    "flexibleLabel": "Matin, après-midi et soir",
+    "online": "En ligne",
+    "onlineLabel": "Brésil et étranger",
+    "inPerson": "En cabinet",
+    "inPersonLabel": "Santo André/SP",
+    "rating": "5.0",
+    "ratingLabel": "Note Doctoralia"
+  },
+  "about": {
+    "eyebrow": "À propos de moi",
+    "title": "Bonjour, je suis",
+    "name": "Lari Ruza",
+    "p1Pre": "Psychologue ayant vécu et appris dans différents coins du monde : Brésil, Espagne et Irlande. Ce parcours nourrit ma perception des ",
+    "p1Strong": "possibilités qui surgissent à chaque nouveau pas",
+    "p1Post": ".",
+    "p2Pre": "Je suis spécialisée en ",
+    "p2Strong": "anxiété, traumatismes, TOC, troubles de la personnalité et thérapie de couple",
+    "p2Post": ".",
+    "formationTitle": "Formation :",
+    "f1": "Thérapie des Schémas — Wainer Psychologie Cognitive et NJ/NYC Schema Therapy Institute",
+    "f2": "Post-graduation en Thérapies Contextuelles — PUC-PR",
+    "f3": "Formation en Thérapie Cognitivo-Comportementale (Artmed)",
+    "p3Pre": "Au-delà du cabinet, je propose ",
+    "p3Strong": "du mentorat de carrière et un accompagnement psychologique",
+    "p3Post": " pour les futurs et actuels immigrants brésiliens. Plus de 8 ans à aider les personnes à naviguer entre transitions de carrière, changements de pays et défis émotionnels des recommencements.",
+    "acbsMember": "Membre ACBS",
+    "acbsName": "Association for Contextual Behavioral Science",
+    "cta": "Je veux réserver"
+  },
+  "therapyFor": {
+    "eyebrow": "Spécialités",
+    "title": "Spécialités traitées en psychothérapie",
+    "subtitle": "Si vous vous reconnaissez dans l'une de ces situations, la thérapie peut vous aider.",
+    "cta": "Cela me parle",
+    "items": {
+      "anxiety": {
+        "title": "Anxiété et stress",
+        "desc": "Crises d'anxiété, panique, inquiétude excessive et stress constant."
+      },
+      "personality": {
+        "title": "Troubles de la personnalité",
+        "desc": "Instabilité émotionnelle, peur de l'abandon, schémas émotionnels et relationnels persistants causant souffrance et difficultés relationnelles."
+      },
+      "selfEsteem": {
+        "title": "Estime de soi et dépendance affective",
+        "desc": "Connaissance de soi, valorisation personnelle et relations plus saines."
+      },
+      "compulsions": {
+        "title": "Addictions et compulsions",
+        "desc": "Compulsions comportementales, conduites compulsives, addictions et comportements répétitifs comme achats, jeux, usage excessif d'internet, alimentation émotionnelle et compulsions liées à la sexualité."
+      },
+      "transitions": {
+        "title": "Changements et transitions",
+        "desc": "Carrière, immigration, deuil et recommencements qui nécessitent un soutien émotionnel."
+      },
+      "selfKnowledge": {
+        "title": "Connaissance de soi",
+        "desc": "Valeurs personnelles, sens de la vie et choix."
+      },
+      "couples": {
+        "title": "Thérapie de Couple",
+        "desc": "Renforcement du lien entre partenaires."
+      }
+    }
+  },
+  "services": {
+    "eyebrow": "Comment se déroulent les séances",
+    "title": "Comment je peux vous aider",
+    "s1": {
+      "title": "Psychothérapie en ligne et en cabinet",
+      "desc": "Suivi en ligne pour les Brésiliens du monde entier et en cabinet à Santo André (Av. Portugal, 397). Séances de 50 minutes."
+    },
+    "s2": {
+      "title": "Approches fondées sur des preuves",
+      "desc": "Utilisation d'approches et techniques scientifiquement éprouvées (TCC, Thérapie des Schémas, ACT, EPR) adaptées à votre réalité."
+    },
+    "s3": {
+      "title": "Mentorat de Carrière",
+      "desc": "Orientation professionnelle pour ceux qui cherchent clarté et direction dans leur carrière."
+    },
+    "associations": "Membre des associations suivantes :",
+    "cta": "Je veux réserver"
+  },
+  "investment": {
+    "eyebrow": "Investissement",
+    "title": "Comment fonctionne l'investissement",
+    "monthly": {
+      "title": "Forfaits mensuels",
+      "desc": "Je travaille avec des forfaits mensuels à valeur fixe. Ils facilitent la planification financière et maintiennent la régularité — qui fait toute la différence dans le processus thérapeutique."
+    },
+    "international": {
+      "title": "Suivi international",
+      "desc": "Si vous vivez hors du Brésil, le paiement peut se faire en dollars, euros ou reais."
+    },
+    "social": {
+      "title": "Tarifs sociaux",
+      "desc": "Je crois que l'accès à la santé mentale est un droit. Je réserve donc des places à conditions différenciées pour les personnes en situation de vulnérabilité socio-économique."
+    },
+    "cta": "Je veux en savoir plus sur l'investissement"
+  },
+  "socialValues": {
+    "eyebrow": "Tarifs sociaux",
+    "title": "Psychothérapie accessible",
+    "p1": "Je crois que l'accès à la santé mentale est un droit. Je propose donc des places à tarifs différenciés pour les personnes en situation de vulnérabilité socio-économique.",
+    "p2": "Si vous traversez des difficultés financières et avez besoin d'accompagnement psychologique, contactez-moi pour discuter de votre situation.",
+    "cta": "Je veux parler des tarifs sociaux"
+  },
+  "testimonials": {
+    "eyebrow": "Témoignages",
+    "title": "Ce que disent mes patients",
+    "subtitle": "Témoignages réels de personnes ayant transformé leur vie grâce à la thérapie",
+    "verified": "Consultation vérifiée",
+    "seeAll": "Voir tout sur Doctoralia"
+  },
+  "faq": {
+    "eyebrow": "Questions Fréquentes",
+    "title": "Questions Fréquentes",
+    "cta": "J'ai encore des questions sur le processus",
+    "items": [
+      {
+        "q": "Quelle approche thérapeutique utilisez-vous ?",
+        "a": "Je travaille avec les Thérapies Cognitivo-Comportementales Contextuelles (TCC, Thérapie des Schémas et ACT), offrant un suivi personnalisé pour chaque patient et demande."
+      },
+      {
+        "q": "Acceptez-vous les mutuelles ?",
+        "a": "Le suivi est actuellement privé. Après chaque séance, j'émets un reçu pour que vous puissiez demander un remboursement à votre mutuelle, si elle offre cette option."
+      },
+      {
+        "q": "Comment se déroule la psychothérapie en ligne ?",
+        "a": "Les séances ont lieu par visioconférence, d'une durée de 50 minutes. Vous avez seulement besoin d'un appareil avec caméra, internet stable et un environnement privé. C'est aussi efficace que la thérapie en cabinet."
+      },
+      {
+        "q": "Comment se déroule la psychothérapie en cabinet ?",
+        "a": "Les séances ont lieu Avenida Portugal, 397 à Santo André, région ABC Paulista, durée de 50 minutes. Plusieurs parkings à proximité."
+      },
+      {
+        "q": "Comment se déroule le processus thérapeutique ?",
+        "a": "Les objectifs sont définis selon votre demande. Les séances sont hebdomadaires ou bimensuelles, 50 minutes chacune, avec confidentialité totale. Vous parlez des problèmes mais apprenez aussi des techniques pour les gérer au quotidien. Nous suivons votre évolution en ajustant ce qu'il faut."
+      },
+      {
+        "q": "Puis-je faire une thérapie en vivant hors du Brésil ?",
+        "a": "Oui ! Je suis des Brésiliens partout dans le monde. J'ai aussi une expérience personnelle d'immigration et comprends les défis émotionnels de ce processus."
+      },
+      {
+        "q": "Comment réserver ma première séance ?",
+        "a": "Vous pouvez réserver directement via Doctoralia, WhatsApp ou en remplissant le formulaire de contact du site. Je répondrai dès que possible !"
+      },
+      {
+        "q": "Quels âges suivez-vous ?",
+        "a": "Adolescents à partir de 16 ans, adultes et couples."
+      }
+    ]
+  },
+  "footer": {
+    "role": "Psychologue Clinicienne",
+    "address": "Av. Portugal, 397 - Santo André/SP",
+    "navTitle": "Navigation",
+    "contactTitle": "Contact",
+    "scheduleTitle": "Réserver",
+    "schedulePrompt": "Prête à faire le premier pas ?",
+    "schedule": "Prendre RDV",
+    "rights": "Tous droits réservés."
+  }
+}
