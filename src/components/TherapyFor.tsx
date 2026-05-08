@@ -60,9 +60,15 @@ const TherapyFor = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground mb-4">
               Especialidades atendidas na psicoterapia
             </h2>
-            <p className="text-muted-foreground text-lg font-light max-w-2xl mx-auto">
-              Se você se identifica com alguma dessas situações, vamos conversar.
+            <p className="text-muted-foreground text-lg font-light max-w-2xl mx-auto mb-8">
+              Se você se identifica com alguma dessas situações, a terapia pode te ajudar.
             </p>
+            <button
+              onClick={handleCta}
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 cursor-pointer"
+            >
+              Isso faz sentido para mim
+            </button>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
