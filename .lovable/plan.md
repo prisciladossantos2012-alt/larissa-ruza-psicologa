@@ -1,59 +1,32 @@
-
-# Integrar Formulario de Contato com HubSpot
-
 ## Problema
-O HubSpot nao consegue detectar o formulario porque ele e renderizado via React (SPA) e o envio padrao e bloqueado com `preventDefault`. O HubSpot precisa de um formulario HTML nativo presente no carregamento da pagina.
 
-## Solucao Recomendada: Envio via HubSpot Forms API
+No Hero (`src/components/Hero.tsx`), o container dos CTAs usa `flex flex-col sm:flex-row flex-wrap`. Como cada idioma tem comprimentos de texto diferentes (ex.: alemão "Ich möchte verstehen, wie Therapie mir helfen kann" é bem mais longo que o português), os botões:
 
-Em vez de tentar fazer o HubSpot capturar o formulario automaticamente (o que e incompativel com SPAs React), vamos enviar os dados diretamente para a API do HubSpot apos o envio bem-sucedido do formulario. Isso garante que os leads aparecem no HubSpot sem precisar mudar a arquitetura do formulario.
+- Quebram para uma segunda linha em alguns idiomas (`flex-wrap`)
+- Ficam com alturas diferentes entre si quando um texto quebra internamente
+- "Pulam de posição" ao trocar o idioma
 
-## Passos
+## Solução
 
-### 1. Atualizar a Edge Function `send-contact-email`
-Apos enviar o email via Resend, fazer uma chamada adicional para a API de Forms do HubSpot para registrar o contato.
+Tornar o layout dos CTAs previsível e estável, independente do tamanho do texto:
 
-- Endpoint: `https://api.hsforms.com/submissions/v3/integration/submit/{portalId}/{formId}`
-- Portal ID: `51092703`
-- Form ID: sera necessario criar um formulario no HubSpot e obter o ID (ou usar a API de Contacts diretamente)
+1. **Remover `flex-wrap`** — impede que o segundo botão pule para baixo em idiomas longos.
+2. **Botões com largura igual em desktop** (`flex-1` + `basis-0`) e com `max-w` razoável, para que mesmo com textos diferentes ocupem o mesmo espaço.
+3. **Alinhar alturas** com `items-stretch` no container e `text-center` + `leading-tight` nos botões, permitindo quebra de linha interna sem desalinhar.
+4. **Mobile**: manter empilhado (`flex-col`), cada botão ocupando 100% da largura — comportamento já estável.
+5. **Reduzir levemente o padding horizontal** (`px-6` em vez de `px-8`) para acomodar textos longos sem precisar quebrar em duas linhas em idiomas como alemão/holandês.
 
-A chamada sera feita no servidor (edge function) para nao depender do comportamento do navegador.
+## Detalhes técnicos
 
-### 2. Alternativa mais simples: API de Contacts
-Usar a API de Contacts do HubSpot (`POST /crm/v3/objects/contacts`) para criar o contato diretamente. Isso requer uma API Key do HubSpot configurada como secret.
-
-### 3. Fluxo atualizado
+Arquivo afetado: `src/components/Hero.tsx` (apenas o `<div>` dos CTAs e classes dos dois `<button>`).
 
 ```text
-Usuario preenche formulario
-        |
-        v
-Edge Function recebe dados
-        |
-        +---> Envia email via Resend (existente)
-        |
-        +---> Cria contato no HubSpot via API (novo)
-        |
-        v
-Retorna sucesso ao usuario
+Antes:  flex flex-col sm:flex-row flex-wrap gap-4
+Depois: flex flex-col sm:flex-row items-stretch gap-4
+
+Botões:
+- adicionar: flex-1 sm:basis-0 sm:max-w-xs text-center leading-tight
+- ajustar:   px-6 (em vez de px-8)
 ```
 
-### 4. Configuracao necessaria
-
-- Criar um formulario no painel do HubSpot para obter o `formGuid` (ID do formulario)
-- OU configurar uma API Key/Private App Token do HubSpot como secret na edge function
-
-## Secao Tecnica
-
-### Arquivo: `supabase/functions/send-contact-email/index.ts`
-- Adicionar chamada para `https://api.hsforms.com/submissions/v3/integration/submit/51092703/{formGuid}` apos o envio do email
-- Mapear os campos: `firstName`, `lastName`, `email`, `phone` (whatsapp)
-- A API de Forms do HubSpot nao requer autenticacao, apenas o portalId e formGuid
-- Incluir `hutk` (cookie do HubSpot) se disponivel, passando do frontend
-
-### Arquivo: `src/components/ContactForm.tsx`
-- Capturar o cookie `hubspotutk` do navegador e envia-lo junto com os dados do formulario para a edge function
-- Isso permite ao HubSpot associar o submit com a sessao de rastreamento do visitante
-
-## Pergunta necessaria
-Para prosseguir, preciso saber: voce ja criou um formulario dentro do HubSpot? Se sim, qual o ID dele? Se nao, posso usar a API de Forms com submissao direta — basta criar um formulario basico no HubSpot com os campos nome, email e telefone.
+Sem mudanças em traduções, lógica, analytics ou outros componentes.
