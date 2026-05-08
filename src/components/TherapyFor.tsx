@@ -1,52 +1,25 @@
 import { Heart, Brain, Users, RotateCcw, Flame, Shield, HeartCrack } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { trackAndRedirectWhatsApp } from "@/lib/analytics";
-
-const items = [
-  {
-    icon: Heart,
-    title: "Ansiedade e estresse",
-    description: "Crises de ansiedade, pânico, preocupação excessiva e estresse constante.",
-  },
-  {
-    icon: Shield,
-    title: "Transtornos de personalidade",
-    description: "Instabilidade emocional, medo do abandono, padrões emocionais e relacionais persistentes, que geram sofrimento e dificuldades nos vínculos.",
-  },
-  {
-    icon: HeartCrack,
-    title: "Autoestima e dependência emocional",
-    description: "Autoconhecimento, valorização pessoal e relações mais saudáveis.",
-  },
-  {
-    icon: Flame,
-    title: "Vícios e compulsões",
-    description: "Compulsões comportamentais, comportamentos compulsivos, vícios e comportamentos repetitivos, como compras, jogos, uso excessivo de internet, alimentação emocional e compulsões ligadas à sexualidade.",
-  },
-  {
-    icon: RotateCcw,
-    title: "Mudanças e transições",
-    description: "Carreira, imigração, luto e recomeços que precisam de suporte emocional.",
-  },
-  {
-    icon: Brain,
-    title: "Autoconhecimento",
-    description: "Valores pessoais, sentido de vida e escolhas.",
-  },
-  {
-    icon: Users,
-    title: "Terapia de Casal",
-    description: "Fortalecimento do vínculo entre parceiros.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const TherapyFor = () => {
+  const { t } = useTranslation();
+  const items = [
+    { icon: Heart, key: "anxiety" },
+    { icon: Shield, key: "personality" },
+    { icon: HeartCrack, key: "selfEsteem" },
+    { icon: Flame, key: "compulsions" },
+    { icon: RotateCcw, key: "transitions" },
+    { icon: Brain, key: "selfKnowledge" },
+    { icon: Users, key: "couples" },
+  ];
   const { ref: titleRef, inView: titleInView } = useScrollAnimation();
 
   const handleCta = () => {
     trackAndRedirectWhatsApp(
       "identificacao_cta_click",
-      "Isso faz sentido para mim",
+      t("therapyFor.cta"),
       "Olá, Larissa. Me identifiquei com as situações descritas no site e gostaria de conversar sobre iniciar acompanhamento."
     );
   };
@@ -56,18 +29,18 @@ const TherapyFor = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div ref={titleRef} className={`text-center mb-12 sm:mb-16 ${titleInView ? "animate-fade-in" : "opacity-0"}`}>
-            <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">Especialidades</p>
+            <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">{t("therapyFor.eyebrow")}</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Especialidades atendidas na psicoterapia
+              {t("therapyFor.title")}
             </h2>
             <p className="text-muted-foreground text-lg font-light max-w-2xl mx-auto mb-8">
-              Se você se identifica com alguma dessas situações, a terapia pode te ajudar.
+              {t("therapyFor.subtitle")}
             </p>
             <button
               onClick={handleCta}
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 cursor-pointer"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 cursor-pointer uppercase"
             >
-              Isso faz sentido para mim
+              {t("therapyFor.cta")}
             </button>
           </div>
 
@@ -80,8 +53,8 @@ const TherapyFor = () => {
                 <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                   <item.icon className="w-7 h-7 text-primary" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-base font-semibold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground font-light leading-relaxed">{item.description}</p>
+                <h3 className="text-base font-semibold text-foreground mb-2">{t(`therapyFor.items.${item.key}.title`)}</h3>
+                <p className="text-sm text-muted-foreground font-light leading-relaxed">{t(`therapyFor.items.${item.key}.desc`)}</p>
               </div>
             ))}
           </div>

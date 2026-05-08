@@ -2,8 +2,10 @@ import lariPortrait from "@/assets/lari-about.png";
 import servicesImage1 from "@/assets/services-image1.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { trackAndRedirectWhatsApp } from "@/lib/analytics";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
   const { ref: sectionRef, inView: sectionInView } = useScrollAnimation();
   const { ref: titleRef, inView: titleInView } = useScrollAnimation();
   const { ref: textRef, inView: textInView } = useScrollAnimation();
@@ -11,7 +13,7 @@ const About = () => {
   const handleCta = () => {
     trackAndRedirectWhatsApp(
       "sobre_cta_click",
-      "Quero agendar",
+      t("about.cta"),
       "Olá, Larissa. Li sobre você no site e gostaria de agendar uma sessão."
     );
   };
@@ -37,7 +39,7 @@ const About = () => {
           {/* Content */}
           <div>
             <p className={`text-sm uppercase tracking-widest text-primary font-medium mb-3 ${titleInView ? "animate-fade-in" : "opacity-0"}`}>
-              Sobre mim
+              {t("about.eyebrow")}
             </p>
             <h2
               ref={titleRef}
@@ -45,7 +47,7 @@ const About = () => {
                 titleInView ? "animate-slide-up" : "opacity-0"
               }`}
             >
-              Olá, eu sou a <span className="text-primary">Lari Ruza</span>
+              {t("about.title")} <span className="text-primary">{t("about.name")}</span>
             </h2>
 
             <div
@@ -55,39 +57,39 @@ const About = () => {
               }`}
             >
               <p>
-                Psicóloga que já viveu e aprendeu em diferentes cantos do mundo: Brasil, Espanha e Irlanda. Essa trajetória aumenta minha percepção sobre as <strong className="text-foreground">possibilidades que surgem a cada novo passo</strong>.
+                {t("about.p1Pre")}<strong className="text-foreground">{t("about.p1Strong")}</strong>{t("about.p1Post")}
               </p>
               <p>
-                Sou especializada em <strong className="text-foreground">ansiedade, traumas, TOC, transtornos de personalidade e terapia de casal</strong>.
+                {t("about.p2Pre")}<strong className="text-foreground">{t("about.p2Strong")}</strong>{t("about.p2Post")}
               </p>
 
               <div className="mt-4">
-                <p className="font-medium text-foreground mb-2">Formação:</p>
+                <p className="font-medium text-foreground mb-2">{t("about.formationTitle")}</p>
                 <ul className="list-disc list-inside space-y-1 text-sm">
-                  <li>Terapia do Esquema — Wainer Psicologia Cognitiva e NJ/NYC Schema Therapy Institute</li>
-                  <li>Pós-graduação em Terapias Contextuais — PUC-PR</li>
-                  <li>Formação em Terapia Cognitivo-Comportamental (Artmed)</li>
+                  <li>{t("about.f1")}</li>
+                  <li>{t("about.f2")}</li>
+                  <li>{t("about.f3")}</li>
                 </ul>
               </div>
 
               <p className="mt-4">
-                Além da clínica, trabalho com <strong className="text-foreground">mentoria de carreira e acompanhamento psicológico</strong> de futuros e atuais imigrantes brasileiros. São mais de 8 anos de experiência ajudando pessoas a navegarem entre transições de carreira, mudanças de país e os desafios emocionais que vêm com recomeços.
+                {t("about.p3Pre")}<strong className="text-foreground">{t("about.p3Strong")}</strong>{t("about.p3Post")}
               </p>
 
               <div className="mt-6 flex items-center gap-4 p-4 bg-muted rounded-xl border border-border">
                 <img src={servicesImage1} alt="ACBS - Association for Contextual Behavioral Science" className="h-12 object-contain" />
                 <div>
-                  <p className="text-sm font-medium text-foreground">Membro da ACBS</p>
-                  <p className="text-xs text-muted-foreground">Association for Contextual Behavioral Science</p>
+                  <p className="text-sm font-medium text-foreground">{t("about.acbsMember")}</p>
+                  <p className="text-xs text-muted-foreground">{t("about.acbsName")}</p>
                 </div>
               </div>
             </div>
 
             <button
               onClick={handleCta}
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 mt-8 cursor-pointer"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 mt-8 cursor-pointer uppercase"
             >
-              Quero agendar
+              {t("about.cta")}
             </button>
           </div>
         </div>

@@ -1,0 +1,198 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "specialties": "Specialties",
+    "services": "Services",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "schedule": "Book a Session",
+    "language": "Language"
+  },
+  "hero": {
+    "rating": "5.0 rating on Doctoralia",
+    "role": "Clinical Psychologist",
+    "title": "A safe space to take care of what can no longer be put off.",
+    "subtitle": "Online and in-person psychotherapy specialized in anxiety, OCD, behavioral compulsions, personality disorders and trauma. Evidence-based approaches to understand deep emotional patterns and build real change.",
+    "trust": {
+      "online": "Online and in-person in Santo André",
+      "couples": "Adults and Couples",
+      "crp": "CRP 06/157739",
+      "audience": "Adults and couples"
+    },
+    "primaryCta": "I want to understand how therapy can help me",
+    "secondaryCta": "Meet the Psychologist",
+    "abroadCta": "I live outside Brazil"
+  },
+  "exteriorBanner": {
+    "badge": "Brazilians abroad",
+    "title": "Living outside Brazil?",
+    "text": "Online sessions in Portuguese, in any time zone, with payment in USD, EUR or BRL.",
+    "cta": "See international care"
+  },
+  "socialProof": {
+    "flexible": "Flexible hours",
+    "flexibleLabel": "Morning, afternoon and evening",
+    "online": "Online",
+    "onlineLabel": "Brazil and abroad",
+    "inPerson": "In-person",
+    "inPersonLabel": "Santo André/SP",
+    "rating": "5.0",
+    "ratingLabel": "Doctoralia rating"
+  },
+  "about": {
+    "eyebrow": "About me",
+    "title": "Hi, I'm",
+    "name": "Lari Ruza",
+    "p1Pre": "A psychologist who has lived and learned in different parts of the world: Brazil, Spain and Ireland. This journey deepens my perception of the ",
+    "p1Strong": "possibilities that arise with each new step",
+    "p1Post": ".",
+    "p2Pre": "I specialize in ",
+    "p2Strong": "anxiety, trauma, OCD, personality disorders and couples therapy",
+    "p2Post": ".",
+    "formationTitle": "Training:",
+    "f1": "Schema Therapy — Wainer Cognitive Psychology and NJ/NYC Schema Therapy Institute",
+    "f2": "Postgraduate in Contextual Therapies — PUC-PR",
+    "f3": "Cognitive-Behavioral Therapy training (Artmed)",
+    "p3Pre": "Beyond the clinic, I work with ",
+    "p3Strong": "career mentoring and psychological support",
+    "p3Post": " for current and future Brazilian immigrants. Over 8 years helping people navigate career transitions, country changes and the emotional challenges of new beginnings.",
+    "acbsMember": "ACBS Member",
+    "acbsName": "Association for Contextual Behavioral Science",
+    "cta": "I want to book"
+  },
+  "therapyFor": {
+    "eyebrow": "Specialties",
+    "title": "Specialties addressed in therapy",
+    "subtitle": "If you identify with any of these situations, therapy can help.",
+    "cta": "This makes sense for me",
+    "items": {
+      "anxiety": {
+        "title": "Anxiety and stress",
+        "desc": "Anxiety crises, panic, excessive worry and constant stress."
+      },
+      "personality": {
+        "title": "Personality disorders",
+        "desc": "Emotional instability, fear of abandonment, persistent emotional and relational patterns that cause suffering and difficulties in bonds."
+      },
+      "selfEsteem": {
+        "title": "Self-esteem and emotional dependence",
+        "desc": "Self-knowledge, personal value and healthier relationships."
+      },
+      "compulsions": {
+        "title": "Addictions and compulsions",
+        "desc": "Behavioral compulsions, compulsive behaviors, addictions and repetitive behaviors such as shopping, gambling, excessive internet use, emotional eating and sexuality-related compulsions."
+      },
+      "transitions": {
+        "title": "Changes and transitions",
+        "desc": "Career, immigration, grief and new beginnings that need emotional support."
+      },
+      "selfKnowledge": {
+        "title": "Self-knowledge",
+        "desc": "Personal values, life meaning and choices."
+      },
+      "couples": {
+        "title": "Couples Therapy",
+        "desc": "Strengthening the bond between partners."
+      }
+    }
+  },
+  "services": {
+    "eyebrow": "How sessions work",
+    "title": "How I can help you",
+    "s1": {
+      "title": "Online and In-Person Psychotherapy",
+      "desc": "Online care for Brazilians worldwide and in-person in Santo André (Av. Portugal, 397). 50-minute sessions."
+    },
+    "s2": {
+      "title": "Evidence-based approaches",
+      "desc": "Scientifically proven approaches and techniques (CBT, Schema Therapy, ACT, ERP) adapted to your reality."
+    },
+    "s3": {
+      "title": "Career Mentoring",
+      "desc": "Professional guidance for those seeking clarity and direction in their career."
+    },
+    "associations": "Member of the following associations:",
+    "cta": "I want to book"
+  },
+  "investment": {
+    "eyebrow": "Investment",
+    "title": "How investment works",
+    "monthly": {
+      "title": "Monthly packages",
+      "desc": "I work with monthly session packages at a fixed price. They help with financial planning and maintain the regularity that makes all the difference in the therapeutic process."
+    },
+    "international": {
+      "title": "International care",
+      "desc": "If you live outside Brazil, payment can be made in USD, EUR or BRL."
+    },
+    "social": {
+      "title": "Social rates",
+      "desc": "I believe access to mental health is a right. That's why I reserve slots with differentiated conditions for people in socioeconomic vulnerability."
+    },
+    "cta": "I want to know more about investment"
+  },
+  "socialValues": {
+    "eyebrow": "Social rates",
+    "title": "Accessible psychotherapy",
+    "p1": "I believe access to mental health is a right. That's why I offer slots with differentiated rates for people in socioeconomic vulnerability.",
+    "p2": "If you are facing financial difficulties and need psychological support, get in touch so we can talk about your situation.",
+    "cta": "I want to talk about social rates"
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "What my patients say",
+    "subtitle": "Real testimonials from people who transformed their lives through therapy",
+    "verified": "Verified consultation",
+    "seeAll": "See all on Doctoralia"
+  },
+  "faq": {
+    "eyebrow": "Frequently Asked",
+    "title": "Frequently Asked Questions",
+    "cta": "I still have questions about the process",
+    "items": [
+      {
+        "q": "What therapeutic approach do you use?",
+        "a": "I work with Contextual Cognitive-Behavioral Therapies (CBT, Schema Therapy and Acceptance and Commitment Therapy - ACT), offering personalized care for each patient and demand."
+      },
+      {
+        "q": "Do you accept health insurance?",
+        "a": "Currently care is private. After each session, I issue a receipt so you can request reimbursement from your health plan, if it offers that option."
+      },
+      {
+        "q": "How does online psychotherapy work?",
+        "a": "Sessions take place via video call, lasting 50 minutes. You only need a device with a camera, stable internet and a private environment. It's as effective as in-person therapy."
+      },
+      {
+        "q": "How does in-person psychotherapy work?",
+        "a": "Sessions take place at Avenida Portugal, 397 in Santo André, ABC Paulista region, lasting 50 minutes. Several parking lots nearby."
+      },
+      {
+        "q": "How does the therapeutic process work?",
+        "a": "Goals are defined based on your demand. Sessions are weekly or biweekly, 50 minutes each, with total privacy and confidentiality. You not only talk about problems but also learn techniques to deal with them daily. We track your evolution, adjusting whatever is needed."
+      },
+      {
+        "q": "Can I do therapy living outside Brazil?",
+        "a": "Yes! I serve Brazilians anywhere in the world. I also have personal experience with immigration and understand the emotional challenges of this process."
+      },
+      {
+        "q": "How do I book my first session?",
+        "a": "You can book directly through Doctoralia, WhatsApp or by filling out the contact form on this site. I'll reply as soon as possible!"
+      },
+      {
+        "q": "What ages do you serve?",
+        "a": "Adolescents from age 16, adults and couples."
+      }
+    ]
+  },
+  "footer": {
+    "role": "Clinical Psychologist",
+    "address": "Av. Portugal, 397 - Santo André/SP",
+    "navTitle": "Navigation",
+    "contactTitle": "Contact",
+    "scheduleTitle": "Book",
+    "schedulePrompt": "Ready to take the first step?",
+    "schedule": "Book a Session",
+    "rights": "All rights reserved."
+  }
+}

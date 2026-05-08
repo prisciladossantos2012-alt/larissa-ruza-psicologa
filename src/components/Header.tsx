@@ -1,16 +1,19 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   const navLinks = [
-    { label: "Início", href: "#inicio" },
-    { label: "Sobre", href: "#sobre" },
-    { label: "Especialidades", href: "#especialidades" },
-    { label: "Serviços", href: "#servicos" },
-    { label: "Depoimentos", href: "#depoimentos" },
-    { label: "Contato", href: "#contato" },
+    { label: t("header.home"), href: "#inicio" },
+    { label: t("header.about"), href: "#sobre" },
+    { label: t("header.specialties"), href: "#especialidades" },
+    { label: t("header.services"), href: "#servicos" },
+    { label: t("header.testimonials"), href: "#depoimentos" },
+    { label: t("header.contact"), href: "#contato" },
   ];
 
   return (
@@ -42,11 +45,12 @@ const Header = () => {
 
           {/* CTA */}
           <div className="flex items-center gap-3">
+            <LanguageSwitcher />
             <a
               href="/agendar"
               className="hidden sm:inline-flex items-center bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium rounded-lg hover:bg-primary/90 transition-all duration-300"
             >
-              Agendar Sessão
+              {t("header.schedule")}
             </a>
             
             {/* Mobile menu button */}
@@ -78,7 +82,7 @@ const Header = () => {
                 href="/agendar"
                 className="sm:hidden inline-flex items-center justify-center bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium rounded-lg mt-2"
               >
-                Agendar Sessão
+                {t("header.schedule")}
               </a>
             </nav>
           </div>

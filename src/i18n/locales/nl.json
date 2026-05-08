@@ -1,0 +1,198 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "Over mij",
+    "specialties": "Specialiteiten",
+    "services": "Diensten",
+    "testimonials": "Getuigenissen",
+    "contact": "Contact",
+    "schedule": "Sessie boeken",
+    "language": "Taal"
+  },
+  "hero": {
+    "rating": "5.0 beoordeling op Doctoralia",
+    "role": "Klinisch Psycholoog",
+    "title": "Een veilige ruimte om voor te zorgen wat niet langer kan wachten.",
+    "subtitle": "Online en persoonlijke psychotherapie gespecialiseerd in angst, OCS, gedragscompulsies, persoonlijkheidsstoornissen en trauma. Op bewijs gebaseerde benaderingen om diepe emotionele patronen te begrijpen en echte verandering op te bouwen.",
+    "trust": {
+      "online": "Online en op locatie in Santo André",
+      "couples": "Volwassenen en Stellen",
+      "crp": "CRP 06/157739",
+      "audience": "Volwassenen en stellen"
+    },
+    "primaryCta": "Ik wil begrijpen hoe therapie mij kan helpen",
+    "secondaryCta": "Maak kennis met de psycholoog",
+    "abroadCta": "Ik woon buiten Brazilië"
+  },
+  "exteriorBanner": {
+    "badge": "Brazilianen in het buitenland",
+    "title": "Woon je buiten Brazilië?",
+    "text": "Online sessies in het Portugees, in elke tijdzone, betaling in USD, EUR of BRL.",
+    "cta": "Bekijk internationale zorg"
+  },
+  "socialProof": {
+    "flexible": "Flexibele uren",
+    "flexibleLabel": "Ochtend, middag en avond",
+    "online": "Online",
+    "onlineLabel": "Brazilië en buitenland",
+    "inPerson": "Op locatie",
+    "inPersonLabel": "Santo André/SP",
+    "rating": "5.0",
+    "ratingLabel": "Doctoralia-score"
+  },
+  "about": {
+    "eyebrow": "Over mij",
+    "title": "Hallo, ik ben",
+    "name": "Lari Ruza",
+    "p1Pre": "Psycholoog die in verschillende delen van de wereld heeft gewoond en geleerd: Brazilië, Spanje en Ierland. Dit traject verdiept mijn besef van de ",
+    "p1Strong": "mogelijkheden die met elke nieuwe stap ontstaan",
+    "p1Post": ".",
+    "p2Pre": "Ik ben gespecialiseerd in ",
+    "p2Strong": "angst, trauma, OCS, persoonlijkheidsstoornissen en relatietherapie",
+    "p2Post": ".",
+    "formationTitle": "Opleiding:",
+    "f1": "Schematherapie — Wainer Cognitieve Psychologie en NJ/NYC Schema Therapy Institute",
+    "f2": "Postgraduaat in Contextuele Therapieën — PUC-PR",
+    "f3": "Opleiding in Cognitieve Gedragstherapie (Artmed)",
+    "p3Pre": "Naast de praktijk werk ik met ",
+    "p3Strong": "loopbaanmentoring en psychologische begeleiding",
+    "p3Post": " voor huidige en toekomstige Braziliaanse migranten. Meer dan 8 jaar ervaring in loopbaantransities, landwijzigingen en de emotionele uitdagingen van nieuwe beginnen.",
+    "acbsMember": "ACBS-lid",
+    "acbsName": "Association for Contextual Behavioral Science",
+    "cta": "Ik wil boeken"
+  },
+  "therapyFor": {
+    "eyebrow": "Specialiteiten",
+    "title": "Specialiteiten in psychotherapie",
+    "subtitle": "Herken je je in een van deze situaties? Therapie kan helpen.",
+    "cta": "Dit klinkt als ik",
+    "items": {
+      "anxiety": {
+        "title": "Angst en stress",
+        "desc": "Angstaanvallen, paniek, overmatige zorgen en aanhoudende stress."
+      },
+      "personality": {
+        "title": "Persoonlijkheidsstoornissen",
+        "desc": "Emotionele instabiliteit, verlatingsangst, aanhoudende emotionele en relationele patronen die lijden en relatieproblemen veroorzaken."
+      },
+      "selfEsteem": {
+        "title": "Zelfwaardering en emotionele afhankelijkheid",
+        "desc": "Zelfkennis, eigenwaarde en gezondere relaties."
+      },
+      "compulsions": {
+        "title": "Verslavingen en compulsies",
+        "desc": "Gedragscompulsies, dwangmatig gedrag, verslavingen en repetitief gedrag zoals winkelen, gokken, overmatig internetgebruik, emotioneel eten en seksualiteitgerelateerde dwang."
+      },
+      "transitions": {
+        "title": "Veranderingen en overgangen",
+        "desc": "Loopbaan, migratie, rouw en nieuwe beginnen die emotionele steun nodig hebben."
+      },
+      "selfKnowledge": {
+        "title": "Zelfkennis",
+        "desc": "Persoonlijke waarden, levenszin en keuzes."
+      },
+      "couples": {
+        "title": "Relatietherapie",
+        "desc": "Versterking van de band tussen partners."
+      }
+    }
+  },
+  "services": {
+    "eyebrow": "Hoe de sessies werken",
+    "title": "Hoe ik je kan helpen",
+    "s1": {
+      "title": "Online en persoonlijke psychotherapie",
+      "desc": "Online zorg voor Brazilianen wereldwijd en op locatie in Santo André (Av. Portugal, 397). Sessies van 50 minuten."
+    },
+    "s2": {
+      "title": "Op bewijs gebaseerde benaderingen",
+      "desc": "Wetenschappelijk onderbouwde benaderingen en technieken (CGT, Schematherapie, ACT, ERP) afgestemd op jouw realiteit."
+    },
+    "s3": {
+      "title": "Loopbaanmentoring",
+      "desc": "Professionele begeleiding voor wie helderheid en richting in zijn loopbaan zoekt."
+    },
+    "associations": "Lid van de volgende verenigingen:",
+    "cta": "Ik wil boeken"
+  },
+  "investment": {
+    "eyebrow": "Investering",
+    "title": "Hoe de investering werkt",
+    "monthly": {
+      "title": "Maandpakketten",
+      "desc": "Ik werk met maandelijkse sessiepakketten tegen vaste prijs. Ze vergemakkelijken financiële planning en behouden de regelmaat — die het verschil maakt in het therapeutische proces."
+    },
+    "international": {
+      "title": "Internationale zorg",
+      "desc": "Woon je buiten Brazilië, dan kan betaling in USD, EUR of BRL."
+    },
+    "social": {
+      "title": "Sociale tarieven",
+      "desc": "Ik geloof dat toegang tot geestelijke gezondheid een recht is. Daarom reserveer ik plekken met aangepaste voorwaarden voor mensen in sociaaleconomisch kwetsbare situaties."
+    },
+    "cta": "Ik wil meer weten over de investering"
+  },
+  "socialValues": {
+    "eyebrow": "Sociale tarieven",
+    "title": "Toegankelijke psychotherapie",
+    "p1": "Ik geloof dat toegang tot geestelijke gezondheid een recht is. Daarom bied ik plekken met aangepaste tarieven voor mensen in sociaaleconomisch kwetsbare situaties.",
+    "p2": "Heb je financiële moeilijkheden en psychologische ondersteuning nodig? Neem contact op om je situatie te bespreken.",
+    "cta": "Ik wil over sociale tarieven praten"
+  },
+  "testimonials": {
+    "eyebrow": "Getuigenissen",
+    "title": "Wat mijn patiënten zeggen",
+    "subtitle": "Echte verhalen van mensen die hun leven door therapie hebben veranderd",
+    "verified": "Geverifieerde consultatie",
+    "seeAll": "Bekijk alles op Doctoralia"
+  },
+  "faq": {
+    "eyebrow": "Veelgestelde Vragen",
+    "title": "Veelgestelde Vragen",
+    "cta": "Ik heb nog vragen over het proces",
+    "items": [
+      {
+        "q": "Welke therapeutische benadering gebruik je?",
+        "a": "Ik werk met Contextuele Cognitieve Gedragstherapieën (CGT, Schematherapie en Acceptance and Commitment Therapy - ACT) en bied persoonlijke zorg voor elke patiënt en vraag."
+      },
+      {
+        "q": "Werk je met zorgverzekeringen?",
+        "a": "Momenteel is de zorg privé. Na elke sessie stuur ik een factuur zodat je vergoeding kunt aanvragen bij je zorgverzekeraar, als die dit aanbiedt."
+      },
+      {
+        "q": "Hoe werkt online psychotherapie?",
+        "a": "Sessies vinden plaats via videogesprek, 50 minuten. Je hebt alleen een apparaat met camera, stabiel internet en een privéomgeving nodig. Het is net zo effectief als therapie op locatie."
+      },
+      {
+        "q": "Hoe werkt psychotherapie op locatie?",
+        "a": "De sessies zijn op Avenida Portugal, 397 in Santo André, regio ABC Paulista, 50 minuten. Diverse parkings dichtbij."
+      },
+      {
+        "q": "Hoe werkt het therapeutische proces?",
+        "a": "Doelen worden gesteld op basis van jouw vraag. Sessies wekelijks of tweewekelijks, 50 minuten, met volledige privacy en vertrouwelijkheid. Je praat niet alleen over problemen maar leert ook technieken voor in het dagelijks leven. We volgen je voortgang en stellen bij waar nodig."
+      },
+      {
+        "q": "Kan ik therapie doen als ik buiten Brazilië woon?",
+        "a": "Ja! Ik begeleid Brazilianen overal ter wereld. Ik heb zelf migratie-ervaring en begrijp de emotionele uitdagingen van dit proces."
+      },
+      {
+        "q": "Hoe boek ik mijn eerste sessie?",
+        "a": "Je kunt direct boeken via Doctoralia, WhatsApp of het contactformulier op de site. Ik reageer zo snel mogelijk!"
+      },
+      {
+        "q": "Welke leeftijden begeleid je?",
+        "a": "Jongeren vanaf 16 jaar, volwassenen en stellen."
+      }
+    ]
+  },
+  "footer": {
+    "role": "Klinisch Psycholoog",
+    "address": "Av. Portugal, 397 - Santo André/SP",
+    "navTitle": "Navigatie",
+    "contactTitle": "Contact",
+    "scheduleTitle": "Boeken",
+    "schedulePrompt": "Klaar voor de eerste stap?",
+    "schedule": "Sessie boeken",
+    "rights": "Alle rechten voorbehouden."
+  }
+}

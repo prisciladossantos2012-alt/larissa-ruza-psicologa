@@ -1,13 +1,14 @@
 import { Clock, Globe, Award, MapPin } from "lucide-react";
-
-const stats = [
-  { icon: Clock, value: "Horários flexíveis", label: "Manhã, tarde e noite" },
-  { icon: Globe, value: "Online", label: "Brasil e exterior" },
-  { icon: MapPin, value: "Presencial", label: "Santo André/SP" },
-  { icon: Award, value: "5.0", label: "Nota no Doctoralia" },
-];
+import { useTranslation } from "react-i18next";
 
 const SocialProof = () => {
+  const { t } = useTranslation();
+  const stats = [
+    { icon: Clock, value: t("socialProof.flexible"), label: t("socialProof.flexibleLabel") },
+    { icon: Globe, value: t("socialProof.online"), label: t("socialProof.onlineLabel") },
+    { icon: MapPin, value: t("socialProof.inPerson"), label: t("socialProof.inPersonLabel") },
+    { icon: Award, value: t("socialProof.rating"), label: t("socialProof.ratingLabel") },
+  ];
   return (
     <section className="bg-primary py-8 sm:py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
