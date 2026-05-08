@@ -61,7 +61,7 @@ const Investment = () => {
           <div className="text-center">
             <button
               onClick={handleCta}
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 cursor-pointer uppercase"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 cursor-pointer"
             >
               {t("investment.cta")}
             </button>

@@ -87,7 +87,7 @@ const About = () => {
 
             <button
               onClick={handleCta}
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 mt-8 cursor-pointer uppercase"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 mt-8 cursor-pointer"
             >
               {t("about.cta")}
             </button>

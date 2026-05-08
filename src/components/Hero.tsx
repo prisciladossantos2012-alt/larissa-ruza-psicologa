@@ -74,22 +74,16 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 pb-12 sm:pb-0 opacity-0 animate-fade-in" style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}>
             <button
               onClick={handlePrimaryCta}
-              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 text-base font-medium rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-lg cursor-pointer uppercase"
+              className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-4 text-base font-medium rounded-lg hover:bg-primary/90 transition-all duration-300 shadow-lg cursor-pointer"
             >
               {t("hero.primaryCta")}
             </button>
             <button
               onClick={handleSecondaryCta}
-              className="inline-flex items-center justify-center border-2 border-white/50 text-white px-8 py-4 text-base font-light rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer uppercase"
+              className="inline-flex items-center justify-center border-2 border-white/50 text-white px-8 py-4 text-base font-light rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
             >
               {t("hero.secondaryCta")}
             </button>
-            <a
-              href="/brasileiros-no-exterior"
-              className="inline-flex items-center justify-center border-2 border-white/30 text-white/90 px-8 py-4 text-base font-light rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer uppercase"
-            >
-              {t("hero.abroadCta")}
-            </a>
           </div>
         </div>
       </div>

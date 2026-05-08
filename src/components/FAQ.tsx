@@ -52,7 +52,7 @@ const FAQ = () => {
           <div className="text-center mt-12">
             <button
               onClick={handleCta}
-              className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer uppercase"
+              className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer"
             >
               {t("faq.cta")}
             </button>
