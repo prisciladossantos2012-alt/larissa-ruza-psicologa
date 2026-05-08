@@ -34,7 +34,7 @@ const BrasileirosExterior = () => {
               </p>
               <a
                 href="/agendar"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg text-base font-medium hover:bg-primary/90 transition-all duration-300 uppercase"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg text-base font-medium hover:bg-primary/90 transition-all duration-300"
               >
                 Agendar Minha Sessão
                 <ArrowRight className="w-4 h-4" />
@@ -124,7 +124,7 @@ const BrasileirosExterior = () => {
 
               <a
                 href="/agendar"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg text-base font-medium hover:bg-primary/90 transition-all duration-300 mt-12 uppercase"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg text-base font-medium hover:bg-primary/90 transition-all duration-300 mt-12"
               >
                 Quero Começar Minha Terapia
                 <ArrowRight className="w-4 h-4" />
