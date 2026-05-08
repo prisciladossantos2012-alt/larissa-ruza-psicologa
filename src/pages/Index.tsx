@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import ExteriorBanner from "@/components/ExteriorBanner";
 import SocialProof from "@/components/SocialProof";
 import About from "@/components/About";
 import TherapyFor from "@/components/TherapyFor";
@@ -18,6 +19,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <ExteriorBanner />
         <SocialProof />
         <About />
         <TherapyFor />
