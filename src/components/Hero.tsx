@@ -80,7 +80,7 @@ const Hero = () => {
               onClick={handleSecondaryCta}
               className="inline-flex items-center justify-center border-2 border-white/50 text-white px-8 py-4 text-base font-light rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
             >
-              Ver como funcionam as sessões
+              Conheça a Psicóloga
             </button>
           </div>
         </div>
