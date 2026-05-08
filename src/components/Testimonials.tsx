@@ -1,5 +1,6 @@
 import { Star } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useTranslation } from "react-i18next";
 import {
   Carousel,
   CarouselContent,
@@ -117,6 +118,7 @@ const testimonials = [
 
 
 const Testimonials = () => {
+  const { t } = useTranslation();
   const { ref: sectionRef, inView: sectionVisible } = useScrollAnimation();
   const { ref: titleRef, inView: titleVisible } = useScrollAnimation();
 
@@ -135,12 +137,10 @@ const Testimonials = () => {
           titleVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`
           }>
 
-          <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">Depoimentos</p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground mb-4">O que dizem meus pacientes
-
-          </h2>
+          <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">{t("testimonials.eyebrow")}</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground mb-4">{t("testimonials.title")}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light">
-            Depoimentos reais de quem transformou sua vida através da terapia
+            {t("testimonials.subtitle")}
           </p>
         </div>
 
@@ -162,7 +162,7 @@ const Testimonials = () => {
                   </p>
                   <div className="border-t border-border pt-3">
                     <p className="font-medium text-primary text-sm">{testimonial.name}</p>
-                    <p className="text-xs text-muted-foreground">{testimonial.location} • Consulta verificada</p>
+                    <p className="text-xs text-muted-foreground">{testimonial.location} • {t("testimonials.verified")}</p>
                   </div>
                 </div>
               </CarouselItem>
@@ -183,7 +183,7 @@ const Testimonials = () => {
               )}
             </div>
             <span className="text-foreground font-medium text-sm">5.0</span>
-            <span className="text-muted-foreground text-sm">• Ver todos no Doctoralia</span>
+            <span className="text-muted-foreground text-sm">• {t("testimonials.seeAll")}</span>
           </a>
         </div>
       </div>

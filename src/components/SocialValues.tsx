@@ -1,14 +1,16 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { trackAndRedirectWhatsApp } from "@/lib/analytics";
 import { Heart } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const SocialValues = () => {
+  const { t } = useTranslation();
   const { ref: titleRef, inView: titleInView } = useScrollAnimation();
 
   const handleCta = () => {
     trackAndRedirectWhatsApp(
       "valores_sociais_cta_click",
-      "Quero conversar sobre valores sociais",
+      t("socialValues.cta"),
       "Olá, Larissa. Vi que você trabalha com valores sociais e gostaria de conversar sobre minha situação."
     );
   };
@@ -21,23 +23,23 @@ const SocialValues = () => {
             <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-6">
               <Heart className="w-7 h-7 text-primary" strokeWidth={1.5} />
             </div>
-            <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">Valores sociais</p>
+            <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">{t("socialValues.eyebrow")}</p>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground mb-6">
-              Psicoterapia acessível
+              {t("socialValues.title")}
             </h2>
             <p className="text-muted-foreground text-base font-light leading-relaxed mb-4">
-              Acredito que o acesso à saúde mental é um direito. Por isso, disponibilizo vagas com valores diferenciados para pessoas em situação de vulnerabilidade socioeconômica.
+              {t("socialValues.p1")}
             </p>
             <p className="text-muted-foreground text-base font-light leading-relaxed mb-10">
-              Se você está passando por dificuldades financeiras e precisa de acompanhamento psicológico, entre em contato para conversarmos sobre sua situação.
+              {t("socialValues.p2")}
             </p>
           </div>
 
           <button
             onClick={handleCta}
-            className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer"
+            className="inline-flex items-center gap-2 border-2 border-primary text-primary px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-pointer uppercase"
           >
-            Quero conversar sobre valores sociais
+            {t("socialValues.cta")}
           </button>
         </div>
       </div>

@@ -1,6 +1,16 @@
 import { Instagram, Mail, Phone } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+  const links = [
+    { label: t("header.home"), href: "#inicio" },
+    { label: t("header.about"), href: "#sobre" },
+    { label: t("header.specialties"), href: "#especialidades" },
+    { label: t("header.services"), href: "#servicos" },
+    { label: t("header.testimonials"), href: "#depoimentos" },
+    { label: t("header.contact"), href: "#contato" },
+  ];
   return (
     <footer className="bg-foreground text-background py-12 sm:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,18 +24,18 @@ const Footer = () => {
               </div>
               <p className="text-sm text-background/60 font-light">
                 CRP 06/157739<br />
-                Psicóloga Clínica<br />
-                Av. Portugal, 397 - Santo André/SP
+                {t("footer.role")}<br />
+                {t("footer.address")}
               </p>
             </div>
 
             {/* Links */}
             <div>
-              <h4 className="text-sm font-medium mb-4 uppercase tracking-wider">Navegação</h4>
+              <h4 className="text-sm font-medium mb-4 uppercase tracking-wider">{t("footer.navTitle")}</h4>
               <nav className="flex flex-col gap-2">
-                {["Início", "Sobre", "Especialidades", "Serviços", "Depoimentos", "Contato"].map((link) => (
-                  <a key={link} href={`#${link.toLowerCase()}`} className="text-sm text-background/60 hover:text-background transition-colors font-light">
-                    {link}
+                {links.map((link) => (
+                  <a key={link.href} href={link.href} className="text-sm text-background/60 hover:text-background transition-colors font-light">
+                    {link.label}
                   </a>
                 ))}
               </nav>
@@ -33,7 +43,7 @@ const Footer = () => {
 
             {/* Contact */}
             <div>
-              <h4 className="text-sm font-medium mb-4 uppercase tracking-wider">Contato</h4>
+              <h4 className="text-sm font-medium mb-4 uppercase tracking-wider">{t("footer.contactTitle")}</h4>
               <div className="flex flex-col gap-3">
                 <a href="tel:+5511930202069" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors font-light">
                   <Phone className="w-4 h-4" /> +55 (11) 93020-2069
@@ -49,22 +59,22 @@ const Footer = () => {
 
             {/* CTA */}
             <div>
-              <h4 className="text-sm font-medium mb-4 uppercase tracking-wider">Agendar</h4>
+              <h4 className="text-sm font-medium mb-4 uppercase tracking-wider">{t("footer.scheduleTitle")}</h4>
               <p className="text-sm text-background/60 font-light mb-4">
-                Pronta para dar o primeiro passo?
+                {t("footer.schedulePrompt")}
               </p>
               <a
                 href="/agendar"
                 className="inline-flex items-center bg-primary text-primary-foreground px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all"
               >
-                Agendar Sessão
+                {t("footer.schedule")}
               </a>
             </div>
           </div>
 
           <div className="border-t border-background/10 pt-6 text-center">
             <p className="text-xs text-background/40 font-light">
-              © {new Date().getFullYear()} Larissa Ruza Psicologia. Todos os direitos reservados.
+              © {new Date().getFullYear()} Larissa Ruza Psicologia. {t("footer.rights")}
             </p>
           </div>
         </div>
