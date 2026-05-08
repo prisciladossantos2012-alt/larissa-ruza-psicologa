@@ -27,8 +27,8 @@ const Services = () => {
   const handleCta = () => {
     trackAndRedirectWhatsApp(
       "funcionamento_cta_click",
-      "Quero verificar investimento e horários",
-      "Olá, Larissa. Gostaria de informações sobre investimento e disponibilidade para acompanhamento semanal."
+      "Quero agendar",
+      "Olá, Larissa. Gostaria de agendar uma sessão e saber sobre a disponibilidade de horários."
     );
   };
 
@@ -71,7 +71,7 @@ const Services = () => {
               onClick={handleCta}
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-lg text-sm font-medium hover:bg-primary/90 transition-all duration-300 cursor-pointer"
             >
-              Quero verificar investimento e horários
+              Quero agendar
             </button>
           </div>
         </div>
