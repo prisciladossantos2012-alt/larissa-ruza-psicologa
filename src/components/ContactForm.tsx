@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, Phone, Mail, Instagram, ArrowRight, MapPin, Loader2 } from "lucide-react";
+import { Calendar, Phone, Mail, Instagram, ArrowRight, Loader2 } from "lucide-react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
