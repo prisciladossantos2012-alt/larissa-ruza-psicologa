@@ -13,9 +13,9 @@
     "rating": "5.0 beoordeling op Doctoralia",
     "role": "Klinisch Psycholoog",
     "title": "Een veilige ruimte om voor te zorgen wat niet langer kan wachten.",
-    "subtitle": "Online en persoonlijke psychotherapie gespecialiseerd in angst, OCS, gedragscompulsies, persoonlijkheidsstoornissen en trauma. Op bewijs gebaseerde benaderingen om diepe emotionele patronen te begrijpen en echte verandering op te bouwen.",
+    "subtitle": "Online psychotherapie gespecialiseerd in angst, OCS, gedragscompulsies, persoonlijkheidsstoornissen en trauma. Op bewijs gebaseerde benaderingen om diepe emotionele patronen te begrijpen en echte verandering op te bouwen.",
     "trust": {
-      "online": "Online en op locatie in Santo André",
+      "online": "Online zorg",
       "couples": "Volwassenen en Stellen",
       "crp": "CRP 06/157739",
       "audience": "Volwassenen en stellen"
@@ -35,8 +35,6 @@
     "flexibleLabel": "Ochtend, middag en avond",
     "online": "Online",
     "onlineLabel": "Brazilië en buitenland",
-    "inPerson": "Op locatie",
-    "inPersonLabel": "Santo André/SP",
     "rating": "5.0",
     "ratingLabel": "Doctoralia-score"
   },
@@ -101,8 +99,8 @@
     "eyebrow": "Hoe de sessies werken",
     "title": "Hoe ik je kan helpen",
     "s1": {
-      "title": "Online en persoonlijke psychotherapie",
-      "desc": "Online zorg voor Brazilianen wereldwijd en op locatie in Santo André (Av. Portugal, 397). Sessies van 50 minuten."
+      "title": "Online psychotherapie",
+      "desc": "Online zorg voor Brazilianen wereldwijd. Sessies van 50 minuten."
     },
     "s2": {
       "title": "Op bewijs gebaseerde benaderingen",
@@ -161,11 +159,7 @@
       },
       {
         "q": "Hoe werkt online psychotherapie?",
-        "a": "Sessies vinden plaats via videogesprek, 50 minuten. Je hebt alleen een apparaat met camera, stabiel internet en een privéomgeving nodig. Het is net zo effectief als therapie op locatie."
-      },
-      {
-        "q": "Hoe werkt psychotherapie op locatie?",
-        "a": "De sessies zijn op Avenida Portugal, 397 in Santo André, regio ABC Paulista, 50 minuten. Diverse parkings dichtbij."
+        "a": "Sessies vinden plaats via videogesprek, 50 minuten. Je hebt alleen een apparaat met camera, stabiel internet en een privéomgeving nodig. Het is effectief en past bij jouw routine."
       },
       {
         "q": "Hoe werkt het therapeutische proces?",
@@ -187,7 +181,6 @@
   },
   "footer": {
     "role": "Klinisch Psycholoog",
-    "address": "Av. Portugal, 397 - Santo André/SP",
     "navTitle": "Navigatie",
     "contactTitle": "Contact",
     "scheduleTitle": "Boeken",
