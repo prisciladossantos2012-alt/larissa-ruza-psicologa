@@ -24,8 +24,7 @@ const Footer = () => {
               </div>
               <p className="text-sm text-background/60 font-light">
                 CRP 06/157739<br />
-                {t("footer.role")}<br />
-                {t("footer.address")}
+                {t("footer.role")}
               </p>
             </div>
 
