@@ -13,9 +13,9 @@
     "rating": "Nota 5.0 en Doctoralia",
     "role": "Psicóloga Clínica",
     "title": "Un espacio seguro para cuidar lo que ya no puede esperar.",
-    "subtitle": "Psicoterapia online y presencial especializada en ansiedad, TOC, compulsiones conductuales, trastornos de personalidad y traumas. Enfoques basados en evidencia para comprender patrones emocionales profundos y construir cambios reales.",
+    "subtitle": "Psicoterapia online especializada en ansiedad, TOC, compulsiones conductuales, trastornos de personalidad y traumas. Enfoques basados en evidencia para comprender patrones emocionales profundos y construir cambios reales.",
     "trust": {
-      "online": "Online y presencial en Santo André",
+      "online": "Atención online",
       "couples": "Adultos y Parejas",
       "crp": "CRP 06/157739",
       "audience": "Adultos y parejas"
@@ -35,8 +35,6 @@
     "flexibleLabel": "Mañana, tarde y noche",
     "online": "Online",
     "onlineLabel": "Brasil y exterior",
-    "inPerson": "Presencial",
-    "inPersonLabel": "Santo André/SP",
     "rating": "5.0",
     "ratingLabel": "Nota en Doctoralia"
   },
@@ -101,8 +99,8 @@
     "eyebrow": "Cómo funcionan las sesiones",
     "title": "Cómo puedo ayudarte",
     "s1": {
-      "title": "Psicoterapia Online y Presencial",
-      "desc": "Atención online para brasileños en todo el mundo y presencial en Santo André (Av. Portugal, 397). Sesiones de 50 minutos."
+      "title": "Psicoterapia Online",
+      "desc": "Atención online para brasileños en todo el mundo. Sesiones de 50 minutos."
     },
     "s2": {
       "title": "Enfoques basados en evidencia",
@@ -161,11 +159,7 @@
       },
       {
         "q": "¿Cómo funciona la psicoterapia online?",
-        "a": "Las sesiones son por videollamada, con duración de 50 minutos. Solo necesitas un dispositivo con cámara, internet estable y un ambiente privado. Es tan efectiva como la terapia presencial."
-      },
-      {
-        "q": "¿Cómo funciona la psicoterapia presencial?",
-        "a": "Las sesiones son en Avenida Portugal, 397 en Santo André, ABC Paulista, con duración de 50 minutos. Varios estacionamientos cerca."
+        "a": "Las sesiones son por videollamada, con duración de 50 minutos. Solo necesitas un dispositivo con cámara, internet estable y un ambiente privado. Es eficaz y se adapta a tu rutina."
       },
       {
         "q": "¿Cómo funciona el proceso terapéutico?",
@@ -187,7 +181,6 @@
   },
   "footer": {
     "role": "Psicóloga Clínica",
-    "address": "Av. Portugal, 397 - Santo André/SP",
     "navTitle": "Navegación",
     "contactTitle": "Contacto",
     "scheduleTitle": "Reservar",

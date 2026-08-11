@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, Phone, Mail, Instagram, ArrowRight, MapPin, Loader2 } from "lucide-react";
+import { Calendar, Phone, Mail, Instagram, ArrowRight, Loader2 } from "lucide-react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -127,9 +127,8 @@ const ContactForm = () => {
               <div className="grid gap-5">
                 {[
                 { icon: Calendar, label: "Agende pelo Doctoralia", href: "http://bit.ly/psilariruza" },
-                { icon: Phone, label: "+55 (11) 93020-2069", href: "https://wa.me/5511930202069" },
+                { icon: Phone, label: "+34 657 907 439", href: "https://wa.me/34657907439" },
                 { icon: Mail, label: "psilariruza@gmail.com", href: "mailto:psilariruza@gmail.com" },
-                { icon: MapPin, label: "Av. Portugal, 397 - Santo André/SP", href: "https://maps.google.com/?q=Av.+Portugal,+397+-+Santo+André,+SP" },
                 { icon: Instagram, label: "@lariruza.psi", href: "https://www.instagram.com/lariruza.psi" }].
                 map((item, i) =>
                 <div key={i} className="flex items-center gap-4">

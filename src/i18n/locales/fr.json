@@ -13,9 +13,9 @@
     "rating": "Note 5.0 sur Doctoralia",
     "role": "Psychologue Clinicienne",
     "title": "Un espace sûr pour prendre soin de ce qui ne peut plus attendre.",
-    "subtitle": "Psychothérapie en ligne et en cabinet spécialisée en anxiété, TOC, compulsions comportementales, troubles de la personnalité et traumatismes. Approches fondées sur des preuves pour comprendre les schémas émotionnels profonds et construire de vrais changements.",
+    "subtitle": "Psychothérapie en ligne spécialisée en anxiété, TOC, compulsions comportementales, troubles de la personnalité et traumatismes. Approches fondées sur des preuves pour comprendre les schémas émotionnels profonds et construire de vrais changements.",
     "trust": {
-      "online": "En ligne et en cabinet à Santo André",
+      "online": "Suivi en ligne",
       "couples": "Adultes et Couples",
       "crp": "CRP 06/157739",
       "audience": "Adultes et couples"
@@ -35,8 +35,6 @@
     "flexibleLabel": "Matin, après-midi et soir",
     "online": "En ligne",
     "onlineLabel": "Brésil et étranger",
-    "inPerson": "En cabinet",
-    "inPersonLabel": "Santo André/SP",
     "rating": "5.0",
     "ratingLabel": "Note Doctoralia"
   },
@@ -101,8 +99,8 @@
     "eyebrow": "Comment se déroulent les séances",
     "title": "Comment je peux vous aider",
     "s1": {
-      "title": "Psychothérapie en ligne et en cabinet",
-      "desc": "Suivi en ligne pour les Brésiliens du monde entier et en cabinet à Santo André (Av. Portugal, 397). Séances de 50 minutes."
+      "title": "Psychothérapie en ligne",
+      "desc": "Suivi en ligne pour les Brésiliens du monde entier. Séances de 50 minutes."
     },
     "s2": {
       "title": "Approches fondées sur des preuves",
@@ -161,11 +159,7 @@
       },
       {
         "q": "Comment se déroule la psychothérapie en ligne ?",
-        "a": "Les séances ont lieu par visioconférence, d'une durée de 50 minutes. Vous avez seulement besoin d'un appareil avec caméra, internet stable et un environnement privé. C'est aussi efficace que la thérapie en cabinet."
-      },
-      {
-        "q": "Comment se déroule la psychothérapie en cabinet ?",
-        "a": "Les séances ont lieu Avenida Portugal, 397 à Santo André, région ABC Paulista, durée de 50 minutes. Plusieurs parkings à proximité."
+        "a": "Les séances ont lieu par visioconférence, d'une durée de 50 minutes. Vous avez seulement besoin d'un appareil avec caméra, internet stable et un environnement privé. C'est efficace et adapté à votre rythme."
       },
       {
         "q": "Comment se déroule le processus thérapeutique ?",
@@ -187,7 +181,6 @@
   },
   "footer": {
     "role": "Psychologue Clinicienne",
-    "address": "Av. Portugal, 397 - Santo André/SP",
     "navTitle": "Navigation",
     "contactTitle": "Contact",
     "scheduleTitle": "Réserver",

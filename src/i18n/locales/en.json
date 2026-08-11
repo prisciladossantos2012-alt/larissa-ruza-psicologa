@@ -13,9 +13,9 @@
     "rating": "5.0 rating on Doctoralia",
     "role": "Clinical Psychologist",
     "title": "A safe space to take care of what can no longer be put off.",
-    "subtitle": "Online and in-person psychotherapy specialized in anxiety, OCD, behavioral compulsions, personality disorders and trauma. Evidence-based approaches to understand deep emotional patterns and build real change.",
+    "subtitle": "Online psychotherapy specialized in anxiety, OCD, behavioral compulsions, personality disorders and trauma. Evidence-based approaches to understand deep emotional patterns and build real change.",
     "trust": {
-      "online": "Online and in-person in Santo André",
+      "online": "Online sessions",
       "couples": "Adults and Couples",
       "crp": "CRP 06/157739",
       "audience": "Adults and couples"
@@ -35,8 +35,6 @@
     "flexibleLabel": "Morning, afternoon and evening",
     "online": "Online",
     "onlineLabel": "Brazil and abroad",
-    "inPerson": "In-person",
-    "inPersonLabel": "Santo André/SP",
     "rating": "5.0",
     "ratingLabel": "Doctoralia rating"
   },
@@ -101,8 +99,8 @@
     "eyebrow": "How sessions work",
     "title": "How I can help you",
     "s1": {
-      "title": "Online and In-Person Psychotherapy",
-      "desc": "Online care for Brazilians worldwide and in-person in Santo André (Av. Portugal, 397). 50-minute sessions."
+      "title": "Online Psychotherapy",
+      "desc": "Online care for Brazilians worldwide. 50-minute sessions."
     },
     "s2": {
       "title": "Evidence-based approaches",
@@ -161,11 +159,7 @@
       },
       {
         "q": "How does online psychotherapy work?",
-        "a": "Sessions take place via video call, lasting 50 minutes. You only need a device with a camera, stable internet and a private environment. It's as effective as in-person therapy."
-      },
-      {
-        "q": "How does in-person psychotherapy work?",
-        "a": "Sessions take place at Avenida Portugal, 397 in Santo André, ABC Paulista region, lasting 50 minutes. Several parking lots nearby."
+        "a": "Sessions take place via video call, lasting 50 minutes. You only need a device with a camera, stable internet and a private environment. It's effective and fits your routine."
       },
       {
         "q": "How does the therapeutic process work?",
@@ -187,7 +181,6 @@
   },
   "footer": {
     "role": "Clinical Psychologist",
-    "address": "Av. Portugal, 397 - Santo André/SP",
     "navTitle": "Navigation",
     "contactTitle": "Contact",
     "scheduleTitle": "Book",

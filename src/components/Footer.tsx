@@ -24,8 +24,7 @@ const Footer = () => {
               </div>
               <p className="text-sm text-background/60 font-light">
                 CRP 06/157739<br />
-                {t("footer.role")}<br />
-                {t("footer.address")}
+                {t("footer.role")}
               </p>
             </div>
 
@@ -45,8 +44,8 @@ const Footer = () => {
             <div>
               <h4 className="text-sm font-medium mb-4 uppercase tracking-wider">{t("footer.contactTitle")}</h4>
               <div className="flex flex-col gap-3">
-                <a href="tel:+5511930202069" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors font-light">
-                  <Phone className="w-4 h-4" /> +55 (11) 93020-2069
+                <a href="tel:+34657907439" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors font-light">
+                  <Phone className="w-4 h-4" /> +34 657 907 439
                 </a>
                 <a href="mailto:psilariruza@gmail.com" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors font-light">
                   <Mail className="w-4 h-4" /> psilariruza@gmail.com
