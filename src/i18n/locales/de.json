@@ -13,9 +13,9 @@
     "rating": "Bewertung 5.0 auf Doctoralia",
     "role": "Klinische Psychologin",
     "title": "Ein sicherer Raum, um das zu pflegen, was nicht länger warten kann.",
-    "subtitle": "Online- und Präsenz-Psychotherapie spezialisiert auf Angst, Zwangsstörungen, Verhaltenskompulsionen, Persönlichkeitsstörungen und Traumata. Evidenzbasierte Ansätze, um tiefe emotionale Muster zu verstehen und echten Wandel zu schaffen.",
+    "subtitle": "Online-Psychotherapie spezialisiert auf Angst, Zwangsstörungen, Verhaltenskompulsionen, Persönlichkeitsstörungen und Traumata. Evidenzbasierte Ansätze, um tiefe emotionale Muster zu verstehen und echten Wandel zu schaffen.",
     "trust": {
-      "online": "Online und vor Ort in Santo André",
+      "online": "Online-Betreuung",
       "couples": "Erwachsene und Paare",
       "crp": "CRP 06/157739",
       "audience": "Erwachsene und Paare"
@@ -35,8 +35,6 @@
     "flexibleLabel": "Morgens, nachmittags und abends",
     "online": "Online",
     "onlineLabel": "Brasilien und Ausland",
-    "inPerson": "Vor Ort",
-    "inPersonLabel": "Santo André/SP",
     "rating": "5.0",
     "ratingLabel": "Doctoralia-Bewertung"
   },
@@ -101,8 +99,8 @@
     "eyebrow": "Wie die Sitzungen ablaufen",
     "title": "Wie ich Ihnen helfen kann",
     "s1": {
-      "title": "Online- und Präsenz-Psychotherapie",
-      "desc": "Online-Betreuung für Brasilianer weltweit und vor Ort in Santo André (Av. Portugal, 397). Sitzungen von 50 Minuten."
+      "title": "Online-Psychotherapie",
+      "desc": "Online-Betreuung für Brasilianer weltweit. Sitzungen von 50 Minuten."
     },
     "s2": {
       "title": "Evidenzbasierte Ansätze",
@@ -161,11 +159,7 @@
       },
       {
         "q": "Wie funktioniert Online-Psychotherapie?",
-        "a": "Sitzungen finden per Videoanruf statt, 50 Minuten lang. Sie brauchen nur ein Gerät mit Kamera, stabiles Internet und eine private Umgebung. Sie ist genauso wirksam wie Präsenztherapie."
-      },
-      {
-        "q": "Wie funktioniert Präsenz-Psychotherapie?",
-        "a": "Die Sitzungen finden in Avenida Portugal, 397 in Santo André, Region ABC Paulista, statt, 50 Minuten lang. Mehrere Parkplätze in der Nähe."
+        "a": "Sitzungen finden per Videoanruf statt, 50 Minuten lang. Sie brauchen nur ein Gerät mit Kamera, stabiles Internet und eine private Umgebung. Sie ist wirksam und passt sich Ihrem Alltag an."
       },
       {
         "q": "Wie läuft der therapeutische Prozess ab?",
@@ -187,7 +181,6 @@
   },
   "footer": {
     "role": "Klinische Psychologin",
-    "address": "Av. Portugal, 397 - Santo André/SP",
     "navTitle": "Navigation",
     "contactTitle": "Kontakt",
     "scheduleTitle": "Buchen",
