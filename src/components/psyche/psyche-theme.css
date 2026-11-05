@@ -1,0 +1,122 @@
+/*
+ * "Psyché" theme, scoped to the home page.
+ * The components keep using the design-system tokens; this file only redefines
+ * those tokens for a lavender, glassy look that sits on top of the 3D building.
+ */
+.psyche-theme {
+  --background: 229 19% 41%;
+  --foreground: 240 30% 98%;
+  --card: 229 19% 41%;
+  --card-foreground: 240 30% 98%;
+  --popover: 229 24% 28%;
+  --popover-foreground: 240 30% 98%;
+  --primary: 0 0% 100%;
+  --primary-foreground: 230 26% 22%;
+  --secondary: 229 18% 52%;
+  --secondary-foreground: 240 30% 98%;
+  --muted: 229 18% 52%;
+  --muted-foreground: 234 45% 94%;
+  --accent: 229 18% 52%;
+  --accent-foreground: 240 30% 98%;
+  --border: 231 22% 66%;
+  --input: 231 22% 66%;
+  --ring: 38 70% 78%;
+  --warm: 38 74% 80%;
+
+  background: #666e98;
+  color: hsl(var(--foreground));
+  font-family: "Manrope", "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* headings: light grotesk with one italic serif word, like a quiet magazine */
+.psyche-theme h1,
+.psyche-theme h2 {
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+.psyche-theme h1 em,
+.psyche-theme h2 em {
+  font-family: "Instrument Serif", "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* surfaces become frosted glass over the scene */
+.psyche-theme .bg-background,
+.psyche-theme .bg-card,
+.psyche-theme .bg-muted,
+.psyche-theme .bg-secondary {
+  background-color: hsl(229 24% 34% / 0.34);
+  -webkit-backdrop-filter: blur(18px) saturate(115%);
+  backdrop-filter: blur(18px) saturate(115%);
+}
+.psyche-theme .bg-muted\/60 { background-color: transparent; }
+.psyche-theme .border-border { border-color: hsl(0 0% 100% / 0.22); }
+
+/* the fixed header turns into a glass bar */
+.psyche-theme header.bg-white\/95 {
+  background-color: hsl(229 24% 30% / 0.32);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow: none;
+  border-bottom: 1px solid hsl(0 0% 100% / 0.14);
+}
+
+/* the stats band is glass too, with light text */
+.psyche-theme section.bg-primary {
+  background-color: hsl(229 26% 26% / 0.42);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  --primary-foreground: 240 30% 98%;
+}
+
+/* white cards (Doctoralia, reviews, menus) stay paper-white with dark ink */
+.psyche-theme .bg-white,
+.psyche-theme .bg-white\/90 {
+  --foreground: 230 26% 20%;
+  --muted-foreground: 230 12% 40%;
+  --primary: 230 45% 36%;
+  --primary-foreground: 0 0% 100%;
+  --border: 230 15% 88%;
+  color: hsl(var(--foreground));
+}
+
+/* buttons that use the primary color become white pills */
+.psyche-theme a.bg-primary,
+.psyche-theme button.bg-primary {
+  border-radius: 999px;
+}
+
+/* form fields on glass */
+.psyche-theme input,
+.psyche-theme textarea {
+  background-color: hsl(0 0% 100% / 0.1);
+  color: hsl(var(--foreground));
+}
+.psyche-theme input::placeholder,
+.psyche-theme textarea::placeholder { color: hsl(var(--muted-foreground) / 0.8); }
+
+/* film grain over everything, like the reference */
+.psyche-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.09;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* keep running text legible wherever a bright wall sits behind it */
+.psyche-theme main p,
+.psyche-theme main li,
+.psyche-theme main h1,
+.psyche-theme main h2,
+.psyche-theme main h3 {
+  text-shadow: 0 1px 14px hsl(230 30% 22% / 0.45);
+}
+.psyche-theme main .bg-white p,
+.psyche-theme main .bg-white li,
+.psyche-theme main .bg-white h3 { text-shadow: none; }

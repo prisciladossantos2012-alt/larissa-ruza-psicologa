@@ -25,7 +25,7 @@ const Hero = () => {
       id="inicio"
       className="relative min-h-screen flex items-center text-white overflow-hidden pt-20"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0b1130]/80 via-[#0b1130]/30 to-transparent lg:to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#363d5e]/70 via-[#363d5e]/25 to-transparent pointer-events-none" />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
@@ -45,8 +45,8 @@ const Hero = () => {
           </p>
 
           {/* Headline */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
-            {t("hero.title")}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.05] mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}>
+            <span dangerouslySetInnerHTML={{ __html: t("mind.heroTitle", { defaultValue: t("hero.title") }) }} />
           </h1>
 
           {/* Subheadline */}
