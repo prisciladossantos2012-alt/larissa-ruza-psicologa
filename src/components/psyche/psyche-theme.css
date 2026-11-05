@@ -1,37 +1,34 @@
 /*
- * Home-page theme built from @lariruza.psi's Instagram:
- * terracotta + deep teal + midnight, cream paper, heavy lowercase sans with one
- * italic or hand-circled word, handwritten labels, typewriter notes, film grain.
+ * "Tarde em Sevilha" theme for the home page, built from @lariruza.psi's Instagram:
+ * a light, sunlit base (albero cream, lilac sky, aqua water) with terracotta and mustard
+ * only as accents; heavy lowercase sans with one italic, hand-circled word; handwritten
+ * labels; typewriter notes; cream paper cards; film grain.
  * Components keep using design-system tokens; this file only redefines them.
  */
 .psyche-theme {
-  /* text that sits directly on the 3D scene (teal dusk) */
-  --background: 186 45% 15%;
-  --foreground: 43 66% 88%;            /* cream #F3E7C3 */
-  --card: 40 33% 94%;
+  --background: 38 45% 94%;
+  --foreground: 233 33% 18%;           /* midnight ink #1F2340 */
+  --card: 40 50% 98%;
   --card-foreground: 233 33% 18%;
-  --popover: 40 33% 94%;
+  --popover: 40 50% 98%;
   --popover-foreground: 233 33% 18%;
-  --primary: 43 66% 88%;               /* cream pills, like her highlighted captions */
-  --primary-foreground: 233 33% 18%;   /* midnight ink */
-  --secondary: 186 40% 22%;
-  --secondary-foreground: 43 66% 88%;
-  --muted: 186 40% 22%;
-  --muted-foreground: 40 40% 84%;
-  --accent: 12 60% 47%;
-  --accent-foreground: 43 66% 92%;
-  --border: 43 40% 70%;
-  --input: 43 40% 70%;
+  --primary: 12 60% 47%;               /* terracotta #C24E30 */
+  --primary-foreground: 40 60% 97%;
+  --secondary: 38 35% 90%;
+  --secondary-foreground: 233 33% 18%;
+  --muted: 38 35% 90%;
+  --muted-foreground: 233 16% 32%;
+  --accent: 36 80% 57%;                /* mustard #E9A23B */
+  --accent-foreground: 233 33% 18%;
+  --border: 36 25% 80%;
+  --input: 36 25% 80%;
   --ring: 12 60% 55%;
 
-  --terracotta: 12 60% 47%;            /* #C24E30 */
-  --teal: 186 45% 22%;                 /* #1E5257 */
-  --midnight: 233 33% 18%;             /* #1F2340 */
-  --ochre: 36 80% 57%;                 /* #E9A23B */
-  --burgundy: 352 66% 33%;             /* #8C1D2A */
-  --paper: 40 33% 94%;                 /* #F3EFE7 */
+  --terracotta: 12 60% 47%;
+  --ochre: 36 80% 57%;
+  --paper: 40 50% 98%;
 
-  background: #17393d;
+  background: #eadfce;
   color: hsl(var(--foreground));
   font-family: "Inter Tight", "Inter", "Helvetica Neue", Arial, sans-serif;
 }
@@ -53,6 +50,7 @@
   position: relative;
   white-space: nowrap;
   margin: 0 0.16em 0 0.1em;
+  color: hsl(var(--terracotta));
 }
 /* the hand-drawn circle she puts around one word ("eu não sou…") */
 .psyche-theme h1 em::after {
@@ -60,7 +58,7 @@
   position: absolute;
   inset: -0.12em -0.2em -0.06em -0.16em;
   pointer-events: none;
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 80' preserveAspectRatio='none'><path d='M30 14 C80 -2 170 2 190 30 C205 58 140 76 85 74 C30 72 2 58 8 36 C13 20 40 10 70 8' fill='none' stroke='%23F3E7C3' stroke-width='3.2' stroke-linecap='round'/></svg>") no-repeat center / 100% 100%;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 80' preserveAspectRatio='none'><path d='M30 14 C80 -2 170 2 190 30 C205 58 140 76 85 74 C30 72 2 58 8 36 C13 20 40 10 70 8' fill='none' stroke='%23C24E30' stroke-width='3.2' stroke-linecap='round'/></svg>") no-repeat center / 100% 100%;
 }
 
 /* small uppercase eyebrows become handwritten notes */
@@ -68,10 +66,10 @@
   font-family: "Caveat", "Segoe Print", cursive;
   text-transform: none;
   letter-spacing: 0;
-  font-size: 1.6rem;
+  font-size: 1.65rem;
   line-height: 1;
   font-weight: 600;
-  color: hsl(var(--foreground));
+  color: hsl(var(--terracotta));
   text-decoration: underline;
   text-decoration-color: hsl(var(--ochre));
   text-decoration-thickness: 2px;
@@ -81,47 +79,32 @@
   display: inline-block;
 }
 
-/* surfaces become cream paper with midnight ink, with a little film grain */
+/* cards: cream paper with a soft lifted shadow */
 .psyche-theme .bg-background,
 .psyche-theme .bg-card,
-.psyche-theme .bg-muted,
-.psyche-theme .bg-secondary,
 .psyche-theme .bg-white,
 .psyche-theme .bg-white\/90 {
-  --foreground: 233 33% 18%;
-  --muted-foreground: 233 12% 38%;
-  --primary: 12 60% 47%;
-  --primary-foreground: 43 66% 94%;
-  --border: 36 20% 82%;
-  --input: 36 20% 82%;
-  --muted: 38 30% 88%;
-  background-color: hsl(var(--paper));
-  color: hsl(var(--foreground));
-  box-shadow: 0 18px 40px -22px rgb(10 25 28 / 0.6);
+  background-color: hsl(var(--paper) / 0.94);
+  box-shadow: 0 22px 44px -26px rgb(90 60 30 / 0.45);
 }
-/* cards nested in paper stay a shade darker, like a second sheet */
+.psyche-theme .bg-muted,
+.psyche-theme .bg-secondary { background-color: hsl(38 40% 92% / 0.92); }
 .psyche-theme .bg-background .bg-muted,
-.psyche-theme .bg-card .bg-muted { background-color: hsl(38 30% 88%); box-shadow: none; }
-.psyche-theme .bg-muted\/60 { background-color: transparent; }
+.psyche-theme .bg-card .bg-muted { background-color: hsl(38 35% 90%); box-shadow: none; }
+.psyche-theme .bg-muted\/60,
+.psyche-theme section.bg-muted { background-color: transparent; box-shadow: none; }
 
-/* the fixed header: midnight glass */
+/* header: warm paper glass */
 .psyche-theme header.bg-white\/95 {
-  --foreground: 43 66% 88%;
-  --muted-foreground: 40 40% 80%;
-  --primary: 43 66% 88%;
-  --primary-foreground: 233 33% 18%;
-  background-color: hsl(233 33% 14% / 0.86);
+  background-color: hsl(40 50% 96% / 0.82);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   box-shadow: none;
-  border-bottom: 1px solid hsl(43 66% 88% / 0.12);
+  border-bottom: 1px solid hsl(36 25% 80% / 0.7);
 }
 
 /* the stats band in her signature terracotta */
-.psyche-theme section.bg-primary {
-  background-color: hsl(var(--terracotta));
-  --primary-foreground: 43 66% 92%;
-}
+.psyche-theme section.bg-primary { background-color: hsl(var(--terracotta)); }
 
 /* buttons: rounded pills */
 .psyche-theme a.bg-primary,
@@ -129,34 +112,61 @@
 
 /* fields on paper */
 .psyche-theme input,
-.psyche-theme textarea {
-  background-color: #fffdf8;
-  color: hsl(233 33% 18%);
+.psyche-theme textarea { background-color: #fffdf8; color: hsl(var(--foreground)); }
+
+/* the hero was written for a dark photo: retint its white text to ink */
+.psyche-theme #inicio.text-white,
+.psyche-theme #inicio .text-white,
+.psyche-theme #inicio .text-white\/90,
+.psyche-theme #inicio .text-white\/85 { color: hsl(var(--foreground)); }
+.psyche-theme #inicio .text-white\/70 { color: hsl(var(--terracotta)); }
+.psyche-theme #inicio .border-white\/50 { border-color: hsl(var(--foreground) / 0.4); }
+.psyche-theme #inicio .bg-white\/15 { background-color: hsl(40 50% 98% / 0.75); }
+.psyche-theme #inicio .hover\:bg-white\/10:hover { background-color: hsl(var(--foreground) / 0.06); }
+.psyche-theme #inicio .text-green-400 { color: hsl(var(--terracotta)); }
+
+/* the About photo, framed like one of her collages: paper border and a strip of tape */
+.psyche-theme #sobre .relative:has(> img) {
+  padding: 12px 12px 44px;
+  background: #fffdf8;
+  border-radius: 6px;
+  transform: rotate(-1.5deg);
+  box-shadow: 0 28px 50px -28px rgb(90 60 30 / 0.55);
+}
+.psyche-theme #sobre .relative:has(> img) > img { border-radius: 3px; }
+.psyche-theme #sobre .relative:has(> img)::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 120px;
+  height: 30px;
+  transform: translateX(-50%) rotate(3deg);
+  background: hsl(36 80% 70% / 0.7);
+  z-index: 2;
 }
 
 /* the psyché caption reads like a typewriter note */
-.psyche-theme .psyche-note {
-  font-family: "Special Elite", "Courier New", monospace;
-}
+.psyche-theme .psyche-note { font-family: "Special Elite", "Courier New", monospace; }
 
-/* running text on the scene stays legible */
+/* running text over the scene keeps a soft paper halo */
 .psyche-theme main > div > section > div p,
 .psyche-theme main h1,
 .psyche-theme main h2 {
-  text-shadow: 0 1px 2px rgb(10 30 33 / 0.35), 0 2px 24px rgb(10 30 33 / 0.7);
+  text-shadow: 0 0 2px rgb(250 244 234 / 0.6), 0 0 22px rgb(250 244 234 / 0.95);
 }
 .psyche-theme main .bg-background *,
 .psyche-theme main .bg-card *,
-.psyche-theme main .bg-muted *,
-.psyche-theme main .bg-white * { text-shadow: none; }
+.psyche-theme main .bg-white *,
+.psyche-theme main section.bg-primary * { text-shadow: none; }
 
-/* film grain over everything, like her photos */
+/* film grain, like her photos */
 .psyche-grain {
   position: fixed;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.12;
-  mix-blend-mode: overlay;
+  opacity: 0.1;
+  mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }

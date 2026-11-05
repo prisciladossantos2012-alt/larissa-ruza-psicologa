@@ -1,4 +1,4 @@
-import lariPortrait from "@/assets/lari-about.png";
+import lariPortrait from "@/assets/lari-portrait-color.jpg";
 import servicesImage1 from "@/assets/services-image1.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { trackAndRedirectWhatsApp } from "@/lib/analytics";
@@ -28,7 +28,7 @@ const About = () => {
               <img
                 src={lariPortrait}
                 alt="Larissa Ruza - Psicóloga CRP 06/157739"
-                className="w-full h-auto object-cover rounded-2xl grayscale"
+                className="w-full h-auto object-cover rounded-2xl"
               />
               <div className="absolute bottom-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium shadow-lg">
                 CRP 06/157739
