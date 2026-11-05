@@ -9,13 +9,16 @@ import { breathBus, guidedBreath } from "@/components/mind/breath";
  * A quiet, surreal building the visitor walks through while scrolling.
  * Each [data-room="n"] section moves the camera to room n:
  * 0 the key in the niche · 1 the moon gate and the chair · 2 the corridor and the stairs
- * 3 the mirror · 4 the keyhole door · 5 the ensō · 6 sunrise.
+ * 3 the mirror · 4 the keyhole door · 5 the embroidered heart · 6 sunrise.
+ * Palette and objects come from @lariruza.psi: terracotta, ochre, deep teal, midnight,
+ * cream paper, the wooden chair, the engraved moth and the crochet heart.
  * Decorative only: aria-hidden, pointer-events none, never touches forms.
  */
 
-const FOG = new THREE.Color("#666e98");
-const WALL = new THREE.Color("#9da3c8");
-const WARM = new THREE.Color("#f4d6a2");
+const FOG = new THREE.Color("#17393d");
+const WALL = new THREE.Color("#a24d33");
+const OCHRE = new THREE.Color("#9c5f2b");
+const WARM = new THREE.Color("#f3e7c3");
 
 const ROOM_Z = [-6, -22, -38, -54, -70, -86, -102];
 type Stop = { pos: [number, number, number]; look: [number, number, number] };
@@ -61,16 +64,22 @@ function wingTexture() {
   g.bezierCurveTo(90, 256, 40, 190, 4, 128);
   g.closePath();
   const grad = g.createLinearGradient(0, 0, 256, 256);
-  grad.addColorStop(0, "#fbf8f2");
-  grad.addColorStop(1, "#e6e0d6");
+  grad.addColorStop(0, "#d9d4c8");
+  grad.addColorStop(1, "#9c968a");
   g.fillStyle = grad;
   g.fill();
-  g.lineWidth = 3; g.strokeStyle = "rgba(60,60,80,.55)"; g.stroke();
+  // engraving: veins and stipple, like the vintage moth in her posts
+  g.save(); g.clip();
+  g.strokeStyle = "rgba(40,36,30,.45)"; g.lineWidth = 1.2;
+  for (let k = 0; k < 14; k++) { const a = -1.2 + k * 0.18; g.beginPath(); g.moveTo(4, 128); g.quadraticCurveTo(90, 128 + Math.sin(a) * 60, 4 + Math.cos(a) * 250, 128 + Math.sin(a) * 140); g.stroke(); }
+  for (let k = 0; k < 900; k++) { g.fillStyle = `rgba(30,28,24,${Math.random() * 0.35})`; g.fillRect(Math.random() * 256, Math.random() * 256, 1.4, 1.4); }
+  g.restore();
+  g.lineWidth = 3; g.strokeStyle = "rgba(30,28,24,.7)"; g.stroke();
   // eyespots, like the Apollo butterfly in Larissa's photo
   const spot = (x: number, y: number, r: number) => {
     g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fillStyle = "#2c2c36"; g.fill();
-    g.beginPath(); g.arc(x, y, r * 0.62, 0, Math.PI * 2); g.fillStyle = "#c9573a"; g.fill();
-    g.beginPath(); g.arc(x, y, r * 0.22, 0, Math.PI * 2); g.fillStyle = "#fbf8f2"; g.fill();
+    g.beginPath(); g.arc(x, y, r * 0.62, 0, Math.PI * 2); g.fillStyle = "#d9d4c8"; g.fill();
+    g.beginPath(); g.arc(x, y, r * 0.3, 0, Math.PI * 2); g.fillStyle = "#2c2a26"; g.fill();
   };
   spot(150, 70, 17); spot(150, 196, 13);
   g.fillStyle = "rgba(44,44,54,.75)";
@@ -143,13 +152,13 @@ const PsycheScene = () => {
     renderer.setPixelRatio(DPR);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 0.9;
+    renderer.toneMappingExposure = 0.95;
     renderer.shadowMap.enabled = !small;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
     const scene = new THREE.Scene();
     scene.background = FOG.clone();
-    const fog = new THREE.FogExp2(FOG, 0.034);
+    const fog = new THREE.FogExp2(FOG, 0.03);
     scene.fog = fog;
     const pmrem = new THREE.PMREMGenerator(renderer);
     scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
@@ -158,8 +167,8 @@ const PsycheScene = () => {
     const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 200);
 
     // light: soft sky + a low warm sun that throws long shadows
-    scene.add(new THREE.HemisphereLight("#d0d4f0", "#3f4668", 1.0));
-    const sun = new THREE.DirectionalLight("#fff0da", 2.2);
+    scene.add(new THREE.HemisphereLight("#f6dcbc", "#0f2a2d", 0.85));
+    const sun = new THREE.DirectionalLight("#ffd3a1", 2.6);
     sun.position.set(-10, 14, 8);
     sun.castShadow = true;
     sun.shadow.mapSize.set(2048, 2048);
@@ -174,7 +183,8 @@ const PsycheScene = () => {
 
     const plaster = track(plasterTexture());
     const wallMat = track(new THREE.MeshStandardMaterial({ color: WALL, roughness: 0.96, metalness: 0, bumpMap: plaster, bumpScale: 0.6 }));
-    const darkMat = track(new THREE.MeshStandardMaterial({ color: "#26262e", roughness: 0.35, metalness: 0.75 }));
+    const ochreMat = track(new THREE.MeshStandardMaterial({ color: OCHRE, roughness: 0.95, metalness: 0, bumpMap: plaster, bumpScale: 0.6 }));
+    const darkMat = track(new THREE.MeshStandardMaterial({ color: "#1f2340", roughness: 0.35, metalness: 0.75 }));
     const warmMat = track(new THREE.MeshBasicMaterial({ color: WARM, fog: false }));
     const add = (m: THREE.Object3D) => { scene.add(m); return m; };
     const mesh = (g: THREE.BufferGeometry, m: THREE.Material, shadow = true) => {
@@ -189,12 +199,12 @@ const PsycheScene = () => {
     const floor = new Reflector(track(new THREE.PlaneGeometry(400, 400)), {
       textureWidth: Math.round(window.innerWidth * DPR * mirrorRes),
       textureHeight: Math.round(window.innerHeight * DPR * mirrorRes),
-      color: 0x9aa0c4,
+      color: 0x7fa6a4,
     });
     floor.rotation.x = -Math.PI / 2;
     floor.position.y = -0.001;
     add(floor);
-    const film = mesh(new THREE.PlaneGeometry(400, 400), track(new THREE.MeshStandardMaterial({ color: "#5d6690", transparent: true, opacity: 0.55, roughness: 0.25 })), false);
+    const film = mesh(new THREE.PlaneGeometry(400, 400), track(new THREE.MeshStandardMaterial({ color: "#1e5257", transparent: true, opacity: 0.6, roughness: 0.25 })), false);
     film.rotation.x = -Math.PI / 2;
     film.position.y = 0.002;
     add(film);
@@ -227,19 +237,23 @@ const PsycheScene = () => {
 
     // room 1 · the moon gate and the empty chair
     const r1 = new THREE.Group(); r1.position.z = ROOM_Z[1];
-    r1.add(mesh(wallWithHole(circlePath(0, 3.2, 3.0)), wallMat));
+    r1.add(mesh(wallWithHole(circlePath(0, 3.2, 3.0)), ochreMat));
     const chair = new THREE.Group();
-    const leather = track(new THREE.MeshStandardMaterial({ color: "#9a4b30", roughness: 0.5, metalness: 0.05 }));
-    const seat = mesh(new RoundedBoxGeometry(0.95, 0.1, 0.9, 4, 0.05), leather); seat.position.y = 0.92; chair.add(seat);
-    const back = mesh(new RoundedBoxGeometry(0.95, 0.95, 0.08, 4, 0.04), leather); back.position.set(0, 1.4, -0.42); back.rotation.x = -0.18; chair.add(back);
-    const legMat = track(new THREE.MeshStandardMaterial({ color: "#1d1d22", roughness: 0.4, metalness: 0.6 }));
-    for (const [x, z] of [[-0.4, 0.38], [0.4, 0.38], [-0.4, -0.38], [0.4, -0.38]]) {
-      const leg = mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.9, 8), legMat); leg.position.set(x, 0.45, z); chair.add(leg);
+    const wood = track(new THREE.MeshStandardMaterial({ color: "#6b3e22", roughness: 0.6, metalness: 0.02 }));
+    const seat = mesh(new RoundedBoxGeometry(0.9, 0.07, 0.8, 3, 0.03), wood); seat.position.y = 0.9; chair.add(seat);
+    for (const [x, z] of [[-0.4, 0.35], [0.4, 0.35]]) {
+      const leg = mesh(new THREE.CylinderGeometry(0.03, 0.025, 0.9, 10), wood); leg.position.set(x, 0.45, z); chair.add(leg);
     }
+    for (const x of [-0.4, 0.4]) {
+      const post = mesh(new THREE.CylinderGeometry(0.032, 0.025, 1.9, 10), wood); post.position.set(x, 0.95, -0.36); chair.add(post);
+    }
+    const rail = mesh(new RoundedBoxGeometry(0.92, 0.14, 0.05, 3, 0.02), wood); rail.position.set(0, 1.82, -0.36); chair.add(rail);
+    for (const y of [1.25, 1.5]) { const bar = mesh(new THREE.CylinderGeometry(0.016, 0.016, 0.8, 8), wood); bar.rotation.z = Math.PI / 2; bar.position.set(0, y, -0.36); chair.add(bar); }
+    const stretcher = mesh(new THREE.CylinderGeometry(0.016, 0.016, 0.8, 8), wood); stretcher.rotation.z = Math.PI / 2; stretcher.position.set(0, 0.3, 0); chair.add(stretcher);
     chair.position.set(1.4, 0, -3.2);
     chair.rotation.y = -0.55;
     r1.add(chair);
-    const pillar = mesh(new THREE.BoxGeometry(1.6, 9, 1.6), wallMat); pillar.position.set(-6.5, 4.5, -5); r1.add(pillar);
+    const pillar = mesh(new THREE.BoxGeometry(1.6, 9, 1.6), ochreMat); pillar.position.set(-6.5, 4.5, -5); r1.add(pillar);
     add(r1);
 
     // room 2 · a corridor of arches and a stair that keeps going up
@@ -261,7 +275,7 @@ const PsycheScene = () => {
 
     // room 3 · the mirror (self-reflection) and a moon on a plinth
     const r3 = new THREE.Group(); r3.position.z = ROOM_Z[3];
-    r3.add(mesh(wallWithHole(archPath(0, 5, 6)), wallMat));
+    r3.add(mesh(wallWithHole(archPath(0, 5, 6)), ochreMat));
     const mirrorFrame = mesh(new THREE.BoxGeometry(2.5, 4.3, 0.12), track(new THREE.MeshStandardMaterial({ color: "#3a2a22", roughness: 0.6 })));
     const glass = new Reflector(track(new THREE.PlaneGeometry(2.2, 4.0)), {
       textureWidth: Math.round(512 * (small ? 0.6 : 1)), textureHeight: Math.round(930 * (small ? 0.6 : 1)), color: 0xc4c8e2,
@@ -271,9 +285,9 @@ const PsycheScene = () => {
     mirror.position.set(2.8, 2.25, 5.0);
     mirror.rotation.y = -0.55;
     r3.add(mirror);
-    const plinth = mesh(new THREE.BoxGeometry(1.1, 1.3, 1.1), track(new THREE.MeshStandardMaterial({ color: "#2b2c35", roughness: 0.5 })));
+    const plinth = mesh(new THREE.BoxGeometry(1.1, 1.3, 1.1), track(new THREE.MeshStandardMaterial({ color: "#1f2340", roughness: 0.5 })));
     plinth.position.set(-2.8, 0.65, 4.2);
-    const moon = mesh(new THREE.SphereGeometry(0.55, 48, 32), track(new THREE.MeshStandardMaterial({ color: "#efe9df", roughness: 0.55, emissive: "#3a3550", emissiveIntensity: 0.4 })));
+    const moon = mesh(new THREE.SphereGeometry(0.55, 48, 32), track(new THREE.MeshStandardMaterial({ color: "#f3e7c3", roughness: 0.55, emissive: "#3a2a1a", emissiveIntensity: 0.35 })));
     moon.position.set(-2.8, 1.85, 4.2);
     r3.add(plinth, moon);
     add(r3);
@@ -287,19 +301,36 @@ const PsycheScene = () => {
 
     // room 5 · an ensō: one open circle standing in the water
     const r5 = new THREE.Group(); r5.position.z = ROOM_Z[5];
-    r5.add(mesh(wallWithHole(archPath(0, 6, 7)), wallMat));
-    const enso = mesh(new THREE.TorusGeometry(2.1, 0.16, 24, 120, Math.PI * 1.86), track(new THREE.MeshStandardMaterial({ color: "#2a2b36", roughness: 0.4, metalness: 0.4 })));
-    enso.position.set(0, 2.6, 2.5);
-    enso.rotation.z = 0.9;
-    r5.add(enso);
+    r5.add(mesh(wallWithHole(archPath(0, 6, 7)), ochreMat));
+    // "sou capaz de fazer coisas difíceis": the embroidered heart, burgundy rim and cream centre
+    const heartShape = (k: number) => {
+      const h = new THREE.Shape();
+      h.moveTo(0, -1.6 * k);
+      h.bezierCurveTo(-0.4 * k, -1.1 * k, -2.0 * k, -0.4 * k, -1.9 * k, 0.6 * k);
+      h.bezierCurveTo(-1.8 * k, 1.5 * k, -0.6 * k, 1.8 * k, 0, 0.9 * k);
+      h.bezierCurveTo(0.6 * k, 1.8 * k, 1.8 * k, 1.5 * k, 1.9 * k, 0.6 * k);
+      h.bezierCurveTo(2.0 * k, -0.4 * k, 0.4 * k, -1.1 * k, 0, -1.6 * k);
+      return h;
+    };
+    const heart = new THREE.Group();
+    const rim = mesh(new THREE.ExtrudeGeometry(heartShape(1), { depth: 0.28, bevelEnabled: true, bevelSize: 0.08, bevelThickness: 0.08, bevelSegments: 4, curveSegments: 48 }), track(new THREE.MeshStandardMaterial({ color: "#8c1d2a", roughness: 0.85, bumpMap: plaster, bumpScale: 2 })));
+    const inner = mesh(new THREE.ExtrudeGeometry(heartShape(0.78), { depth: 0.1, bevelEnabled: false, curveSegments: 48 }), track(new THREE.MeshStandardMaterial({ color: "#efe3c8", roughness: 0.9, bumpMap: plaster, bumpScale: 1.5 })));
+    inner.position.z = 0.3;
+    heart.add(rim, inner);
+    // off the walking path, turned toward the visitor
+    heart.scale.setScalar(0.75);
+    heart.position.set(-3.7, 2.3, 3.2);
+    heart.rotation.y = 0.45;
+    r5.add(heart);
     add(r5);
+    const heartRef = heart;
 
     // room 6 · the last arch opens onto a sunrise
     const r6 = new THREE.Group(); r6.position.z = ROOM_Z[6];
     r6.add(mesh(wallWithHole(archPath(0, 5.5, 8)), wallMat));
-    const sunDisc = new THREE.Mesh(track(new THREE.CircleGeometry(4, 96)), track(new THREE.MeshBasicMaterial({ color: "#f6dcaa", fog: false })));
+    const sunDisc = new THREE.Mesh(track(new THREE.CircleGeometry(4, 96)), track(new THREE.MeshBasicMaterial({ color: "#f3e7c3", fog: false })));
     sunDisc.position.set(0, 4.2, -60);
-    const halo = new THREE.Sprite(track(new THREE.SpriteMaterial({ map: track(glowTexture("rgba(255,214,160,0.85)")), fog: false, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending })));
+    const halo = new THREE.Sprite(track(new THREE.SpriteMaterial({ map: track(glowTexture("rgba(233,162,59,0.85)")), fog: false, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending })));
     halo.scale.set(20, 20, 1);
     halo.material.opacity = 0.6;
     halo.position.copy(sunDisc.position).add(new THREE.Vector3(0, 0, 0.1));
@@ -386,8 +417,8 @@ const PsycheScene = () => {
       const ambient = reduce ? 0 : 0.5 - 0.5 * Math.cos((now / 10000) * Math.PI * 2);
       const guided = breathBus.start !== null ? guidedBreath(now - breathBus.start).value : null;
       breath += ((guided ?? ambient * 0.5) - breath) * Math.min(1, dt * 5);
-      renderer.toneMappingExposure = 0.88 + breath * 0.1;
-      fog.density = 0.036 - breath * 0.008;
+      renderer.toneMappingExposure = 0.86 + breath * 0.1;
+      fog.density = 0.032 - breath * 0.008;
 
       // the warm glow behind the keyhole sits on the walking path: hide it once the camera reaches it
       behind.visible = camPos.z > ROOM_Z[4] - 5.5;
@@ -395,6 +426,8 @@ const PsycheScene = () => {
       key.rotation.y = time * 0.5;
       key.position.y = 2.9 + Math.sin(time * 0.9) * 0.05;
       moon.position.y = 1.85 + Math.sin(time * 0.6) * 0.04;
+      heartRef.rotation.y = 0.45 + Math.sin(time * 0.35) * 0.12;
+      heartRef.scale.setScalar(0.75 * (1 + breath * 0.05));
 
       for (const f of flies) {
         const u = f.userData;

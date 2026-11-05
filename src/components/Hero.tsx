@@ -25,7 +25,7 @@ const Hero = () => {
       id="inicio"
       className="relative min-h-screen flex items-center text-white overflow-hidden pt-20"
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-[#363d5e]/70 via-[#363d5e]/25 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0f2a2d]/80 via-[#0f2a2d]/30 to-transparent pointer-events-none" />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
@@ -83,7 +83,7 @@ const Hero = () => {
       </div>
 
       <p
-        className="hidden lg:block absolute z-10 right-10 bottom-10 max-w-xs text-xs leading-relaxed text-white/60 font-light [&_em]:not-italic [&_em]:font-serif [&_em]:text-sm [&_em]:text-[#E9C27D]"
+        className="psyche-note hidden lg:block absolute z-10 right-10 bottom-10 max-w-xs text-xs leading-relaxed text-[#F3E7C3]/75 [&_em]:not-italic [&_em]:text-sm [&_em]:text-[#E9A23B]"
         dangerouslySetInnerHTML={{ __html: t("mind.psyche") }}
       />
     </section>
