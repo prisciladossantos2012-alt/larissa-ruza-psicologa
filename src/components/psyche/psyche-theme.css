@@ -28,7 +28,7 @@
   --ochre: 36 80% 57%;
   --paper: 40 50% 98%;
 
-  background: #eadfce;
+  background: #f6efe3;
   color: hsl(var(--foreground));
   font-family: "Inter Tight", "Inter", "Helvetica Neue", Arial, sans-serif;
 }

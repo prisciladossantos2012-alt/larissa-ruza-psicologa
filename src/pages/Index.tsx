@@ -17,13 +17,13 @@ import BreatheGuide from "@/components/mind/BreatheGuide";
 import "@/components/psyche/psyche-theme.css";
 
 // three.js loads in its own chunk after the page renders, so it never delays the first paint
-const PsycheScene = lazy(() => import("@/components/psyche/PsycheScene"));
+const StippleField = lazy(() => import("@/components/psyche/StippleField"));
 
-// data-room: 0 the key in the niche · 1 moon gate and chair · 2 corridor and stairs · 3 mirror · 4 keyhole door · 5 ensō · 6 sunrise
+// data-room picks the stippled drawing: 0 moth · 1 her wooden chair · 2 tangled thread · 3 ensō breath · 4 old key · 5 crochet heart · 6 arch of Seville
 const Index = () => {
   return (
     <div className="min-h-screen psyche-theme">
-      <Suspense fallback={null}><PsycheScene /></Suspense>
+      <Suspense fallback={null}><StippleField /></Suspense>
       <div className="psyche-grain" aria-hidden="true" />
       <Header />
       <main className="relative z-10">
