@@ -117,6 +117,10 @@ const testimonials = [
 }];
 
 
+// Reviews are real quotes, so they stay in the original Portuguese; only the labels are translated.
+const localizeLocation = (location: string, t: (k: string) => string) =>
+  location.replace("Terapia Online", t("contactForm.online")).replace("Terapia Presencial", t("contactForm.inPerson"));
+
 const Testimonials = () => {
   const { t } = useTranslation();
   const { ref: sectionRef, inView: sectionVisible } = useScrollAnimation();
@@ -142,6 +146,7 @@ const Testimonials = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light">
             {t("testimonials.subtitle")}
           </p>
+          {t("contactForm.originalNote") && <p className="text-xs text-muted-foreground mt-2 italic">{t("contactForm.originalNote")}</p>}
         </div>
 
         <Carousel opts={{ align: "start", loop: true }} className="w-full max-w-6xl mx-auto px-8 sm:px-12">
@@ -162,7 +167,7 @@ const Testimonials = () => {
                   </p>
                   <div className="border-t border-border pt-3">
                     <p className="font-medium text-primary text-sm">{testimonial.name}</p>
-                    <p className="text-xs text-muted-foreground">{testimonial.location} • {t("testimonials.verified")}</p>
+                    <p className="text-xs text-muted-foreground">{localizeLocation(testimonial.location, t)} • {t("testimonials.verified")}</p>
                   </div>
                 </div>
               </CarouselItem>

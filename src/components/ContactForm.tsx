@@ -5,16 +5,20 @@ import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { trackFormSubmit } from "@/lib/analytics";
+import { useTranslation } from "react-i18next";
+import type { TFunction } from "i18next";
 
-const contactSchema = z.object({
-  firstName: z.string().trim().min(1, "Nome é obrigatório").max(50, "Máximo 50 caracteres").regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Nome contém caracteres inválidos"),
-  lastName: z.string().trim().min(1, "Sobrenome é obrigatório").max(50, "Máximo 50 caracteres").regex(/^[a-zA-ZÀ-ÿ\s'-]+$/, "Sobrenome contém caracteres inválidos"),
-  email: z.string().trim().min(1, "Email é obrigatório").email("Email inválido").max(255, "Máximo 255 caracteres"),
-  whatsapp: z.string().trim().min(1, "WhatsApp é obrigatório").regex(/^\+?[\d\s()-]{10,20}$/, "Número de WhatsApp inválido"),
-  howDidYouMeetMe: z.string().max(500, "Máximo 500 caracteres").optional().or(z.literal(''))
+const nameRe = /^[a-zA-ZÀ-ÿ\s'-]+$/;
+const makeSchema = (t: TFunction) => z.object({
+  firstName: z.string().trim().min(1, t("contactForm.errRequiredFirst")).max(50, t("contactForm.errMax", { count: 50 })).regex(nameRe, t("contactForm.errChars")),
+  lastName: z.string().trim().min(1, t("contactForm.errRequiredLast")).max(50, t("contactForm.errMax", { count: 50 })).regex(nameRe, t("contactForm.errChars")),
+  email: z.string().trim().min(1, t("contactForm.errRequiredEmail")).email(t("contactForm.errEmail")).max(255, t("contactForm.errMax", { count: 255 })),
+  whatsapp: z.string().trim().min(1, t("contactForm.errRequiredWhatsapp")).regex(/^\+?[\d\s()-]{10,20}$/, t("contactForm.errWhatsapp")),
+  howDidYouMeetMe: z.string().max(500, t("contactForm.errMax", { count: 500 })).optional().or(z.literal(''))
 });
 
 const ContactForm = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -36,7 +40,7 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const result = contactSchema.safeParse(formData);
+    const result = makeSchema(t).safeParse(formData);
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
       result.error.errors.forEach((err) => {
@@ -91,8 +95,8 @@ const ContactForm = () => {
       }
 
       toast({
-        title: "Mensagem enviada!",
-        description: "Entraremos em contato em breve."
+        title: t("contactForm.successTitle"),
+        description: t("contactForm.successDescription")
       });
 
       setFormData({ firstName: "", lastName: "", email: "", whatsapp: "", howDidYouMeetMe: "" });
@@ -100,8 +104,8 @@ const ContactForm = () => {
     } catch (err) {
       console.error('Form submission error:', err);
       toast({
-        title: "Erro ao enviar",
-        description: "Tente novamente ou entre em contato pelo WhatsApp.",
+        title: t("contactForm.errorTitle"),
+        description: t("contactForm.errorDescription"),
         variant: "destructive"
       });
     } finally {
@@ -116,17 +120,13 @@ const ContactForm = () => {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
             {/* Left side */}
             <div>
-              <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">Contato</p>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground mb-6">Pronto para dar o primeiro passo?
-
-              </h2>
-              <p className="text-muted-foreground font-light leading-relaxed mb-10">
-                Se você sentiu que é a hora de olhar para si e caminhar em direção ao que realmente importa, entre em contato.
-              </p>
+              <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">{t("contactForm.eyebrow")}</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-foreground mb-6">{t("contactForm.title")}</h2>
+              <p className="text-muted-foreground font-light leading-relaxed mb-10">{t("contactForm.intro")}</p>
 
               <div className="grid gap-5">
                 {[
-                { icon: Calendar, label: "Agende pelo Doctoralia", href: "http://bit.ly/psilariruza" },
+                { icon: Calendar, label: t("contactForm.doctoralia"), href: "http://bit.ly/psilariruza" },
                 { icon: Phone, label: "+34 657 907 439", href: "https://wa.me/34657907439" },
                 { icon: Mail, label: "psilariruza@gmail.com", href: "mailto:psilariruza@gmail.com" },
                 { icon: Instagram, label: "@lariruza.psi", href: "https://www.instagram.com/lariruza.psi" }].
@@ -145,37 +145,37 @@ const ContactForm = () => {
 
             {/* Form */}
             <div className="bg-background rounded-2xl p-8 sm:p-10 shadow-sm border border-border">
-              <h3 className="text-xl font-semibold text-foreground mb-2">Envie uma mensagem</h3>
-              <p className="text-muted-foreground text-sm font-light mb-6">Deixe seus dados e eu te retorno.</p>
+              <h3 className="text-xl font-semibold text-foreground mb-2">{t("contactForm.formTitle")}</h3>
+              <p className="text-muted-foreground text-sm font-light mb-6">{t("contactForm.formSubtitle")}</p>
 
               <form onSubmit={handleSubmit} action="" method="POST" className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm text-foreground mb-1.5 block font-medium">Nome <span className="text-destructive">*</span></label>
-                    <input type="text" name="firstName" placeholder="Nome" value={formData.firstName} onChange={handleInputChange} maxLength={50} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm bg-background" />
+                    <label className="text-sm text-foreground mb-1.5 block font-medium">{t("contactForm.firstName")} <span className="text-destructive">*</span></label>
+                    <input type="text" name="firstName" placeholder={t("contactForm.firstName")} value={formData.firstName} onChange={handleInputChange} maxLength={50} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm bg-background" />
                     {errors.firstName && <p className="text-xs text-destructive mt-1">{errors.firstName}</p>}
                   </div>
                   <div>
-                    <label className="text-sm text-foreground mb-1.5 block font-medium">Sobrenome <span className="text-destructive">*</span></label>
-                    <input type="text" name="lastName" placeholder="Sobrenome" value={formData.lastName} onChange={handleInputChange} maxLength={50} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm bg-background" />
+                    <label className="text-sm text-foreground mb-1.5 block font-medium">{t("contactForm.lastName")} <span className="text-destructive">*</span></label>
+                    <input type="text" name="lastName" placeholder={t("contactForm.lastName")} value={formData.lastName} onChange={handleInputChange} maxLength={50} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm bg-background" />
                     {errors.lastName && <p className="text-xs text-destructive mt-1">{errors.lastName}</p>}
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-sm text-foreground mb-1.5 block font-medium">Email <span className="text-destructive">*</span></label>
-                  <input type="email" name="email" placeholder="seu@email.com" value={formData.email} onChange={handleInputChange} maxLength={255} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm bg-background" />
+                  <label className="text-sm text-foreground mb-1.5 block font-medium">{t("contactForm.email")} <span className="text-destructive">*</span></label>
+                  <input type="email" name="email" placeholder={t("contactForm.emailPlaceholder")} value={formData.email} onChange={handleInputChange} maxLength={255} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm bg-background" />
                   {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
                 </div>
 
                 <div>
-                  <label className="text-sm text-foreground mb-1.5 block font-medium">WhatsApp <span className="text-destructive">*</span></label>
-                  <input type="tel" name="whatsapp" placeholder="(00) 00000-0000" value={formData.whatsapp} onChange={handleInputChange} maxLength={20} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm bg-background" />
-                  {errors.whatsapp ? <p className="text-xs text-destructive mt-1">{errors.whatsapp}</p> : <p className="text-xs text-muted-foreground mt-1">Coloque um número válido</p>}
+                  <label className="text-sm text-foreground mb-1.5 block font-medium">{t("contactForm.whatsapp")} <span className="text-destructive">*</span></label>
+                  <input type="tel" name="whatsapp" placeholder={t("contactForm.whatsappPlaceholder")} value={formData.whatsapp} onChange={handleInputChange} maxLength={20} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm bg-background" />
+                  {errors.whatsapp ? <p className="text-xs text-destructive mt-1">{errors.whatsapp}</p> : <p className="text-xs text-muted-foreground mt-1">{t("contactForm.whatsappHint")}</p>}
                 </div>
 
                 <div>
-                  <label className="text-sm text-foreground mb-1.5 block font-medium">Como me conheceu?</label>
+                  <label className="text-sm text-foreground mb-1.5 block font-medium">{t("contactForm.howDidYouMeetMe")}</label>
                   <textarea name="howDidYouMeetMe" value={formData.howDidYouMeetMe} onChange={handleInputChange} rows={3} className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm bg-background resize-none" />
                 </div>
 
@@ -183,11 +183,11 @@ const ContactForm = () => {
                   {isSubmitting ?
                   <>
                       <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      Enviando...
+                      {t("contactForm.sending")}
                     </> :
 
                   <>
-                      Enviar Mensagem
+                      {t("contactForm.send")}
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </>
                   }
