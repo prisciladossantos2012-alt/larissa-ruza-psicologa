@@ -3,6 +3,7 @@ import * as THREE from "three";
 import { Reflector } from "three/examples/jsm/objects/Reflector.js";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry.js";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
+import { mergeGeometries } from "three/examples/jsm/utils/BufferGeometryUtils.js";
 import { breathBus, guidedBreath } from "@/components/mind/breath";
 
 /**
@@ -10,13 +11,14 @@ import { breathBus, guidedBreath } from "@/components/mind/breath";
  * Each [data-room="n"] section moves the camera to room n:
  * 0 the key in the niche · 1 the moon gate and the wooden chair · 2 the stairs and the arcade
  * 3 the mirror · 4 the keyhole door · 5 the embroidered heart · 6 the golden sun.
- * Palette and objects come from @lariruza.psi: albero cream, terracotta friezes, mustard
- * awnings, azulejos, orange trees, the wooden chair, the engraved moth and the crochet heart.
+ * The whole frame is redrawn as stippling (ink dots on cream paper), like the engraved moth
+ * in her posts: light and shadow become dot density, and only terracotta and mustard
+ * survive as coloured dots.
  * Decorative only: aria-hidden, pointer-events none, never touches forms.
  */
 
-const HAZE = new THREE.Color("#eadfce");
-const CREAM = new THREE.Color("#efe4d0");
+const HAZE = new THREE.Color("#e4d3c0");
+const CREAM = new THREE.Color("#e3d3bb");
 const TERRACOTTA = new THREE.Color("#c24e30");
 const OCHRE = new THREE.Color("#e9a23b");
 const MIDNIGHT = new THREE.Color("#1f2340");
@@ -193,8 +195,70 @@ const PsycheScene = () => {
     renderer.shadowMap.enabled = !small;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
+    // ---------- stippling pass: the 3D frame is redrawn as ink dots on paper ----------
+    const rt = new THREE.WebGLRenderTarget(1, 1, { samples: small ? 0 : 4 });
+    const post = new THREE.ShaderMaterial({
+      depthTest: false, depthWrite: false,
+      uniforms: {
+        tScene: { value: rt.texture },
+        uRes: { value: new THREE.Vector2(1, 1) },
+        uCell: { value: 5 },
+        uExposure: { value: 1 },
+        uPaper: { value: new THREE.Color("#f6efe3") },
+        uInk: { value: new THREE.Color("#1f2340") },
+      },
+      vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }",
+      fragmentShader: `
+        uniform sampler2D tScene; uniform vec2 uRes; uniform float uCell, uExposure; uniform vec3 uPaper, uInk;
+        varying vec2 vUv;
+        float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+        vec3 aces(vec3 x){ return clamp((x * (2.51 * x + 0.03)) / (x * (2.43 * x + 0.59) + 0.14), 0.0, 1.0); }
+        vec3 sceneAt(vec2 uv){ return pow(aces(texture2D(tScene, uv).rgb * uExposure), vec3(1.0 / 2.2)); }
+        // ink by default; saturated areas (terracotta, mustard, the heart) keep their colour
+        vec3 inkify(vec3 c){
+          float sat = max(c.r, max(c.g, c.b)) - min(c.r, min(c.g, c.b));
+          return mix(uInk, c * 0.78, smoothstep(0.12, 0.3, sat));
+        }
+        float lumAt(vec2 uv){ return dot(sceneAt(uv), vec3(0.299, 0.587, 0.114)); }
+        // one jittered dot per cell; its size follows the tone of the scene under it.
+        // highlights stay clean paper, shadows fill in, and outlines get a line of dots, like an engraving
+        float layer(vec2 px, float cell, float rot, float minDark, out vec3 dotCol){
+          float cs = cos(rot), sn = sin(rot);
+          vec2 q = vec2(cs * px.x - sn * px.y, sn * px.x + cs * px.y) / cell;
+          vec2 id = floor(q);
+          vec2 center = id + 0.5 + 0.3 * (vec2(hash(id), hash(id + 19.19)) - 0.5);
+          vec2 c = center * cell;
+          vec2 uv = vec2(cs * c.x + sn * c.y, -sn * c.x + cs * c.y) / uRes;
+          vec3 sc = sceneAt(uv);
+          float l = dot(sc, vec3(0.299, 0.587, 0.114));
+          vec2 o = vec2(2.5) / uRes;
+          float edge = abs(l - lumAt(uv + vec2(o.x, 0.0))) + abs(l - lumAt(uv - vec2(o.x, 0.0)))
+                     + abs(l - lumAt(uv + vec2(0.0, o.y))) + abs(l - lumAt(uv - vec2(0.0, o.y)));
+          float dark = smoothstep(0.14, 0.8, 1.0 - l);
+          dark = max(dark, clamp(edge * 3.5, 0.0, 1.0) * 0.8);
+          dark *= smoothstep(minDark, minDark + 0.15, dark);
+          float r = sqrt(dark) * 0.56 * (0.8 + 0.4 * hash(id + 3.1));
+          dotCol = inkify(sc);
+          return 1.0 - smoothstep(r - 0.1, r + 0.1, length(q - center));
+        }
+        void main(){
+          vec2 px = vUv * uRes;
+          vec3 c1; float a1 = layer(px, uCell, 0.0, 0.0, c1);
+          vec3 c2; float a2 = layer(px + 7.3, uCell * 1.3, 0.6, 0.45, c2);
+          vec3 col = uPaper * (0.988 + 0.024 * hash(floor(px)));
+          col = mix(col, c2, a2 * 0.6);
+          col = mix(col, c1, a1);
+          gl_FragColor = vec4(col, 1.0);
+        }`,
+    });
+    const postScene = new THREE.Scene();
+    const postCam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+    const quad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), post);
+    quad.frustumCulled = false;
+    postScene.add(quad);
+
     const scene = new THREE.Scene();
-    const fog = new THREE.FogExp2(HAZE, 0.016);
+    const fog = new THREE.FogExp2(HAZE, 0.013);
     scene.fog = fog;
     const pmrem = new THREE.PMREMGenerator(renderer);
     scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
@@ -218,8 +282,8 @@ const PsycheScene = () => {
     scene.add(sky);
 
     // light: soft sky + a low golden sun from the side, for long column shadows
-    scene.add(new THREE.HemisphereLight("#dfe4f6", "#e9d6ba", 1.25));
-    const sun = new THREE.DirectionalLight("#ffe0b0", 2.9);
+    scene.add(new THREE.HemisphereLight("#d9def2", "#c9b090", 0.95));
+    const sun = new THREE.DirectionalLight("#ffd9a3", 3.4);
     sun.castShadow = true;
     sun.shadow.mapSize.set(2048, 2048);
     sun.shadow.bias = -0.0004;
@@ -230,12 +294,11 @@ const PsycheScene = () => {
 
     const plaster = track(plasterTexture());
     const wallMat = track(new THREE.MeshStandardMaterial({ color: CREAM, roughness: 0.95, bumpMap: plaster, bumpScale: 0.5 }));
-    const terraMat = track(new THREE.MeshStandardMaterial({ color: TERRACOTTA, roughness: 0.85, bumpMap: plaster, bumpScale: 0.8 }));
+    const terraMat = track(new THREE.MeshStandardMaterial({ color: "#c27a5d", roughness: 0.85, bumpMap: plaster, bumpScale: 0.8 }));
     const ochreMat = track(new THREE.MeshStandardMaterial({ color: OCHRE, roughness: 0.8 }));
     const inkMat = track(new THREE.MeshStandardMaterial({ color: MIDNIGHT, roughness: 0.35, metalness: 0.7 }));
     const goldMat = track(new THREE.MeshBasicMaterial({ color: GOLD, fog: false }));
     const azulejo = track(azulejoTexture());
-    const stripes = track(stripeTexture());
     const beamTex = track(beamTexture());
     const beamMat = track(new THREE.MeshBasicMaterial({ map: beamTex, transparent: true, opacity: 0.22, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide, fog: false }));
 
@@ -274,30 +337,6 @@ const PsycheScene = () => {
       g.add(beam, trim);
       return g;
     };
-    const leafMat = track(new THREE.MeshStandardMaterial({ color: "#4e6b3a", roughness: 0.9, flatShading: true }));
-    const orangeMat = track(new THREE.MeshStandardMaterial({ color: OCHRE, roughness: 0.5, emissive: "#6a3a08", emissiveIntensity: 0.15 }));
-    const trunkMat = track(new THREE.MeshStandardMaterial({ color: "#6b4a2e", roughness: 0.9 }));
-    const orangeTree = () => {
-      const t = new THREE.Group();
-      const pot = mesh(new THREE.CylinderGeometry(0.46, 0.34, 0.7, 24), terraMat); pot.position.y = 0.35;
-      const trunk = mesh(new THREE.CylinderGeometry(0.06, 0.08, 1.2, 8), trunkMat); trunk.position.y = 1.2;
-      const crown = mesh(new THREE.IcosahedronGeometry(0.85, 1), leafMat); crown.position.y = 2.25; crown.scale.set(1, 0.9, 1);
-      t.add(pot, trunk, crown);
-      const fruitGeo = track(new THREE.SphereGeometry(0.09, 12, 8));
-      for (let k = 0; k < 10; k++) {
-        const a = k * 2.4, y = 2.25 + (Math.random() - 0.4) * 1.0;
-        const r = 0.8 * Math.sqrt(1 - Math.min(0.8, ((y - 2.25) / 0.85) ** 2));
-        const o = new THREE.Mesh(fruitGeo, orangeMat); o.position.set(Math.cos(a) * r, y, Math.sin(a) * r); o.castShadow = true;
-        t.add(o);
-      }
-      return t;
-    };
-    const awning = (width: number, x: number, y: number, z: number) => {
-      const tex = stripes.clone(); track(tex); tex.repeat.set(width / 1.2, 1); tex.needsUpdate = true;
-      const a = mesh(new THREE.PlaneGeometry(width, 1.4), track(new THREE.MeshStandardMaterial({ map: tex, side: THREE.DoubleSide, roughness: 0.9 })));
-      a.position.set(x, y, z + 0.6); a.rotation.x = -0.9;
-      return a;
-    };
     const beam = (x: number, z: number, h = 9, w = 1.6) => {
       const b = new THREE.Mesh(track(new THREE.PlaneGeometry(w, h)), beamMat);
       b.position.set(x, h / 2 - 0.4, z); b.rotation.set(0, 0.5, -0.55);
@@ -313,7 +352,7 @@ const PsycheScene = () => {
     });
     floor.rotation.x = -Math.PI / 2; floor.position.y = -0.001;
     add(floor);
-    const film = mesh(new THREE.PlaneGeometry(500, 500), track(new THREE.MeshStandardMaterial({ color: "#9cc9c2", transparent: true, opacity: 0.5, roughness: 0.15 })), false);
+    const film = mesh(new THREE.PlaneGeometry(500, 500), track(new THREE.MeshStandardMaterial({ color: "#8db9b3", transparent: true, opacity: 0.55, roughness: 0.15 })), false);
     film.rotation.x = -Math.PI / 2; film.position.y = 0.002;
     add(film);
 
@@ -321,21 +360,35 @@ const PsycheScene = () => {
     const r0 = new THREE.Group(); r0.position.z = ROOM_Z[0];
     r0.add(mesh(wallWithHole(archPath(1.2, 4.2, 5.2)), wallMat));
     const f0 = mesh(archFrame(1.2, 4.2, 5.2), terraMat); f0.position.z = 0.4; r0.add(f0);
-    r0.add(azulejoBand(9, -5.6, 0.42), azulejoBand(9, 7.8, 0.42));
-    const nicheBack = mesh(new THREE.PlaneGeometry(1.2, 2.6), goldMat, false); nicheBack.position.set(-3.4, 2.6, 0.42); r0.add(nicheBack);
+    // the niche glows warm and catches the key's shadow, like the reference
+    const nicheMat = track(new THREE.MeshStandardMaterial({ color: "#f5deb6", emissive: "#e9c48a", emissiveIntensity: 0.45, roughness: 0.9 }));
+    const nicheBack = mesh(new THREE.PlaneGeometry(1.2, 2.6), nicheMat, false); nicheBack.position.set(-3.4, 2.6, 0.42); r0.add(nicheBack);
     const nicheWall = mesh(wallWithHole(archPath(0, 1.1, 1.5, 1.6), 2.2, 4.4, 0.6), wallMat); nicheWall.position.set(-3.4, 0, 0.75); r0.add(nicheWall);
     const nicheFrame = mesh(archFrame(0, 1.1, 1.5, 0.12), terraMat); nicheFrame.position.set(-3.4, 1.6, 1.05); r0.add(nicheFrame);
+    // an old bronze key: ornate bow, collared shaft, stepped bit
+    const bronze = track(new THREE.MeshStandardMaterial({ color: "#5a3d26", roughness: 0.42, metalness: 0.85 }));
     const key = new THREE.Group();
-    key.add(mesh(new THREE.TorusGeometry(0.2, 0.04, 16, 48), inkMat));
-    const shaft = mesh(new THREE.CylinderGeometry(0.032, 0.032, 0.9, 16), inkMat); shaft.position.y = -0.62; key.add(shaft);
-    const t1 = mesh(new THREE.BoxGeometry(0.16, 0.06, 0.04), inkMat); t1.position.set(0.09, -0.95, 0); key.add(t1);
-    const t2 = mesh(new THREE.BoxGeometry(0.11, 0.05, 0.04), inkMat); t2.position.set(0.07, -0.82, 0); key.add(t2);
+    key.add(mesh(new THREE.TorusGeometry(0.17, 0.032, 16, 48), bronze));
+    for (let k = 0; k < 3; k++) {
+      const lobe = mesh(new THREE.TorusGeometry(0.055, 0.016, 12, 32), bronze);
+      const a = k * ((Math.PI * 2) / 3) + Math.PI / 2;
+      lobe.position.set(Math.cos(a) * 0.075, Math.sin(a) * 0.075, 0);
+      key.add(lobe);
+    }
+    for (const y of [-0.21, -0.25]) { const collar = mesh(new THREE.TorusGeometry(0.036, 0.012, 10, 24), bronze); collar.rotation.x = Math.PI / 2; collar.position.y = y; key.add(collar); }
+    const shaft = mesh(new THREE.CylinderGeometry(0.026, 0.03, 0.82, 16), bronze); shaft.position.y = -0.62; key.add(shaft);
+    for (const [w, h, y] of [[0.17, 0.05, -0.98], [0.12, 0.045, -0.91], [0.15, 0.04, -0.85]]) {
+      const bit = mesh(new THREE.BoxGeometry(w, h, 0.03), bronze); bit.position.set(w / 2 + 0.01, y, 0); key.add(bit);
+    }
     key.position.set(-3.4, 2.9, 0.8); key.rotation.z = -0.35;
     r0.add(key);
-    const nicheLight = new THREE.PointLight("#ffd9a6", 5, 5, 2); nicheLight.position.set(-3.4, 2.8, 1.5); r0.add(nicheLight);
-    const tree0 = orangeTree(); tree0.position.set(6.4, 0, 1.6); r0.add(tree0);
-    const tree1 = orangeTree(); tree1.position.set(3.9, 0, 2.6); r0.add(tree1);
-    r0.add(awning(4.6, 1.2, 6.2, 0.4));
+    const nicheLight = new THREE.SpotLight("#ffd9a6", 28, 6, 0.55, 0.8, 2);
+    nicheLight.position.set(-3.1, 3.9, 2.2);
+    nicheLight.target.position.set(-3.4, 2.6, 0.4);
+    nicheLight.castShadow = !small;
+    nicheLight.shadow.mapSize.set(1024, 1024);
+    nicheLight.shadow.bias = -0.0005;
+    r0.add(nicheLight, nicheLight.target);
     r0.add(beam(1.4, -2.5), beam(2.6, -3.5, 10, 1.1));
     add(r0);
 
@@ -349,7 +402,6 @@ const PsycheScene = () => {
     const r1 = new THREE.Group(); r1.position.z = ROOM_Z[1];
     r1.add(mesh(wallWithHole(circlePath(0, 3.2, 3.0)), wallMat));
     const ring = mesh(new THREE.TorusGeometry(3.15, 0.16, 16, 96), terraMat); ring.position.set(0, 3.2, 0.42); r1.add(ring);
-    r1.add(azulejoBand(16, -11.2, 0.42), azulejoBand(16, 11.2, 0.42));
     const chair = new THREE.Group();
     const wood = track(new THREE.MeshStandardMaterial({ color: "#7a4a2a", roughness: 0.6 }));
     const seat = mesh(new RoundedBoxGeometry(0.9, 0.07, 0.8, 3, 0.03), wood); seat.position.y = 0.9; chair.add(seat);
@@ -359,7 +411,6 @@ const PsycheScene = () => {
     for (const y of [1.25, 1.5]) { const bar = mesh(new THREE.CylinderGeometry(0.016, 0.016, 0.8, 8), wood); bar.rotation.z = Math.PI / 2; bar.position.set(0, y, -0.36); chair.add(bar); }
     chair.position.set(1.4, 0, -3.2); chair.rotation.y = -0.55;
     r1.add(chair);
-    const tree2 = orangeTree(); tree2.position.set(-2.4, 0, -4.5); r1.add(tree2);
     r1.add(beam(-0.6, -2.5, 9, 1.4));
     add(r1);
 
@@ -369,7 +420,6 @@ const PsycheScene = () => {
       const w = mesh(wallWithHole(archPath(0, 3.2, 3.8)), wallMat); w.position.z = -k * 3.2; r2.add(w);
       const fr = mesh(archFrame(0, 3.2, 3.8, 0.22), terraMat); fr.position.z = -k * 3.2 + 0.4; r2.add(fr);
     }
-    r2.add(awning(3.8, 0, 6.1, 0.4));
     const steps = 14;
     for (let s = 0; s < steps; s++) {
       const h = 0.18 + s * 0.26;
@@ -396,7 +446,6 @@ const PsycheScene = () => {
     const r3 = new THREE.Group(); r3.position.z = ROOM_Z[3];
     r3.add(mesh(wallWithHole(archPath(0, 5, 6)), wallMat));
     const f3 = mesh(archFrame(0, 5, 6), terraMat); f3.position.z = 0.4; r3.add(f3);
-    r3.add(azulejoBand(18, -11.5, 0.42), azulejoBand(18, 11.5, 0.42));
     const mirrorFrame = mesh(new THREE.BoxGeometry(2.5, 4.3, 0.12), track(new THREE.MeshStandardMaterial({ color: "#8a5a36", roughness: 0.6 })));
     const glass = new Reflector(track(new THREE.PlaneGeometry(2.2, 4.0)), {
       textureWidth: Math.round(512 * (small ? 0.6 : 1)), textureHeight: Math.round(930 * (small ? 0.6 : 1)), color: 0xe9e4da,
@@ -415,18 +464,14 @@ const PsycheScene = () => {
     // room 4 · the keyhole door, golden light behind it -----------------
     const r4 = new THREE.Group(); r4.position.z = ROOM_Z[4];
     r4.add(mesh(wallWithHole(keyholePath()), wallMat));
-    r4.add(azulejoBand(18, -10.5, 0.42), azulejoBand(18, 10.5, 0.42));
     const behind = mesh(new THREE.PlaneGeometry(9, 8), goldMat, false); behind.position.set(0, 3, -6); r4.add(behind);
     const keyLight = new THREE.PointLight("#ffd29a", 10, 12, 2); keyLight.position.set(0, 2.5, -1.5); r4.add(keyLight);
-    const tree3 = orangeTree(); tree3.position.set(-2.8, 0, 2.6); r4.add(tree3);
-    const tree4 = orangeTree(); tree4.position.set(2.8, 0, 2.6); r4.add(tree4);
     add(r4);
 
     // room 5 · the embroidered heart ("sou capaz de fazer coisas difíceis")
     const r5 = new THREE.Group(); r5.position.z = ROOM_Z[5];
     r5.add(mesh(wallWithHole(archPath(0, 6, 7)), wallMat));
     const f5 = mesh(archFrame(0, 6, 7), terraMat); f5.position.z = 0.4; r5.add(f5);
-    r5.add(awning(6.6, 0, 10.6, 0.4));
     const heartShape = (k: number) => {
       const h = new THREE.Shape();
       h.moveTo(0, -1.6 * k);
@@ -451,7 +496,6 @@ const PsycheScene = () => {
     const r6 = new THREE.Group(); r6.position.z = ROOM_Z[6];
     r6.add(mesh(wallWithHole(archPath(0, 5.5, 8)), wallMat));
     const f6 = mesh(archFrame(0, 5.5, 8), terraMat); f6.position.z = 0.4; r6.add(f6);
-    r6.add(azulejoBand(18, -11.7, 0.42), azulejoBand(18, 11.7, 0.42));
     const sunDisc = new THREE.Mesh(track(new THREE.CircleGeometry(4, 96)), track(new THREE.MeshBasicMaterial({ color: "#ffe2a8", fog: false })));
     sunDisc.position.set(0, 4.2, -60);
     const halo = new THREE.Sprite(track(new THREE.SpriteMaterial({ map: track(glowTexture("rgba(255,200,120,0.75)")), fog: false, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending })));
@@ -482,6 +526,9 @@ const PsycheScene = () => {
     const resize = () => {
       const w = window.innerWidth, h = window.innerHeight;
       renderer.setSize(w, h, false);
+      rt.setSize(Math.round(w * DPR), Math.round(h * DPR));
+      post.uniforms.uRes.value.set(Math.round(w * DPR), Math.round(h * DPR));
+      post.uniforms.uCell.value = (small ? 4 : 4.6) * DPR;
       camera.aspect = w / h;
       camera.fov = w / h < 0.8 ? 58 : 42;
       camera.updateProjectionMatrix();
@@ -544,8 +591,8 @@ const PsycheScene = () => {
       const ambient = reduce ? 0 : 0.5 - 0.5 * Math.cos((now / 10000) * Math.PI * 2);
       const guided = breathBus.start !== null ? guidedBreath(now - breathBus.start).value : null;
       breath += ((guided ?? ambient * 0.5) - breath) * Math.min(1, dt * 5);
-      renderer.toneMappingExposure = 0.98 + breath * 0.1;
-      fog.density = 0.016 - breath * 0.005;
+      post.uniforms.uExposure.value = 0.95 + breath * 0.1;
+      fog.density = 0.013 - breath * 0.004;
       beamMat.opacity = 0.18 + breath * 0.12;
 
       key.rotation.y = time * 0.5;
@@ -565,7 +612,10 @@ const PsycheScene = () => {
         f.rotation.x = -0.9;
       }
 
+      renderer.setRenderTarget(rt);
       renderer.render(scene, camera);
+      renderer.setRenderTarget(null);
+      renderer.render(postScene, postCam);
       raf = requestAnimationFrame(frame);
     };
     raf = requestAnimationFrame(frame);
@@ -577,6 +627,7 @@ const PsycheScene = () => {
       floor.dispose(); glass.dispose();
       disposables.forEach((d) => d.dispose());
       scene.environment?.dispose();
+      rt.dispose(); post.dispose(); quad.geometry.dispose();
       renderer.dispose();
     };
   }, []);
