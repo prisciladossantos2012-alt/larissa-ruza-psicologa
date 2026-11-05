@@ -187,5 +187,14 @@
     "schedulePrompt": "¿Lista para dar el primer paso?",
     "schedule": "Reservar Sesión",
     "rights": "Todos los derechos reservados."
+  },
+  "mind": {
+    "cta": "Respira conmigo",
+    "inhale": "Inspira",
+    "hold": "Mantén",
+    "exhale": "Suelta el aire",
+    "stop": "Parar",
+    "hint": "Respiración cuadrada: 4 segundos por etapa, durante un minuto",
+    "psyche": "<em>ψυχή</em> (psyché): en griego, alma y mariposa. De ahí viene la palabra psicología."
   }
 }

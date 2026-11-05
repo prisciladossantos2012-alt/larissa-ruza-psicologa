@@ -187,5 +187,14 @@
     "schedulePrompt": "Prête à faire le premier pas ?",
     "schedule": "Prendre RDV",
     "rights": "Tous droits réservés."
+  },
+  "mind": {
+    "cta": "Respirez avec moi",
+    "inhale": "Inspirez",
+    "hold": "Retenez",
+    "exhale": "Expirez",
+    "stop": "Arrêter",
+    "hint": "Respiration carrée : 4 secondes par étape, pendant une minute",
+    "psyche": "<em>ψυχή</em> (psyché) : en grec, l’âme et le papillon. C’est l’origine du mot psychologie."
   }
 }

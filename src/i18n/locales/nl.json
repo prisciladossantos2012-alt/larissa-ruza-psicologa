@@ -187,5 +187,14 @@
     "schedulePrompt": "Klaar voor de eerste stap?",
     "schedule": "Sessie boeken",
     "rights": "Alle rechten voorbehouden."
+  },
+  "mind": {
+    "cta": "Adem met me mee",
+    "inhale": "Adem in",
+    "hold": "Vasthouden",
+    "exhale": "Adem uit",
+    "stop": "Stoppen",
+    "hint": "Box-ademhaling: 4 seconden per stap, één minuut lang",
+    "psyche": "<em>ψυχή</em> (psyche): Grieks voor zowel ziel als vlinder. Daar komt het woord psychologie vandaan."
   }
 }

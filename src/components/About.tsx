@@ -19,7 +19,7 @@ const About = () => {
   };
 
   return (
-    <section id="sobre" ref={sectionRef} className="py-16 sm:py-20 lg:py-24 bg-background">
+    <section id="sobre" ref={sectionRef} className="py-16 sm:py-20 lg:py-24 bg-transparent">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center max-w-7xl mx-auto">
           {/* Image */}

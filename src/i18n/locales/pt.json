@@ -187,5 +187,14 @@
     "schedulePrompt": "Pronta para dar o primeiro passo?",
     "schedule": "Agendar Sessão",
     "rights": "Todos os direitos reservados."
+  },
+  "mind": {
+    "cta": "Respire comigo",
+    "inhale": "Inspire",
+    "hold": "Segure",
+    "exhale": "Solte o ar",
+    "stop": "Parar",
+    "hint": "Respiração quadrada: 4 segundos por etapa, durante um minuto",
+    "psyche": "<em>ψυχή</em> (psyché): em grego, alma e borboleta. É daí que vem a palavra psicologia."
   }
 }

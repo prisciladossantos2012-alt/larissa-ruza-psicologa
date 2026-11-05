@@ -1,4 +1,3 @@
-import heroImage from "@/assets/hero-main.jpg";
 import { Star, CheckCircle } from "lucide-react";
 import { trackAndRedirectWhatsApp } from "@/lib/analytics";
 import { useTranslation } from "react-i18next";
@@ -25,13 +24,8 @@ const Hero = () => {
     <section
       id="inicio"
       className="relative min-h-screen flex items-center text-white overflow-hidden pt-20"
-      style={{
-        backgroundImage: `url(${heroImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0b1130]/80 via-[#0b1130]/30 to-transparent lg:to-transparent pointer-events-none" />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
@@ -87,6 +81,11 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      <p
+        className="hidden lg:block absolute z-10 right-10 bottom-10 max-w-xs text-xs leading-relaxed text-white/60 font-light [&_em]:not-italic [&_em]:font-serif [&_em]:text-sm [&_em]:text-[#E9C27D]"
+        dangerouslySetInnerHTML={{ __html: t("mind.psyche") }}
+      />
     </section>
   );
 };

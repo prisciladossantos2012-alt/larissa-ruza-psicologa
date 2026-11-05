@@ -187,5 +187,14 @@
     "schedulePrompt": "Ready to take the first step?",
     "schedule": "Book a Session",
     "rights": "All rights reserved."
+  },
+  "mind": {
+    "cta": "Breathe with me",
+    "inhale": "Breathe in",
+    "hold": "Hold",
+    "exhale": "Breathe out",
+    "stop": "Stop",
+    "hint": "Box breathing: 4 seconds per step, for one minute",
+    "psyche": "<em>ψυχή</em> (psyche): Greek for both soul and butterfly. It is where the word psychology comes from."
   }
 }

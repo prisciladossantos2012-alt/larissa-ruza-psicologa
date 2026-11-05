@@ -187,5 +187,14 @@
     "schedulePrompt": "Bereit für den ersten Schritt?",
     "schedule": "Termin buchen",
     "rights": "Alle Rechte vorbehalten."
+  },
+  "mind": {
+    "cta": "Atme mit mir",
+    "inhale": "Einatmen",
+    "hold": "Halten",
+    "exhale": "Ausatmen",
+    "stop": "Stopp",
+    "hint": "Box-Atmung: 4 Sekunden pro Schritt, eine Minute lang",
+    "psyche": "<em>ψυχή</em> (Psyche): griechisch für Seele und Schmetterling. Daher stammt das Wort Psychologie."
   }
 }
