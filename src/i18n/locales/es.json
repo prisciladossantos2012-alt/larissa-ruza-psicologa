@@ -231,5 +231,10 @@
     "originalNote": "Las opiniones se muestran en el portugués original.",
     "online": "Terapia online",
     "inPerson": "Terapia presencial"
+  },
+  "carta": {
+    "note": "una conversación honesta antes de conocernos",
+    "specTitle": "Especialidades <em>atendidas</em> en psicoterapia",
+    "threadHint": "pasa el cursor por el hilo ↝"
   }
 }

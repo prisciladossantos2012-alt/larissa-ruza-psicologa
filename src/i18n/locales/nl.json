@@ -231,5 +231,10 @@
     "originalNote": "De beoordelingen worden in het oorspronkelijke Portugees getoond.",
     "online": "Online therapie",
     "inPerson": "Therapie op locatie"
+  },
+  "carta": {
+    "note": "een eerlijk gesprek voordat we elkaar ontmoeten",
+    "specTitle": "Specialiteiten in <em>psychotherapie</em>",
+    "threadHint": "beweeg je cursor over de draad ↝"
   }
 }

@@ -231,5 +231,10 @@
     "originalNote": "Reviews are shown in the original Portuguese.",
     "online": "Online therapy",
     "inPerson": "In-person therapy"
+  },
+  "carta": {
+    "note": "an honest conversation before we meet",
+    "specTitle": "Specialties <em>addressed</em> in therapy",
+    "threadHint": "run your cursor through the thread ↝"
   }
 }

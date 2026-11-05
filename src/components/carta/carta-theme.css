@@ -1,0 +1,159 @@
+/*
+ * "Carta" — the home page as an editorial letter.
+ * Paper, midnight ink and a single terracotta accent; Fraunces for display, Hanken Grotesk
+ * for text, Caveat for handwritten notes. Existing components are restyled through the
+ * design-system tokens; the hero and the specialties have their own markup below.
+ */
+.carta-theme {
+  --background: 37 45% 95%;            /* paper #F7F2EA */
+  --foreground: 232 33% 19%;           /* ink #1F2340 */
+  --card: 40 60% 99%;
+  --card-foreground: 232 33% 19%;
+  --popover: 40 60% 99%;
+  --popover-foreground: 232 33% 19%;
+  --primary: 232 33% 19%;              /* ink buttons */
+  --primary-foreground: 37 45% 95%;
+  --secondary: 36 30% 91%;
+  --secondary-foreground: 232 33% 19%;
+  --muted: 36 30% 91%;
+  --muted-foreground: 232 10% 40%;
+  --accent: 12 60% 47%;                /* terracotta #C24E30 */
+  --accent-foreground: 37 45% 95%;
+  --border: 36 22% 85%;
+  --input: 36 22% 82%;
+  --ring: 12 60% 47%;
+  --terracotta: 12 60% 47%;
+  --teal: 186 45% 23%;
+
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* type ------------------------------------------------------------------ */
+.carta-theme h1, .carta-theme h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 350;
+  font-variation-settings: "SOFT" 100, "opsz" 144;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+.carta-theme h3 { font-family: "Fraunces", Georgia, serif; font-weight: 420; font-variation-settings: "SOFT" 100; letter-spacing: -0.01em; }
+.carta-theme h1 em, .carta-theme h2 em { font-style: italic; font-weight: 300; color: hsl(var(--terracotta)); }
+
+/* small uppercase eyebrows: letter-spaced with a short rule */
+.carta-theme p.uppercase.tracking-widest,
+.carta-kicker {
+  display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  font-size: 12.5px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+}
+.carta-theme p.uppercase.tracking-widest::before { content: ""; width: 32px; height: 1px; background: hsl(var(--terracotta)); }
+.carta-kicker b { color: hsl(var(--terracotta)); font-weight: 600; }
+.carta-kicker span { width: 36px; height: 1px; background: hsl(var(--muted-foreground)); }
+
+/* existing components ---------------------------------------------------- */
+.carta-theme section.bg-muted,
+.carta-theme .bg-muted\/60 { background-color: transparent; }
+.carta-theme .bg-background,
+.carta-theme .bg-card { background-color: hsl(var(--card)); box-shadow: none; }
+.carta-theme main .rounded-xl, .carta-theme main .rounded-2xl { border-radius: 10px; }
+.carta-theme a.bg-primary, .carta-theme button.bg-primary { border-radius: 999px; }
+
+.carta-theme header.bg-white\/95 {
+  background-color: hsl(var(--background) / 0.88);
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  box-shadow: none; border-bottom: 1px solid hsl(var(--border));
+}
+.carta-theme header a.flex-col span:first-child { font-family: "Fraunces", Georgia, serif; font-weight: 400 !important; font-size: 1.35rem; }
+
+/* the stats band becomes an editorial row of facts */
+.carta-theme section.bg-primary {
+  background: transparent;
+  border-block: 1px solid hsl(var(--border));
+  --primary-foreground: 232 33% 19%;
+}
+.carta-theme section.bg-primary .text-2xl { font-family: "Fraunces", Georgia, serif; font-weight: 400; }
+.carta-theme section.bg-primary svg { color: hsl(var(--terracotta)); }
+
+/* About photo: warm sepia instead of hard black and white, framed like a print */
+.carta-theme #sobre img.rounded-2xl {
+  filter: grayscale(1) sepia(0.5) saturate(1.35) hue-rotate(-10deg) contrast(1.03);
+  border-radius: 200px 200px 8px 8px;
+}
+
+/* buttons and links of the new sections --------------------------------- */
+.carta-btn {
+  display: inline-flex; align-items: center; justify-content: center; text-align: center;
+  background: hsl(var(--foreground)); color: hsl(var(--background));
+  padding: 15px 24px; border-radius: 999px; font-size: 15px; font-weight: 600; line-height: 1.25;
+  transition: background-color .25s, transform .25s;
+}
+.carta-btn:hover { background: hsl(var(--terracotta)); transform: translateY(-1px); }
+.carta-btn:focus-visible, .carta-link:focus-visible { outline: 2px solid hsl(var(--terracotta)); outline-offset: 3px; }
+.carta-link { font-weight: 600; font-size: 15px; border-bottom: 1.5px solid currentColor; padding-bottom: 2px; }
+.carta-link:hover { color: hsl(var(--terracotta)); }
+
+.carta-wrap { max-width: 1240px; margin: 0 auto; padding-inline: max(20px, env(safe-area-inset-left, 0px)) max(20px, env(safe-area-inset-right, 0px)); }
+@media (min-width: 1024px) { .carta-wrap { padding-inline: 56px; } }
+
+/* hero ------------------------------------------------------------------ */
+.carta-hero { padding-top: 120px; padding-bottom: 72px; overflow: hidden; }
+.carta-hero__grid { display: grid; gap: 48px; align-items: center; }
+@media (min-width: 1024px) { .carta-hero__grid { grid-template-columns: 1.12fr 0.88fr; gap: 56px; } }
+.carta-h1 { font-size: clamp(44px, 6.4vw, 92px); margin: 26px 0 0; }
+.carta-lede { max-width: 54ch; font-size: 18px; line-height: 1.62; color: hsl(var(--muted-foreground)); margin: 28px 0 34px; }
+.carta-ctas { display: flex; flex-wrap: wrap; gap: 18px 24px; align-items: center; }
+.carta-trust { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 30px; font-size: 14px; color: hsl(var(--muted-foreground)); }
+.carta-trust li::before { content: "✦"; color: hsl(var(--terracotta)); margin-right: 8px; font-size: 11px; }
+
+.carta-hero__art { position: relative; justify-self: center; width: min(440px, 100%); }
+.carta-arch { aspect-ratio: 440 / 560; border-radius: 999px 999px 10px 10px; overflow: hidden; box-shadow: 0 40px 60px -40px rgb(60 40 20 / .45); }
+.carta-arch img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.carta-stamp {
+  position: absolute; right: -14px; top: 18%; width: 118px; height: 118px; border-radius: 50%;
+  background: hsl(var(--terracotta)); color: hsl(var(--background));
+  display: grid; place-content: center; text-align: center; transform: rotate(10deg);
+  font-family: "Fraunces", Georgia, serif; line-height: 1.1;
+}
+.carta-stamp span { font-size: 19px; }
+.carta-stamp small { font-family: "Hanken Grotesk", sans-serif; font-size: 11.5px; letter-spacing: .04em; margin-top: 4px; padding-inline: 14px; }
+.carta-note {
+  font-family: "Caveat", cursive; font-size: 27px; line-height: 1.05; color: hsl(var(--teal));
+  transform: rotate(-5deg); margin-top: 18px; max-width: 260px;
+}
+.carta-note svg { display: block; margin: 4px 0 0 90px; color: hsl(var(--teal)); }
+@media (min-width: 1024px) {
+  .carta-note { margin: 22px 0 0 -40px; }
+}
+.carta-moth { position: absolute; left: -34%; top: -12%; width: 56%; aspect-ratio: 1; z-index: 2; cursor: pointer; }
+@media (max-width: 1023px) { .carta-moth { left: -8%; top: -4%; width: 46%; } }
+.carta-psyche { margin-top: 18px; font-size: 12.5px; line-height: 1.5; color: hsl(var(--muted-foreground)); max-width: 40ch; }
+.carta-psyche em { font-style: normal; font-family: "Fraunces", Georgia, serif; color: hsl(var(--terracotta)); font-size: 14px; }
+
+/* specialties ----------------------------------------------------------- */
+.carta-section { padding-block: 104px; }
+.carta-spec { display: grid; gap: 40px; }
+@media (min-width: 1024px) {
+  .carta-spec { grid-template-columns: 0.85fr 1.15fr; gap: 72px; align-items: start; }
+  .carta-spec__head { position: sticky; top: 110px; }
+}
+.carta-h2 { font-size: clamp(38px, 4.4vw, 60px); margin-top: 18px; }
+.carta-spec .carta-lede { margin: 22px 0 8px; }
+.carta-thread { width: 100%; height: 220px; margin: 4px 0 0; touch-action: pan-y; }
+.carta-hint { font-family: "Caveat", cursive; font-size: 22px; color: hsl(var(--teal)); margin: -4px 0 22px; transform: rotate(-2deg); }
+.carta-list { border-top: 1.5px solid hsl(var(--foreground)); }
+.carta-row {
+  display: grid; gap: 6px 28px; padding: 24px 0; border-bottom: 1px solid hsl(var(--border));
+  transition: padding-left .3s ease;
+}
+@media (min-width: 640px) { .carta-row { grid-template-columns: 0.9fr 1.1fr; align-items: baseline; } }
+.carta-row h3 { font-size: 25px; line-height: 1.15; }
+.carta-row p { color: hsl(var(--muted-foreground)); font-size: 15.5px; line-height: 1.55; }
+.carta-row:hover { padding-left: 10px; }
+.carta-row:hover h3 { color: hsl(var(--terracotta)); }
+
+@media (prefers-reduced-motion: reduce) {
+  .carta-row, .carta-btn { transition: none; }
+}

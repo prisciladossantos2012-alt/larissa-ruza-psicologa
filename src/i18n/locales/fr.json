@@ -231,5 +231,10 @@
     "originalNote": "Les avis sont affichés dans leur portugais d'origine.",
     "online": "Thérapie en ligne",
     "inPerson": "Thérapie en présentiel"
+  },
+  "carta": {
+    "note": "une conversation honnête avant de nous rencontrer",
+    "specTitle": "Spécialités <em>traitées</em> en psychothérapie",
+    "threadHint": "passez le curseur sur le fil ↝"
   }
 }
