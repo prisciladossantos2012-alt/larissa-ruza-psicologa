@@ -105,20 +105,20 @@
 .carta-trust { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 30px; font-size: 14px; color: hsl(var(--muted-foreground)); }
 .carta-trust li::before { content: "✦"; color: hsl(var(--terracotta)); margin-right: 8px; font-size: 11px; }
 
-.carta-hero__art { position: relative; justify-self: center; width: min(440px, 100%); }
+.carta-hero__art { position: relative; justify-self: center; width: min(560px, 100%); }
 .carta-arch { aspect-ratio: 440 / 560; border-radius: 999px 999px 10px 10px; overflow: hidden; box-shadow: 0 40px 60px -40px rgb(60 40 20 / .45); }
 .carta-arch img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .carta-stamp {
-  position: absolute; right: -14px; top: 18%; width: 118px; height: 118px; border-radius: 50%;
+  position: absolute; right: -4%; top: -2%; width: 118px; height: 118px; border-radius: 50%;
   background: hsl(var(--terracotta)); color: hsl(var(--background));
   display: grid; place-content: center; text-align: center; transform: rotate(10deg);
   font-family: "Fraunces", Georgia, serif; line-height: 1.1;
 }
 .carta-stamp span { font-size: 19px; }
 .carta-stamp small { font-family: "Hanken Grotesk", sans-serif; font-size: 11.5px; letter-spacing: .04em; margin-top: 4px; padding-inline: 14px; }
-.carta-moth { position: absolute; left: -36%; top: -10%; width: 52%; aspect-ratio: 1; pointer-events: none; }
-@media (max-width: 1023px) { .carta-moth { left: -8%; top: -4%; width: 46%; } }
-.carta-psyche { margin-top: 18px; font-size: 12.5px; line-height: 1.5; color: hsl(var(--muted-foreground)); max-width: 40ch; }
+.carta-moth { width: 100%; aspect-ratio: 1; pointer-events: none; transform: scale(1.45); } /* the moth fills ~70% of its drawing, so the spot is scaled up */
+@media (max-width: 1023px) { .carta-hero__art { width: min(380px, 90%); } }
+.carta-psyche { margin: 6px auto 0; text-align: center; font-size: 12.5px; line-height: 1.5; color: hsl(var(--muted-foreground)); max-width: 40ch; }
 .carta-psyche em { font-style: normal; font-family: "Fraunces", Georgia, serif; color: hsl(var(--terracotta)); font-size: 14px; }
 
 /* specialties ----------------------------------------------------------- */

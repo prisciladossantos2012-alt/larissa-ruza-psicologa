@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { trackAndRedirectWhatsApp } from "@/lib/analytics";
-import portrait from "@/assets/lari-portrait-color.jpg";
 
-/** Editorial hero: large serif headline, the portrait in a Sevillian arch, a stamp, and a spot where the stippled moth lands. */
+/** Editorial hero: large serif headline, a large stippled moth, a stamp and the psyché note. */
 const HeroCarta = () => {
   const { t } = useTranslation();
 
@@ -39,15 +38,12 @@ const HeroCarta = () => {
         </div>
 
         <div className="carta-hero__art">
-          <div className="carta-arch">
-            <img src={portrait} alt="Larissa Ruza, psicóloga clínica, CRP 06/157739" />
-          </div>
+          {/* the stippled moth (ScrollArt) lands here, large: psyché, soul and butterfly */}
+          <div className="carta-moth" data-art-anchor aria-hidden="true" />
           <div className="carta-stamp" aria-hidden="true">
             <span>{t("socialProof.online")}</span>
             <small>{t("socialProof.onlineLabel")}</small>
           </div>
-          {/* the stippled moth (ScrollArt) settles in this spot */}
-          <div className="carta-moth" data-art-anchor aria-hidden="true" />
           <p className="carta-psyche" dangerouslySetInnerHTML={{ __html: t("mind.psyche") }} />
         </div>
       </div>
