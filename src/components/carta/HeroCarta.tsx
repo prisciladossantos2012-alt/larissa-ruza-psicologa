@@ -1,11 +1,8 @@
-import { lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { trackAndRedirectWhatsApp } from "@/lib/analytics";
 import portrait from "@/assets/lari-portrait-color.jpg";
 
-const MothParticles = lazy(() => import("./MothParticles"));
-
-/** Editorial hero: large serif headline, the portrait in a Sevillian arch, a handwritten note and the stippled moth. */
+/** Editorial hero: large serif headline, the portrait in a Sevillian arch, a stamp, and a spot where the stippled moth lands. */
 const HeroCarta = () => {
   const { t } = useTranslation();
 
@@ -49,16 +46,8 @@ const HeroCarta = () => {
             <span>{t("socialProof.online")}</span>
             <small>{t("socialProof.onlineLabel")}</small>
           </div>
-          <p className="carta-note">
-            {t("carta.note")}
-            <svg width="64" height="40" viewBox="0 0 64 40" aria-hidden="true">
-              <path d="M2 4 C20 30 42 34 58 28" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
-              <path d="M47 20 L59 28 L47 35" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
-            </svg>
-          </p>
-          <Suspense fallback={null}>
-            <MothParticles className="carta-moth" />
-          </Suspense>
+          {/* the stippled moth (ScrollArt) settles in this spot */}
+          <div className="carta-moth" data-art-anchor aria-hidden="true" />
           <p className="carta-psyche" dangerouslySetInnerHTML={{ __html: t("mind.psyche") }} />
         </div>
       </div>

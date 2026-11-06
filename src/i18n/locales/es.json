@@ -233,8 +233,6 @@
     "inPerson": "Terapia presencial"
   },
   "carta": {
-    "note": "una conversación honesta antes de conocernos",
-    "specTitle": "Especialidades <em>atendidas</em> en psicoterapia",
-    "threadHint": "pasa el cursor por el hilo ↝"
+    "specTitle": "Especialidades <em>atendidas</em> en psicoterapia"
   }
 }

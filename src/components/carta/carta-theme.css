@@ -77,11 +77,8 @@
 .carta-theme section.bg-primary .text-2xl { font-family: "Fraunces", Georgia, serif; font-weight: 400; }
 .carta-theme section.bg-primary svg { color: hsl(var(--terracotta)); }
 
-/* About photo: warm sepia instead of hard black and white, framed like a print */
-.carta-theme #sobre img.rounded-2xl {
-  filter: grayscale(1) sepia(0.5) saturate(1.35) hue-rotate(-10deg) contrast(1.03);
-  border-radius: 200px 200px 8px 8px;
-}
+/* About photo: printed with a soft arch, in full colour */
+.carta-theme #sobre img.rounded-2xl { border-radius: 200px 200px 8px 8px; }
 
 /* buttons and links of the new sections --------------------------------- */
 .carta-btn {
@@ -119,15 +116,7 @@
 }
 .carta-stamp span { font-size: 19px; }
 .carta-stamp small { font-family: "Hanken Grotesk", sans-serif; font-size: 11.5px; letter-spacing: .04em; margin-top: 4px; padding-inline: 14px; }
-.carta-note {
-  font-family: "Caveat", cursive; font-size: 27px; line-height: 1.05; color: hsl(var(--teal));
-  transform: rotate(-5deg); margin-top: 18px; max-width: 260px;
-}
-.carta-note svg { display: block; margin: 4px 0 0 90px; color: hsl(var(--teal)); }
-@media (min-width: 1024px) {
-  .carta-note { margin: 22px 0 0 -40px; }
-}
-.carta-moth { position: absolute; left: -34%; top: -12%; width: 56%; aspect-ratio: 1; z-index: 2; cursor: pointer; }
+.carta-moth { position: absolute; left: -36%; top: -10%; width: 52%; aspect-ratio: 1; pointer-events: none; }
 @media (max-width: 1023px) { .carta-moth { left: -8%; top: -4%; width: 46%; } }
 .carta-psyche { margin-top: 18px; font-size: 12.5px; line-height: 1.5; color: hsl(var(--muted-foreground)); max-width: 40ch; }
 .carta-psyche em { font-style: normal; font-family: "Fraunces", Georgia, serif; color: hsl(var(--terracotta)); font-size: 14px; }
@@ -141,8 +130,9 @@
 }
 .carta-h2 { font-size: clamp(38px, 4.4vw, 60px); margin-top: 18px; }
 .carta-spec .carta-lede { margin: 22px 0 8px; }
-.carta-thread { width: 100%; height: 220px; margin: 4px 0 0; touch-action: pan-y; }
-.carta-hint { font-family: "Caveat", cursive; font-size: 22px; color: hsl(var(--teal)); margin: -4px 0 22px; transform: rotate(-2deg); }
+.carta-art { width: 100%; height: 300px; margin: 8px 0 18px; }
+@media (max-width: 1023px) { .carta-art { height: 240px; } }
+.carta-contact-art { position: absolute; bottom: 24px; left: max(24px, calc(50% - 576px)); width: 300px; height: 280px; }
 .carta-list { border-top: 1.5px solid hsl(var(--foreground)); }
 .carta-row {
   display: grid; gap: 6px 28px; padding: 24px 0; border-bottom: 1px solid hsl(var(--border));

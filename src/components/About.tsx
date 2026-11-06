@@ -1,4 +1,4 @@
-import lariPortrait from "@/assets/lari-about.png";
+import lariPortrait from "@/assets/lari-portrait-color.jpg";
 import servicesImage1 from "@/assets/services-image1.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { trackAndRedirectWhatsApp } from "@/lib/analytics";

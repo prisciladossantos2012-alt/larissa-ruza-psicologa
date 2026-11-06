@@ -233,8 +233,6 @@
     "inPerson": "Therapie vor Ort"
   },
   "carta": {
-    "note": "ein ehrliches Gespräch, bevor wir uns kennenlernen",
-    "specTitle": "Schwerpunkte in der <em>Psychotherapie</em>",
-    "threadHint": "fahr mit dem Cursor über den Faden ↝"
+    "specTitle": "Schwerpunkte in der <em>Psychotherapie</em>"
   }
 }

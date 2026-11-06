@@ -233,8 +233,6 @@
     "inPerson": "Therapie op locatie"
   },
   "carta": {
-    "note": "een eerlijk gesprek voordat we elkaar ontmoeten",
-    "specTitle": "Specialiteiten in <em>psychotherapie</em>",
-    "threadHint": "beweeg je cursor over de draad ↝"
+    "specTitle": "Specialiteiten in <em>psychotherapie</em>"
   }
 }

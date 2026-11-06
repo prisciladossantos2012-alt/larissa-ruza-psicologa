@@ -1,12 +1,9 @@
-import { lazy, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { trackAndRedirectWhatsApp } from "@/lib/analytics";
 
-const ThreadLine = lazy(() => import("./ThreadLine"));
-
 const KEYS = ["anxiety", "personality", "selfEsteem", "compulsions", "transitions", "selfKnowledge", "couples"];
 
-/** Specialties as an editorial index, with a tangled thread that untangles as you read down the list. */
+/** Specialties as an editorial index, next to a stippled head with a tangle of thoughts. */
 const SpecialtiesCarta = () => {
   const { t } = useTranslation();
   const cta = () =>
@@ -23,10 +20,8 @@ const SpecialtiesCarta = () => {
           <p className="carta-kicker">{t("therapyFor.eyebrow")}</p>
           <h2 className="carta-h2" dangerouslySetInnerHTML={{ __html: t("carta.specTitle", { defaultValue: t("therapyFor.title") }) }} />
           <p className="carta-lede">{t("therapyFor.subtitle")}</p>
-          <Suspense fallback={null}>
-            <ThreadLine className="carta-thread" sectionId="especialidades" />
-          </Suspense>
-          <p className="carta-hint">{t("carta.threadHint")}</p>
+          {/* the stippled head with a tangle of thoughts (ScrollArt) settles here */}
+          <div className="carta-art" data-art-anchor aria-hidden="true" />
           <button type="button" className="carta-btn" onClick={cta}>{t("therapyFor.cta")}</button>
         </div>
         <ul className="carta-list">

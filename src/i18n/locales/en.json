@@ -233,8 +233,6 @@
     "inPerson": "In-person therapy"
   },
   "carta": {
-    "note": "an honest conversation before we meet",
-    "specTitle": "Specialties <em>addressed</em> in therapy",
-    "threadHint": "run your cursor through the thread ↝"
+    "specTitle": "Specialties <em>addressed</em> in therapy"
   }
 }

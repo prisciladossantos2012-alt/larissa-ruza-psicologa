@@ -233,8 +233,6 @@
     "inPerson": "Thérapie en présentiel"
   },
   "carta": {
-    "note": "une conversation honnête avant de nous rencontrer",
-    "specTitle": "Spécialités <em>traitées</em> en psychothérapie",
-    "threadHint": "passez le curseur sur le fil ↝"
+    "specTitle": "Spécialités <em>traitées</em> en psychothérapie"
   }
 }

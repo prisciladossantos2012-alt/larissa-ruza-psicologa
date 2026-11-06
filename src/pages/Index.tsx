@@ -16,32 +16,32 @@ import SpecialtiesCarta from "@/components/carta/SpecialtiesCarta";
 import { lazy, Suspense } from "react";
 import "@/components/carta/carta-theme.css";
 
-// three.js only loads in the chunks of the interactive pieces, after the page renders
-const EmbroideredHeart = lazy(() => import("@/components/carta/EmbroideredHeart"));
+// three.js loads in its own chunk after the page renders
+const ScrollArt = lazy(() => import("@/components/carta/ScrollArt"));
 
+// data-room picks the stippled drawing for each theme:
+// 0 moth (psyché) · 1 route Brazil–Spain–Ireland · 2 head with a tangle of thoughts
+// 3 two armchairs · 4 old key · 5 embroidered heart · 6 door left ajar
 const Index = () => {
   return (
     <div className="min-h-screen carta-theme">
+      <Suspense fallback={null}><ScrollArt /></Suspense>
       <Header />
-      <main>
-        <HeroCarta />
+      <main className="relative z-10">
+        <div data-room="0"><HeroCarta /></div>
         <SocialProof />
-        <ExteriorBanner />
-        <About />
-        <SpecialtiesCarta />
-        <Services />
-        <Investment />
-        <SocialValues />
-        <Testimonials />
-        <FAQ />
-        <div className="relative">
+        <div data-room="1"><ExteriorBanner /><About /></div>
+        <div data-room="2"><SpecialtiesCarta /></div>
+        <div data-room="3"><Services /></div>
+        <div data-room="4"><Investment /><SocialValues /></div>
+        <div data-room="5"><Testimonials /><FAQ /></div>
+        <div data-room="6" className="relative">
           <ContactForm />
-          <Suspense fallback={null}>
-            <EmbroideredHeart className="hidden lg:block absolute left-[max(24px,calc(50%-600px))] bottom-6 w-[260px] h-[260px] pointer-events-auto" />
-          </Suspense>
+          {/* the door drawing settles under the contact details on large screens */}
+          <div className="carta-contact-art hidden lg:block" data-art-anchor aria-hidden="true" />
         </div>
       </main>
-      <Footer />
+      <div className="relative z-10"><Footer /></div>
       <FloatingWhatsApp />
       <BreatheGuide />
     </div>
